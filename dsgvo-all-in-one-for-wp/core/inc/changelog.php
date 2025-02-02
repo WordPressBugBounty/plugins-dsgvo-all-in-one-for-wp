@@ -9,6 +9,10 @@ update_option('dsgvoaio_notification_count_v42', '0');
 update_option('dsgvoaio_notification_count_v44', '0');
 
 update_option('dsgvoaio_notification_count_v45', '0');
+
+update_option('dsgvoaio_notification_count_v47', '0');
+
+
 ?>
 <div class="wrap">
 	
@@ -17,7 +21,15 @@ update_option('dsgvoaio_notification_count_v45', '0');
 	<p><?php echo wp_kses(__('Here you will find an overview of the changes and new features in each version listed in detail.', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></p>
 
 	<dl class="dsgvoaio_changlog_accordion">
-		<dt><a href="#"><?php echo wp_kses(__('Version 4.6 (current)', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
+		<dt><a href="#"><?php echo wp_kses(__('Version 4.7 (current)', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
+		<dd>
+		<b><?php echo wp_kses(__('Changes', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></b>
+		<ul>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Policy changed for Germany', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Cookie Notice Design revised', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+		</ul>		
+		</dd>	
+		<dt><a href="#"><?php echo wp_kses(__('Version 4.6', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
 		<dd>
 		<b><?php echo wp_kses(__('Bugfixes', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></b>
 		<ul>

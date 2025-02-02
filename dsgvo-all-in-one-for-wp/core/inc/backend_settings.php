@@ -4,7 +4,6 @@
 <?php
 	if (!isset($language)) $language = wf_get_language();
 
-
 	if ( is_plugin_active( 'polylang/polylang.php' ) or
 	is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) or is_plugin_active( 'sitepress-multilingual-cms-develop/sitepress.php' ) or
 	is_plugin_active( 'sitepress-multilingual-cms-master-/sitepress.php' ) or is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) or
@@ -14,7 +13,6 @@
 		$showpolylangoptions = false;		
 	}
 
-	
 	if (isset($_GET['act'])) {
 		if ($_GET['act'] == "deleteall") {
 		?>
@@ -51,6 +49,7 @@
 			if (isset($_POST["use_dnt"])) { $use_dnt = sanitize_text_field($_POST["use_dnt"]);	} else { $use_dnt = ""; }									
 			if (isset($_POST["show_layertext"])) { $show_layertext = sanitize_text_field($_POST["show_layertext"]);	} else { $show_layertext = ""; }
 			if (isset($_POST["dsdvo_policy_site"]["page_id"])) { $dsdvo_policy_site = sanitize_text_field($_POST["dsdvo_policy_site"]["page_id"]);	} else { $dsdvo_policy_site = ""; }		
+			if (isset($_POST["dsdvo_imprint_site"]["page_id"])) { $dsdvo_imprint_site = sanitize_text_field($_POST["dsdvo_imprint_site"]["page_id"]);	} else { $dsdvo_imprint_site = ""; }	
 			if (isset($_POST["dsdvo_legalform"]["option_id"])) { $dsdvo_legalform = sanitize_text_field($_POST["dsdvo_legalform"]["option_id"]);	} else { $dsdvo_legalform = ""; }						
 			if (isset($_POST["legalform_register"]["option_id"])) { $legalform_register = sanitize_text_field($_POST["legalform_register"]["option_id"]);	} else { $legalform_register = ""; }						
 			if (isset($_POST["legalform_inforule"]["option_id"])) { $legalform_inforule = sanitize_text_field($_POST["legalform_inforule"]["option_id"]);	} else { $legalform_inforule = ""; }						
@@ -395,6 +394,7 @@
 			if (isset($_POST["cookie-time"])) { update_option("dsdvo_cookie_time", sanitize_text_field($_POST["cookie-time"]), false);	}		
 			if (isset($_POST["blog_agb"])) { update_option("dsdvo_blog_agb", wp_kses_post($_POST["blog_agb"]), false);	} else { update_option("dsdvo_blog_agb", "", false); }		
 			if (isset($_POST["dsdvo_policy_site"]["page_id"])) { update_option("dsdvo_policy_site", sanitize_text_field($_POST["dsdvo_policy_site"]["page_id"]), false);	}		
+			if (isset($_POST["dsdvo_imprint_site"]["page_id"])) { update_option("dsdvo_imprint_site", sanitize_text_field($_POST["dsdvo_imprint_site"]["page_id"]), false);	}
 			if (isset($_POST["dsdvo_legalform"]["option_id"])) { update_option("dsdvo_legalform", sanitize_text_field($_POST["dsdvo_legalform"]["option_id"]), false);	} else { update_option("dsdvo_legalform", "", false); }		
 			if (isset($_POST["legalform_register"]["option_id"])) { update_option("dsdvo_legalform_register", sanitize_text_field($_POST["legalform_register"]["option_id"]), false);	}		
 			if (isset($_POST["legalform_inforule"]["option_id"])) { update_option("dsdvo_legalform_inforule", sanitize_text_field($_POST["legalform_inforule"]["option_id"]), false);	}		
@@ -698,6 +698,7 @@
 			$cookie_time = sanitize_text_field(get_option("dsdvo_cookie_time"));
 			$blog_agb = sanitize_text_field(get_option("dsdvo_blog_agb"));
 			$dsdvo_policy_site = sanitize_text_field(get_option("dsdvo_policy_site"));
+			$dsdvo_imprint_site = sanitize_text_field(get_option("dsdvo_imprint_site"));
 			$dsdvo_legalform = sanitize_text_field(get_option("dsdvo_legalform"));
 			if(!$dsdvo_legalform) {$dsdvo_legalform = ""; }	
 			$legalform_register = sanitize_text_field(get_option("dsdvo_legalform_register"));
@@ -1228,7 +1229,7 @@
 					
 					
 					<br />						
-					<h2 class="dsgvoheader"><a><span class="dashicons dashicons-networking"></span><?php echo wp_kses(__("External Services <span style='font-size:13px'>(Google Analytics, Facebook Pixel & Like, Twitter Tweet Button, Linkedin Button)</span>", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></a></h2>
+					<h2 class="dsgvoheader"><a><span class="dashicons dashicons-networking"></span><?php echo wp_kses(__("External Services <span style='font-size:13px'>(Google Analytics, Facebook Pixel & Like, X Share Button, Linkedin Button)</span>", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></a></h2>
 					<span class="dsgvooptionsinner">
 					
 					<p class="dsdvo_options">
@@ -1516,7 +1517,7 @@
 					</label>
 					<br />
 					<br />				
-					<b><?php echo wp_kses(__('Shortcode for manual integration of Shareaholic:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b>
+					<b><?php echo wp_kses(__('Shortcode for manual integration of Shareaholic:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b><br />
 					<input class="dsdvo_input shareaholicshortcode" type="text" name="shareaholicshortcode" value='[dsgvo_shareaholic]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate Shareaholic GDPR compliant manually on any desired page.', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					<?php echo wp_kses(__('This is not required - Shareaholic is also displayed without the shortcode.', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
@@ -1530,7 +1531,7 @@
 					<br />
 					<br />
 					<span class="facebookcommentswrap">
-					<b><?php echo wp_kses(__('Shortcode for the integration of Facebook Comments:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b>
+					<b><?php echo wp_kses(__('Shortcode for the integration of Facebook Comments:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b><br/>
 					<input class="dsdvo_input amazonshortcode" type="text" name="amazonshortcode" value='[dsgvo_facebook_comments]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate Facebook Comments GDPR compliant on any desired page.', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					</span>
@@ -1543,16 +1544,16 @@
 					<br />
 					<br />
 					<span class="facebooklikewrap">
-					<b><?php echo wp_kses(__('Shortcode for embedding the Facebook Like Button:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b>
+					<b><?php echo wp_kses(__('Shortcode for embedding the Facebook Like Button:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b><br/>
 					<input class="dsdvo_input facebooklikeshortcode" type="text" name="facebooklikeshortcode" value='[dsgvo_facebook_like]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate the Facebook Like Btton GDPR compliant on every desired page.', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					</span>
 					</p>
 					<br />
 					<p class="dsdvo_options">
-					<b><?php echo wp_kses(__("Twitter (Tweet Button)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
+					<b><?php echo wp_kses(__("X (Share Button)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 					<input  class="dsdvo_input use_twitter" type="checkbox" name="use_twitter" <?php echo esc_html($use_twitter); ?>/><br />
-					<label><?php echo wp_kses(__("Do you use Twitter?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></label>
+					<label><?php echo wp_kses(__("Do you want use the X Share Button?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></label>
 					<br />
 					<br />
 					<span class="twitterwrap">
@@ -1590,7 +1591,7 @@
 					<br />
 					<br />
 					<span class="linkedinwrap">
-					<b><?php echo wp_kses(__('Shortcode for embedding the Linkedin Button:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b>
+					<b><?php echo wp_kses(__('Shortcode for embedding the Linkedin Button:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b><br/>
 					<input class="dsdvo_input addthisshortcode" type="text" name="twittershortcode" value='[dsgvo_linkedin]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate the Linkedin Button GDPR compliant on every desired page.', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					</span>
@@ -1744,19 +1745,19 @@
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>						
-						<input class="dsdvo_input" type="text" name="btn_txt_accept" value="<?php if ($btn_txt_accept) {echo esc_html($btn_txt_accept);} else { echo "Akzeptieren";}?>" /><br />
+						<input class="dsdvo_input" type="text" name="btn_txt_accept" value="<?php if ($btn_txt_accept) {echo esc_html($btn_txt_accept);} else { echo "Alle akzeptieren";}?>" /><br />
 						<?php } ?>
 						<?php if ($showpolylangoptions == true or $language == "en") { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
-						<input class="dsdvo_input" type="text" name="btn_txt_accept_en" value="<?php if ($btn_txt_accept_en) {echo esc_html($btn_txt_accept_en);} else { echo "Accept";}?>" /><br />
+						<input class="dsdvo_input" type="text" name="btn_txt_accept_en" value="<?php if ($btn_txt_accept_en) {echo esc_html($btn_txt_accept_en);} else { echo "Accept all";}?>" /><br />
 						<?php } ?>
 						<?php if ($showpolylangoptions == true or $language == "it") { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
-						<input class="dsdvo_input" type="text" name="btn_txt_accept_it" value="<?php if ($btn_txt_accept_it) {echo esc_html($btn_txt_accept_it);} else { echo "Accetta";}?>" /><br />
+						<input class="dsdvo_input" type="text" name="btn_txt_accept_it" value="<?php if ($btn_txt_accept_it) {echo esc_html($btn_txt_accept_it);} else { echo "Accettare tutti";}?>" /><br />
 						<?php } ?>						
 						<label>
 						<?php echo wp_kses(__("Text of the button to accept the conditions", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>.<br />
@@ -1943,6 +1944,7 @@
 					<p class="dsdvo_options">
 						<b><?php echo wp_kses(__("Privacy Policy Page", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>  <br />
 						<select class="dsdvo_input"  name="dsdvo_policy_site[page_id]">
+							<option disabled selected><?php echo wp_kses(__("Select Page...", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>
 								<?php
 								if( $pages = get_pages() ){
 									foreach( $pages as $page ){
@@ -2249,8 +2251,8 @@
 							
 							<?php if (get_option('dsdvo_use_twitter') == "on") { ?> 
 							<span class="dsgvoaio_lang_info scnd">
-							<b><?php echo wp_kses(__("Twitter", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
-							<a href="#" class="reset_policy_service" data-service="twitter" title="<?php echo wp_kses(__("Reload Twitter Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
+							<b><?php echo wp_kses(__("X (Twitter)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
+							<a href="#" class="reset_policy_service" data-service="twitter" title="<?php echo wp_kses(__("Reload X Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>
 							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3054,6 +3056,19 @@
 						<?php } ?>
 					</span>
 					<p>
+						<b class="blabel"><?php echo wp_kses(__("Imprint Page", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
+						<select class="dsdvo_input"  name="dsdvo_imprint_site[page_id]">
+						<option disabled selected><?php echo wp_kses(__("Select Page...", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>
+								<?php
+								if( $pages = get_pages() ){
+									foreach( $pages as $page ){
+										echo '<option value="' . wp_kses($page->ID, $kses_allowed_html) . '" ' . selected( $page->ID, sanitize_text_field(get_option("dsdvo_imprint_site"))) . '>' . wp_kses($page->post_title, $kses_allowed_html) . '</option>';
+									}
+								}
+								?>
+							</select>		
+					</p>					
+					<p>
 						<b class="blabel"><?php echo wp_kses(__("Shortcode Imprint", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 						<input class="dsdvo_input" type="text" value="[dsgvo_imprint]" readonly/>						
 						<span  class="dsgvoaio_tooltip tooltip" title="<?php echo wp_kses(__("With this shortcode you can embed the imprint on a page", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>" ><span class="dashicons dashicons-editor-help"></span></span>										
@@ -3308,7 +3323,7 @@
 							<?php if (get_option('dsdvo_use_twitter') == "on") { ?>
 							<?php $count = $count+1; ?>							
 							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
-								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("Twitter", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="twitter" title="<?php echo wp_kses(__("Edit VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="twitter" title="<?php echo wp_kses(__("Reload VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
+								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("X (Twitter)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="twitter" title="<?php echo wp_kses(__("Edit VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="twitter" title="<?php echo wp_kses(__("Reload VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text twitter">
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
@@ -3633,7 +3648,7 @@
 							<span class="gfontlines">
 							<?php foreach($allfonts as $key => $font) { ?>
 							<?php if ($font != "") { ?>
-								<b><?php echo wp_kses($key, $kses_allowed_html); ?>.)</b> <?php echo wp_kses($font, $kses_allowed_html); ?><br />
+								<span style="word-break: break-word;"><b><?php echo wp_kses($key, $kses_allowed_html); ?>.)</b> <?php echo wp_kses($font, $kses_allowed_html); ?><br /></span>
 							<?php } ?>
 							<?php } ?>
 							<br />			
@@ -3645,7 +3660,7 @@
 						<?php } ?>
 					</p>
 					<br />
-					</span>							
+					</span>										
 			</div>
 			 <?php
 				wp_nonce_field( 'dsgvo-settings');
@@ -3887,7 +3902,7 @@
 			<?php $service_count++; ?>
 			<?php } ?>
 			<?php if (get_option("dsdvo_use_twitter") == "on") { ?>
-				<li><span class="dashicons dashicons-plus"></span>&nbsp;<?php echo wp_kses(__("Twitter", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></li>
+				<li><span class="dashicons dashicons-plus"></span>&nbsp;<?php echo wp_kses(__("X (Twitter)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></li>
 			<?php $service_count++; ?>
 			<?php } ?>
 			<?php if (get_option("dsdvo_use_shareaholic") == "on") { ?>

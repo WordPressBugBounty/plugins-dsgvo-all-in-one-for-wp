@@ -3,11 +3,11 @@
 $imprint_template = "";
 $country = get_option("dsgvoaiocountry", "");
 if ($country == "" or $country == "Deutschland" or $country == "deutschland" or $country == "de" or $country == "DE" or $country == "De" or $country == "Germany" or $country == "germany") {
-	$imprint_template .= "<p><b>".__("Information according to § 18 para. 2 Medienstaatsvertrag ", "dsgvo-all-in-one-for-wp")."</b></p>";
+	$imprint_template .= "<p><b>".__("Information according to § 5 DDG ", "dsgvo-all-in-one-for-wp")."</b></p>";
 } else if ($country == "&Ouml;sterreich" or $country == "&ouml;sterreich" or $country == "at" or $country == "AT" or $country == "At" or $country == "Austria" or $country == "austria") {
 	$imprint_template .= "<p><b>".__("Duty to inform according to § 5 para. 1 E-Commerce Act and § 25 Media Act", "dsgvo-all-in-one-for-wp")."</b></p>";
 } else {
-	$imprint_template .= "<p><b>".__("Information according to § 5 TMG", "dsgvo-all-in-one-for-wp")."</b></p>";	
+	$imprint_template .= "<p><b>".__("Information according to § 5 DDG", "dsgvo-all-in-one-for-wp")."</b></p>";	
 }
 $imprint_template .= "<p>";
 
@@ -21,24 +21,28 @@ $imprint_template .= "[dsgvozip] [dsgvocityowner]";
 $imprint_template .= "[dsgvocountryowner]";
 
 $imprint_template .= "</p>";
-$imprint_template .= "<p><b>".__("Represented by", "dsgvo-all-in-one-for-wp").":</b> [dsgvoperson]</p>";
-$imprint_template .= "<p>";
-$imprint_template .= "<b>".__("Contact", "dsgvo-all-in-one-for-wp").":</b><br/>";
-
-if (get_option('dsgvoaiophone', '') != "") {
-	$imprint_template .= __("Phone", "dsgvo-all-in-one-for-wp").": [dsgvophone]<br/>";
+if (get_option("dsgvoaioperson") != "") {
+	$imprint_template .= "<p><b>".__("Represented by", "dsgvo-all-in-one-for-wp").":</b> [dsgvoperson]</p>";
 }
 
-if (get_option('dsgvoaiofax', '') != "") {
-	$imprint_template .= __("Fax", "dsgvo-all-in-one-for-wp").": [dsgvofax]<br/>";
+if (get_option("dsgvoaiophone") != "" or get_option("dsgvoaiofax") != "" or get_option("dsgvoaiomail") != "") {
+	$imprint_template .= "<p>";
+	$imprint_template .= "<b>".__("Contact", "dsgvo-all-in-one-for-wp").":</b><br/>";
+
+	if (get_option('dsgvoaiophone', '') != "") {
+		$imprint_template .= __("Phone", "dsgvo-all-in-one-for-wp").": [dsgvophone]<br/>";
+	}
+
+	if (get_option('dsgvoaiofax', '') != "") {
+		$imprint_template .= __("Fax", "dsgvo-all-in-one-for-wp").": [dsgvofax]<br/>";
+	}
+
+	if (get_option('dsgvoaiomail', '') != "") {
+		$imprint_template .= __("E-Mail", "dsgvo-all-in-one-for-wp").": [dsgvoemail]<br/>";
+	}
+
+	$imprint_template .= "</p>";
 }
-
-if (get_option('dsgvoaiomail', '') != "") {
-	$imprint_template .= __("E-Mail", "dsgvo-all-in-one-for-wp").": [dsgvoemail]<br/>";
-}
-
-$imprint_template .= "</p>";
-
 
 if (get_option("dsdvo_legalform_needregister", "no") == "yes") {
 	$imprint_template .= "<p>";
@@ -77,10 +81,18 @@ if ($legalforminforule != "1" && $legalforminforule != "0") {
 if (get_option("dsdvo_legalform_journalist", "no") == "yes") {
 	$imprint_template .= "<p>";
 	$imprint_template .= "<b>".__("Responsible for the content according to § 55 Abs. 2 RStV", "dsgvo-all-in-one-for-wp").":</b><br />";
-	$imprint_template .= "[dsgvoperson_journalist]<br/>";
-	$imprint_template .= "[dsgvostreet_journalist]<br/>";
-	$imprint_template .= "[dsgvozip_journalist] [dsgvocity_journalist]<br/>";
-	$imprint_template .= "[dsgvocountry_journalist]<br/>";
+	if (get_option("dsdvo_legalform_personname_jornalist")) {
+		$imprint_template .= "[dsgvoperson_journalist]<br/>";
+	}
+	if (get_option("dsdvo_legalform_adress_jornalist")) {
+		$imprint_template .= "[dsgvostreet_journalist]<br/>";
+	}
+	if (get_option("dsdvo_legalform_zip_jornalist") or get_option("dsdvo_legalform_city_jornalist")) {
+		$imprint_template .= "[dsgvozip_journalist] [dsgvocity_journalist]<br/>";
+	}
+	if (get_option("dsdvo_legalform_country_jornalist")) {
+		$imprint_template .= "[dsgvocountry_journalist]<br/>";
+	}
 	$imprint_template .= "</p>";
 }
 
@@ -93,11 +105,11 @@ if (get_option("dsdvo_clause", "no") == "yes") {
 	$imprint_template .= "<p>";	
 	$imprint_template .= "<b>".__("Liability for content", "dsgvo-all-in-one-for-wp").":</b><br/>";
 if ($country == "" or $country == "Deutschland" or $country == "deutschland" or $country == "de" or $country == "DE" or $country == "De" or $country == "Germany" or $country == "germany") {
-	$imprint_template .= __("The contents of our pages were created with the greatest care. However, we cannot assume any liability for the correctness, completeness and topicality of the contents. As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG (German Telemedia Act) and general laws. According to § 8 to 10 TMG we are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this respect is only possible from the time of knowledge of a concrete infringement. If we become aware of any such violations, we will remove the content in question immediately.", "dsgvo-all-in-one-for-wp")."</p>";
+	$imprint_template .= __("The contents of our pages were created with the greatest care. However, we cannot assume any liability for the correctness, completeness and topicality of the contents. As a service provider, we are responsible for our own content on these pages in accordance with § 5 DDG and general laws. According to § 5 DDG we are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this respect is only possible from the time of knowledge of a concrete infringement. If we become aware of any such violations, we will remove the content in question immediately.", "dsgvo-all-in-one-for-wp")."</p>";
 } else if ($country == "&Ouml;sterreich" or $country == "&ouml;sterreich" or $country == "at" or $country == "AT" or $country == "At" or $country == "Austria" or $country == "austria") {	
 	$imprint_template .= __("The contents of our pages were created with the greatest care. However, we cannot assume any liability for the correctness, completeness and topicality of the contents. As a service provider, we are responsible for our own content on these pages in accordance with § 25 para. 1 Austrian Media Act and general laws. According to § 25 Austrian Media Act we are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this respect is only possible from the time of knowledge of a concrete infringement. If we become aware of any such violations, we will remove the content in question immediately.", "dsgvo-all-in-one-for-wp")."</p>";
 } else {
-	$imprint_template .= __("The contents of our pages were created with the greatest care. However, we cannot assume any liability for the correctness, completeness and topicality of the contents. As a service provider, we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG (German Telemedia Act) and general laws. According to § 8 to 10 TMG we are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this respect is only possible from the time of knowledge of a concrete infringement. If we become aware of any such violations, we will remove the content in question immediately.", "dsgvo-all-in-one-for-wp")."</p>";	
+	$imprint_template .= __("The contents of our pages were created with the greatest care. However, we cannot assume any liability for the correctness, completeness and topicality of the contents. As a service provider, we are responsible for our own content on these pages in accordance with § 5 DDG and general laws. According to § 5 DDG we are not obliged to monitor transmitted or stored information from third parties or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this respect is only possible from the time of knowledge of a concrete infringement. If we become aware of any such violations, we will remove the content in question immediately.", "dsgvo-all-in-one-for-wp")."</p>";	
 }
 }
 

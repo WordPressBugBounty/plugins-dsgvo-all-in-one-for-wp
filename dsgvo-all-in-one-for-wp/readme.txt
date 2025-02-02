@@ -5,7 +5,7 @@ Tags: DSGVO, Cookie Notice, cookie, GDPR, Datenschutz
 Requires at least: 4.5
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 4.6
+Stable tag: 4.7
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -378,6 +378,8 @@ Bugfixes: Wichtiger Sicherheitsfix (CSRF), E-Mail Spamschutz überarbeitet (Umla
 Bugfixes: Dateien nicht gefunden  (google_fonts.php, tooltipster.bundle.min, tooltipster.min.css)
 = 4.6 =
 Bugfixes: Security issue fixed
+= 4.7 =
+Bugfixes: Security issue fixed, Email Adress display bug fixed | Changes: Cookie Notice Design revised, Policy Text for Germany changed
 
 == Upgrade Notice ==
 
@@ -467,3 +469,5 @@ Bugfixes: Wichtiger Sicherheitsfix (CSRF), E-Mail Spamschutz überarbeitet (Umla
 Bugfixes: Bugfix - Dateien nicht gefunden  (google_fonts.php, tooltipster.bundle.min, tooltipster.min.css)
 = 4.6 =
 Bugfixes: Security issue fixed
+= 4.7 =
+Bugfixes: Security issue fixed, Email Adress display bug fixed | Changes: Cookie Notice Design revised, Policy Text for Germany changed

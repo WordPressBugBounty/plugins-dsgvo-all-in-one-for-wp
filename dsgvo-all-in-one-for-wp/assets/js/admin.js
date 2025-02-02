@@ -654,4 +654,11 @@ jQuery(document).ready(function ($){
 
     });						
 						
-					});	
+});	
+
+jQuery( document ).on( 'click', '.dsgvoaio_checkcookies', function(event) {
+		event.preventDefault();
+	alert("sasa");
+	
+								
+});	

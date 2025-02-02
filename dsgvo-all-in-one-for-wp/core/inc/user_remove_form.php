@@ -17,30 +17,27 @@ $city = get_user_meta( $user_info->ID, 'billing_city', true );
 $zip_code = get_user_meta( $user_info->ID, 'billing_postcode', true );
 $billing_email = get_user_meta( $user_info->ID, 'billing_email', true );
 
-
-
-//Delete user // uncomment for live
 if (isset($_POST['delete_user_data'])) {
 	
-	//if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'once_remove_user' ) ) {
+	if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'once_remove_user' ) ) {
 		
-		//$output .= "Ihre Sitzung ist abgelaufen bitte aktualisieren Sie die Seite.";
+		$output .= "Ihre Sitzung ist abgelaufen bitte aktualisieren Sie die Seite.";
 		
-	//} else {
+	} else {
 		
 		require_once(ABSPATH.'wp-admin/includes/user.php' );
 
 		$current_user = wp_get_current_user();
 
-		//double check "privilegs"
 		if ( is_user_logged_in() ) {
+			
 			wp_delete_user( $current_user->ID );
+			
 			$output .= __("Your user account including all data was successfully and irrevocably deleted. You can create a new account at any time.", "dsgvo-all-in-one-for-wp"); 
 
-			//header(get_home_url());
 		}
 		
-	//}	
+	}	
 } else {
 if (!isset($language)) $language = wf_get_language();
 
@@ -202,7 +199,6 @@ $output .='
 		
 		
 		$output .= "<br />";
-		//$field = wp_nonce_field( 'once_remove_user' );
 		$output .= wp_nonce_field( 'once_remove_user', '_wpnonce', true, false );
 		$output .= "<tr><td class='dsgvoaio_td_full' colspan='2'><button type='submit' name='delete_user_data' class='delete_user_data'"; 
 					

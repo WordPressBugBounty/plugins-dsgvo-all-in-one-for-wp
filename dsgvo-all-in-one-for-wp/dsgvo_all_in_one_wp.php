@@ -3,7 +3,7 @@
 
  * Plugin Name: DSGVO All in one for WP
 
- * Version: 4.6
+ * Version: 4.7
 
  * Plugin URI: http://www.dsgvo-for-wp.com
 
@@ -69,6 +69,10 @@ class dsdvo_wp_backend {
 
 		add_action( 'wp_ajax_nopriv_dsgvoaio_dismiss_cache_msg', __CLASS__ . '::dsgvoaio_dismiss_cache_msg' );		
 
+		add_action('wp_ajax_dsgvoaio_dismiss_gfonts_msg', __CLASS__ . '::dsgvoaio_dismiss_gfonts_msg');
+
+		add_action( 'wp_ajax_nopriv_dsgvoaio_dismiss_gfonts_msg', __CLASS__ . '::dsgvoaio_dismiss_gfonts_msg' );			
+		
 		add_action( 'admin_init', __CLASS__ .'::dsgvoaio_check_autoptimize' );
 
 		add_action( 'admin_init', __CLASS__ . '::dsgvoaiofree_process_settings_export' );
@@ -89,7 +93,15 @@ class dsdvo_wp_backend {
 			
 			include( plugin_dir_path(__FILE__ )."/core/inc/blocks.php");	
 			
-		}		
+		}	
+
+		$gfonts_found_new = get_option('dsgvoaio_gfonts_found_new');
+		if ($gfonts_found_new == 1) {
+			
+			add_action( 'admin_notices', __CLASS__ . '::dsgvoaiofree_new_gfont_found' );
+			
+			//update_option('dsgvoaio_gfonts_found_new', 0);
+		}
 	}
 	
 	
@@ -309,7 +321,63 @@ class dsdvo_wp_backend {
 		wp_die();
 		
 	}
+
+	public static function dsgvoaiofree_new_gfont_found() {
+		
+	$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
 	
+	?>
+	
+	<script>
+
+		jQuery( document ).ready( function() {
+
+			jQuery( document ).on( 'click', '.dsgvonewgfontfound .notice-dismiss', function() {
+
+				var data = {
+
+						action: 'dsgvoaio_dismiss_gfonts_msg',
+
+				};
+
+				jQuery.post( '<?php echo esc_js(admin_url( 'admin-ajax.php' )); ?>', data, function(d) {
+
+				});
+
+			})	
+
+		});	
+
+	</script>	
+	
+	<div class="notice dsgvonewgfontfound is-dismissible notice-warning" data-notice="dsgvo_msg_new_gfont_found">			
+		
+		<div class="dsgvonewgfontfound_iconwrap" style="float: left; width: 50px; height: 50px; padding-top: 5px;">
+		
+			<span class="dashicons dashicons-warning" style="font-size: 45px;"></span>
+		
+		</div>
+		
+		<p>
+			
+			<b><?php echo wp_kses(__( 'Warning', 'dsgvo-all-in-one-for-wp' ), $kses_allowed_html); ?></b>
+			
+			&nbsp;
+			
+			<?php echo wp_kses(__( 'DSGVO AIO has found externally integrated Google Fonts on your website that are not GDPR compliant.', 'dsgvo-all-in-one-for-wp' ), $kses_allowed_html); ?>
+			
+			<br />
+			
+			<?php $settings_url = admin_url( 'admin.php?page=dsgvoaio-free-settings-page' ); ?>
+			
+			<?php printf(wp_kses(__( 'You can find more information about that in the <a href="%s">DSGVO AIO settings.</a>', 'dsgvo-all-in-one-for-wp' ), $kses_allowed_html), $settings_url); ?>		
+			
+		</p>
+					
+	</div>	
+	<?php
+			
+	}		
 	
 	public static function dsgvoaiofree_settings_import_success() {
 			
@@ -353,6 +421,14 @@ class dsdvo_wp_backend {
 		}
 			
 	}	
+	
+	public static function dsgvoaio_dismiss_gfonts_msg() {
+
+		update_option( 'dsgvoaio_gfonts_found_new', 0 );
+
+		exit();
+
+	}		
 
 
 	public static function dsgvoaio_dismiss_cache_msg() {
@@ -771,7 +847,25 @@ class dsdvo_wp_backend {
 
 			$clientipsplit = explode(".", $clientip);
 			
-			$clientip = $clientipsplit[0].'.'.$clientipsplit[1].'.'.$clientipsplit[2].'.XXX';
+			if (isset($clientipsplit[0])) {
+				$ip0 = $clientipsplit[0];
+			} else {
+				$ip0 = "0";
+			}
+			
+			if (isset($clientipsplit[1])) {
+				$ip1 = $clientipsplit[1];
+			} else {
+				$ip1 = "0";
+			}
+
+			if (isset($clientipsplit[2])) {
+				$ip2 = $clientipsplit[2];
+			} else {
+				$ip2 = "0";
+			}			
+			
+			$clientip = $ip0.'.'.$ip1.'.'.$ip2.'.XXX';
 
 			$currentdatas = get_option('dsgvoaio_log', array());
 
@@ -1231,7 +1325,7 @@ class dsdvo_wp_backend {
 
 	public static function dsgvo_aio_admin_menu(){
 		
-		$notification_count_changelog = get_option('dsgvoaio_notification_count_v45', '1');
+		$notification_count_changelog = get_option('dsgvoaio_notification_count_v47', '1');
 
 		add_menu_page( 'DSGVO All in one for WP', 'DSGVO AIO ', 'manage_options', 'dsgvoaio-free-settings-page', __CLASS__ . '::dsdvo_settings' );
 
@@ -1437,11 +1531,8 @@ class dsdvo_wp_frontend {
 
 		}		
 
-		if (get_option("dsgvo_notice_design") == "clear") {	
-
 		add_action('wp_head', __CLASS__ . '::style_dsgvoaio', 1);
 
-		}
 
 		if (get_option("dsdvo_use_vgwort") == "on" && get_option("dsdvo_remove_vgwort") == "on" && !is_admin()) {
 
@@ -1942,7 +2033,55 @@ class dsdvo_wp_frontend {
 
 					}					
 
-				}		
+				}	
+
+				if (get_option('dsdvo_use_youtube') == "on" && !empty(get_option("dsdvo_youtube_policy")) or get_option('dsdvo_use_youtube') == "on" && !empty(get_option("dsdvo_youtube_policy_en"))) { 
+
+					$content .= "<p>&nbsp;</p>";
+
+					if ($language == "de") {
+
+						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_youtube_policy")));
+
+					} 
+
+					if ($language == "en") {
+
+						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_youtube_policy_en")));
+
+					}	
+
+					if ($language == "it") {
+
+						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_youtube_policy_it")));
+
+					}					
+
+				}	
+
+				if (get_option('dsdvo_use_vimeo') == "on" && !empty(get_option("dsdvo_vimeo_policy")) or get_option('dsdvo_use_vimeo') == "on" && !empty(get_option("dsdvo_vimeo_policy_en"))) { 
+
+					$content .= "<p>&nbsp;</p>";
+
+					if ($language == "de") {
+
+						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_vimeo_policy")));
+
+					} 
+
+					if ($language == "en") {
+
+						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_vimeo_policy_en")));
+
+					}	
+
+					if ($language == "it") {
+
+						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_vimeo_policy_it")));
+
+					}					
+
+				}				
 
 				if (get_option('dsgvoaiocompanyname')) {
 
@@ -2038,9 +2177,13 @@ class dsdvo_wp_frontend {
 
 					$content = str_replace('[ust]',stripslashes(esc_html(get_option('dsdvo_legalform_ustid'))),$content);
 
+					$content = str_replace('[taxid]',stripslashes(esc_html(get_option('dsdvo_legalform_ustid'))),$content);
+					
 				} else {
 
 					$content = str_replace('[ust]','',$content);
+					
+					$content = str_replace('[taxid]','',$content);
 
 				}				
 
@@ -2513,6 +2656,8 @@ class dsdvo_wp_frontend {
 
 			if (isset($match[0])) {
 				
+				$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
+				
 				foreach ($match[0] as $data) {
 					
 					if (isset($data)) {
@@ -2525,7 +2670,7 @@ class dsdvo_wp_frontend {
 							
 							if (isset($kokomatch[1])) {
 								
-								update_option('dsgvo_kokocode', $kokomatch[1], false);
+								update_option('dsgvo_kokocode', wp_kses($kokomatch[1], $kses_allowed_html), false);
 								
 							}
 							
@@ -2537,8 +2682,27 @@ class dsdvo_wp_frontend {
 				
 			}
 			
+			preg_match_all('/\<script>[^<>]*window.koko_analytics(.*?)<\/script\>/i', $html, $match_koko);
+			
+			if (isset($match_koko[1])) {
+				
+				foreach ($match_koko[1] as $data_koko) {
+					
+					if (isset($data_koko)) {
+						
+						update_option('dsgvo_kokoscript', 'window.koko_analytics '.wp_kses($data_koko, $kses_allowed_html));
+						
+					}
+					
+				}
+			
+			$html = preg_replace('#<script>[^<>]*window.koko_analytics(.*?)<\/script\>#is', '', $html);			
+				
+			}
+			
 			return $html;
-		}		
+			
+		}	
 			
 		public static function dsgvoaio_disable_analytics_ob_start(){
 			
@@ -2678,8 +2842,9 @@ class dsdvo_wp_frontend {
 				if (get_option("dsgvo_notice_design") == "clear") {
 
 					$content .= "
+					#tarteaucitronCookieImg { background: url(/assets/img/cookies-dark.png);}
 					.tarteaucitronInfoBox { color: #424242 !important; }
-					.dsgvoaio_pol_header { background: #eaeaea;}
+					.dsgvoaio_pol_header { background: #eaeaea !important;}
 					.dsgvo_hide_policy_popup .dashicons {color: #424242 !important;}					
 
 					#tarteaucitron #tarteaucitronServices .tarteaucitronMainLine {
@@ -2738,11 +2903,17 @@ class dsdvo_wp_frontend {
 
 					#tarteaucitronAlertBig, #tarteaucitronManager {
 
-						background: #eaeaea !important;
+						/**background: #eaeaea !important;
 
-						color: #424242 !important;
+						color: #424242 !important;**/
 
 					}	
+					
+					#tarteaucitronAlertSmall {
+						
+						background: #eaeaea !important;
+					
+					}
 
 
 
@@ -2768,8 +2939,36 @@ class dsdvo_wp_frontend {
 
 					}
 
+					.dsdvo-cookie-notice.style1 #tarteaucitronAlertBig {
+						
+						background: #eaeaea !important;
+						
+						color: #424242 !important;
+					}
 					
-
+					.dsgvoaio-checkbox {
+						
+						color: #424242 !important;
+						
+					}
+					
+					.dsgvoaio-checkbox-indicator { 
+					
+						background: #ffffff !important;
+					
+					}
+					
+					.dsgvoaio-checkbox input:checked ~ .dsgvoaio-checkbox-indicator {
+						
+						background: #79b51f !important;
+						
+					}
+					
+					#tarinner #dsgvonotice_footer a, .dsgvonotice_footer_separator {
+						
+						color: #424242 !important;
+						
+					}					 
 					
 
 				 ";
@@ -2778,7 +2977,7 @@ class dsdvo_wp_frontend {
 
 					$content .= ".dsdvo-cookie-notice.style2 #tarteaucitronAlertBig #tarinner {background: #eaeaea !important; border-radius: 5px;}";
 
-					$content .= ".dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h1, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h2, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h3, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h4, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert a  { color: #828080 !important; }";
+					$content .= ".dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h1, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h2, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h3, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert h4, .dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert a  { color: #424242 !important; }";
 
 					$content .= ".dsdvo-cookie-notice.style2 #tarteaucitronDisclaimerAlert a {text-decoration: underline;}";
 
@@ -2788,11 +2987,32 @@ class dsdvo_wp_frontend {
 
 					$content .= ".dsdvo-cookie-notice.style3 #tarteaucitronAlertBig #tarinner {background: #eaeaea !important; border-radius: 5px;}";
 
-					$content .= ".dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h1, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h2, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h3, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h4, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert a  { color: #828080 !important; }";
+					$content .= ".dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h1, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h2, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h3, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert h4, .dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert a  { color: #424242 !important; }";
 
 					$content .= ".dsdvo-cookie-notice.style3 #tarteaucitronDisclaimerAlert a {text-decoration: underline;}";
 
 				 }				 				
+				
+				} else {
+					
+					$content .= "
+						#tarinner #dsgvonotice_footer a, .dsgvonotice_footer_separator {
+							
+							color: #ffffff !important;
+							
+						}
+												
+					";
+					
+					if (get_option("dsgvo_notice_style") == "3") {
+						$content .= ".dsdvo-cookie-notice.style3 #tarteaucitronAlertBig #tarinner {border-radius: 5px;}";
+					}
+					if (get_option("dsgvo_notice_style") == "2") {
+						$content .= ".dsdvo-cookie-notice.style2 #tarteaucitronAlertBig #tarinner {border-radius: 5px;}";
+					}					
+				
+				}
+				
 				
 				$allowed_output_html = array(
 						'script' => array(),
@@ -2811,9 +3031,7 @@ class dsdvo_wp_frontend {
 				);				 
 
 				
-				echo  "<style type='text/css'>".wp_kses( $content, $allowed_output_html, $allowed_output_protocol)."</style>";				
-
-				}
+				echo  "<style type='text/css'>".wp_kses( $content, $allowed_output_html, $allowed_output_protocol)."</style>";		
 
 
 
@@ -3468,9 +3686,9 @@ class dsdvo_wp_frontend {
 
 							top: auto !important;
 
-							bottom: 0 !important;
+							bottom: 20px !important;
 
-							left: 0 !important;
+							left: 35px !important;
 
 							right: auto !important;
 
@@ -3488,11 +3706,11 @@ class dsdvo_wp_frontend {
 
 							top: auto !important;
 
-							bottom: 0 !important;
+							bottom: 20px !important;
 
 							left: auto !important;
 
-							right: 0 !important;
+							right: 15px !important;
 
 						}			
 
@@ -3506,9 +3724,9 @@ class dsdvo_wp_frontend {
 
 						.tarteaucitronAlertSmallTop {
 
-							top: 0;
+							top: 20px !important;
 
-							left: 0 !important;
+							left: 35px !important;
 
 							right: auto !important;
 
@@ -3517,6 +3735,24 @@ class dsdvo_wp_frontend {
 					";
 
 				}
+				
+				if ($position_service_control == "topright") {
+
+					$dsgvoaio_control_style .= "
+
+						.tarteaucitronAlertSmallTop {
+
+							top: 20px !important;
+
+							right: 15px !important;
+
+							left: auto !important;
+
+						}			
+
+					";
+
+				}				
 
 				wp_register_style( 'dsgvoaio_control', false, '', '1.0' );
 
@@ -3563,7 +3799,9 @@ class dsdvo_wp_frontend {
 
 				$animation_time = get_option("dsgvo_animation_time", "1000");
 					
-				if (get_option("dsdvo_policy_site")) { $dsdvo_policy_site = get_option("dsdvo_policy_site"); } else { $dsdvo_policy_site = ""; }
+				if (get_option("dsdvo_policy_site")) { $dsdvo_policy_site = get_option("dsdvo_policy_site"); } else { $dsdvo_policy_site = "#"; }
+
+				if (get_option("dsdvo_imprint_site")) { $dsdvo_imprint_site = get_option("dsdvo_imprint_site"); } else { $dsdvo_imprint_site = "#"; }
 
 				if (get_option("dsgvo_btn_txt_reject_url")) { $dsgvo_btn_txt_reject_url = get_option("dsgvo_btn_txt_reject_url"); } else { $dsgvo_btn_txt_reject_url = "www.google.de"; }
 
@@ -3610,6 +3848,16 @@ class dsdvo_wp_frontend {
 					$yeslabel = "JA";
 
 					$nolabel = "NEIN";	
+					
+					$text_policy = "Datenschutzbedingungen";	
+					
+					$text_imprint = "Impressum";	
+					
+					$checkbox_essentials_label = "Essenziell";	
+					
+					$checkbox_statistics_label = "Statistiken";
+					
+					$checkbox_externals_label = "Externe Dienste";					
 
 					$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
 
@@ -3617,11 +3865,15 @@ class dsdvo_wp_frontend {
 
 					if (get_option("dsdvo_cookie_text")) { $cookietextnotice = wp_kses(wpautop(html_entity_decode(stripslashes(get_option("dsdvo_cookie_text")), ENT_COMPAT, get_option('blog_charset'))), $kses_allowed_html); } else { $cookietextnotice = "Wir verwenden technisch notwendige Cookies auf unserer Webseite sowie externe Dienste.<br />Standardmäßig sind alle externen Dienste deaktiviert. Sie können diese jedoch nach belieben aktivieren & deaktivieren.<br/>Für weitere Informationen lesen Sie unsere Datenschutzbestimmungen."; }				
 
+					if (get_option("dsdvo_cookie_text_header")) { $cookietextheader = wp_kses(wpautop(html_entity_decode(stripslashes(get_option("dsdvo_cookie_text_header")), ENT_COMPAT, get_option('blog_charset'))), $kses_allowed_html); } else { $cookietextheader = "Datenschutzeinstellungen"; }
+
 					if (get_option("dsdvo_cookie_text_scroll")) { $onscrolltext = wp_kses(wpautop(html_entity_decode(stripslashes(get_option("dsdvo_cookie_text_scroll")), ENT_COMPAT, get_option('blog_charset'))), $kses_allowed_html); } else { $onscrolltext = "Durch das fortgesetzte blättern stimmen Sie der Benutzung von externen Diensten zu."; }								 
 					 
 					if (get_option("dsgvo_btn_txt_accept")) { $cookieaccepttext = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_accept")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookieaccepttext =  "Akzeptieren"; }
 
 					if (get_option("dsgvo_btn_txt_customize")) { $btncustomizetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_customize")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btncustomizetxt =  "Personalisieren"; }
+
+					if (get_option("dsgvo_btn_txt_save")) { $btnsavetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_save")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btnsavetxt =  "Auswahl speichern"; }
 
 					if (get_option("dsgvo_btn_txt_reject")) { $dsgvo_btn_txt_reject = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_reject")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $dsgvo_btn_txt_reject = "Ablehnen"; }
 
@@ -3672,10 +3924,22 @@ class dsdvo_wp_frontend {
 					$yeslabel = "YES";
 
 					$nolabel = "NO";
+					
+					$text_policy = "Privacy Policy";	
+					
+					$text_imprint = "Imprint";	
+
+					$checkbox_essentials_label = "Essentials";	
+					
+					$checkbox_statistics_label = "Statistics";
+					
+					$checkbox_externals_label = "External services";						
 
 					if (get_option("dsdvo_outgoing_text_en")) { $outgoing_text = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_outgoing_text_en"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $outgoing_text = "<p><b>You are now leaving our Internet presence</b></p><p>As you have clicked on an external link you are now leaving our website.</p><p>If you agree to this, please click on the following button:</p>"; }				
 
 					if (get_option("dsdvo_cookie_text_en")) { $cookietextnotice = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_cookie_text_en"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookietextnotice = "We use technically necessary cookies on our website and external services.<br/>By default, all services are disabled. You can turn or off each service if you need them or not.<br />For more informations please read our privacy policy."; }				
+
+					if (get_option("dsdvo_cookie_text_header_en")) { $cookietextheader = wp_kses(wpautop(html_entity_decode(stripslashes(get_option("dsdvo_cookie_text_header_en")), ENT_COMPAT, get_option('blog_charset'))), $kses_allowed_html); } else { $cookietextheader = "Privacy Settings"; }
 
 					if (get_option("dsdvo_cookie_text_scroll_en")) { $onscrolltext = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_cookie_text_scroll_en"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $onscrolltext = "By continuing to scroll, you consent to the use of external services."; }				
 
@@ -3683,6 +3947,8 @@ class dsdvo_wp_frontend {
 
 					if (get_option("dsgvo_btn_txt_customize_en")) { $btncustomizetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_customize_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btncustomizetxt =  "Customize"; }
 
+					if (get_option("dsgvo_btn_txt_save_en")) { $btnsavetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_save_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btnsavetxt =  "Save Selection"; }
+					
 					if (get_option("dsgvo_btn_txt_reject_en")) { $dsgvo_btn_txt_reject = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_reject_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $dsgvo_btn_txt_reject = "Reject"; }
 
 					if (get_option("dsgvo_btn_txt_reject_text_en")) { $dsgvo_btn_txt_reject_text = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_reject_text_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $dsgvo_btn_txt_reject_text = "You have rejected the conditions. You will be redirected to google.com."; }			
@@ -3732,6 +3998,16 @@ class dsdvo_wp_frontend {
 					$yeslabel = "SI";
 
 					$nolabel = "NO";
+					
+					$text_policy = "Politica sulla riservatezza";	
+					
+					$text_imprint = "Impronta";	
+
+					$checkbox_essentials_label = "Essenziale";	
+					
+					$checkbox_statistics_label = "Statistiche";
+					
+					$checkbox_externals_label = "Esterno";						
 
 					if (get_option("dsdvo_outgoing_text_it")) { $outgoing_text = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_outgoing_text_it"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $outgoing_text = "<p><b>Stai lasciando la nostra presenza su Internet</b></p><p>Quando hai cliccato su un link esterno stai lasciando il nostro sito web.</p><p><p>Se sei d'accordo, clicca sul seguente pulsante:</p>."; }				
 
@@ -3739,10 +4015,14 @@ class dsdvo_wp_frontend {
 
 					if (get_option("dsdvo_cookie_text_scroll_it")) { $onscrolltext = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_cookie_text_scroll_it"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $onscrolltext = "Continuando a scorrere, l'utente acconsente all'utilizzo di servizi esterni."; }				
 
+					if (get_option("dsdvo_cookie_text_header_it")) { $cookietextheader = wp_kses(wpautop(html_entity_decode(stripslashes(get_option("dsdvo_cookie_text_header_it")), ENT_COMPAT, get_option('blog_charset'))), $kses_allowed_html); } else { $cookietextheader = "Impostazioni della privacy"; }
+
 					if (get_option("dsgvo_btn_txt_accept_it")) { $cookieaccepttext = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_accept_it")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookieaccepttext =  "Accetta"; }
 
 					if (get_option("dsgvo_btn_txt_customize_it")) { $btncustomizetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_customize_it")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btncustomizetxt =  "Personalizza"; }
 
+					if (get_option("dsgvo_btn_txt_save_it")) { $btnsavetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_save_it")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btnsavetxt =  "Salva selezione"; }
+					
 					if (get_option("dsgvo_btn_txt_reject_it")) { $dsgvo_btn_txt_reject = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_reject_it")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $dsgvo_btn_txt_reject = "Rifiuta"; }
 
 					if (get_option("dsgvo_btn_txt_reject_text_it")) { $dsgvo_btn_txt_reject_text = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_reject_text_it")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $dsgvo_btn_txt_reject_text = "Avete rifiutato le condizioni. Verrai reindirizzato a google.com."; }			
@@ -4098,7 +4378,7 @@ class dsdvo_wp_frontend {
 				
 				$plugin_version = $plugin_data['Version'];				
 			
-				wp_localize_script( 'dsdvo_tarteaucitron', 'parms', array('version' => $plugin_version, 'close_popup_auto' => $close_popup_auto, 'animation_time' => $animation_time, 'nolabel' => $nolabel, 'yeslabel' => $yeslabel, 'showpolicyname' => $showpolicyname,'maincatname' => $maincatname, 'language' => $language, 'woocommercecookies' => $woocommerce_cookies, 'polylangcookie' => $polylangcookie, 'usenocookies' => $usenocookies, 'nocookietext' => $nocookietext, 'cookietextusage' => $cookietextusage, 'cookietextusagebefore' => $cookietextusagebefore, 'adminajaxurl' => admin_url('admin-ajax.php'), 'vgwort_defaultoptinout' => get_option('dsdvo_vgwort_optinoutsetting'), 'koko_defaultoptinout' => get_option('dsdvo_koko_optinoutsetting'), 'ga_defaultoptinout' => get_option('dsdvo_ga_optinoutsetting'), 'notice_design' =>  $notice_design, 'expiretime' =>  get_option("dsdvo_cookie_time"), 'noticestyle' =>  'style'.get_option("dsgvo_notice_style", "3"), 'backgroundcolor' => '#333', 'textcolor' => '#ffffff', 'buttonbackground' => '#fff', 'buttontextcolor' => '#333', 'buttonlinkcolor' => get_option("dsgvo_cookienotice_linkcolor"), 'cookietext' => wp_kses($cookietextnotice, $kses_allowed_html), 'cookieaccepttext' => $cookieaccepttext, 'btn_text_customize' => $btncustomizetxt, 'cookietextscroll' => $cookietextscroll, 'policyurl' => esc_url( get_permalink($dsdvo_policy_site) ), 'policyurltext' => 'Hier finden Sie unsere Datenschutzbestimmungen', 'ablehnentxt' => $dsgvo_btn_txt_reject, 'ablehnentext' => $dsgvo_btn_txt_reject_text, 'ablehnenurl' => $dsgvo_btn_txt_reject_url, 'showrejectbtn' => $dsdvo_show_rejectbtn, 'popupagbs' => dsgvo_show_policy_popup(), 'languageswitcher' => $languageswitcher, 'pixelorderid' => $pixelorderid, 'fbpixel_content_type' => $fbpixel_content_type, 'fbpixel_content_ids' => $fbpixel_content_ids, 'fbpixel_currency' => $fbpixel_currency, 'fbpixel_product_cat' => $fbpixel_product_cat, 'fbpixel_content_name' => $fbpixel_content_name, 'fbpixel_product_price' => $fbpixel_product_price, 'isbuyedsendet' => $isbuyedsendet, 'pixelevent' => $pixelevent, 'pixeleventcurrency' => $pixeleventcurrency, 'pixeleventamount' => $pixeleventamount, 'outgoing_text' => $outgoing_text, 'youtube_spt' => $youtube_layer, 'twitter_spt' => $twitter_layer, 'linkedin_spt' => $linkedin_layer, 'shareaholic_spt' => $shareaholic_layer, 'vimeo_spt' => $vimeo_layer, 'vgwort_spt' => $vgwort_layer, 'accepttext' => $accepttext, 'policytextbtn' => $policytextbtn, 'show_layertext' => $show_layertext));
+				wp_localize_script( 'dsdvo_tarteaucitron', 'parms', array('version' => $plugin_version, 'close_popup_auto' => $close_popup_auto, 'animation_time' => $animation_time, 'text_policy' => $text_policy, 'buttoncustomizebackground' => 'transparent', 'buttoncustomizetextcolor' => '#79b51f', 'text_imprint' => $text_imprint, 'btn_text_save' => $btnsavetxt, 'checkbox_externals_label' => $checkbox_externals_label, 'checkbox_statistics_label' => $checkbox_statistics_label, 'checkbox_essentials_label' => $checkbox_essentials_label, 'nolabel' => $nolabel, 'yeslabel' => $yeslabel, 'showpolicyname' => $showpolicyname,'maincatname' => $maincatname, 'language' => $language, 'woocommercecookies' => $woocommerce_cookies, 'polylangcookie' => $polylangcookie, 'usenocookies' => $usenocookies, 'cookietextheader' => wp_kses($cookietextheader, $kses_allowed_html), 'nocookietext' => $nocookietext, 'cookietextusage' => $cookietextusage, 'cookietextusagebefore' => $cookietextusagebefore, 'adminajaxurl' => admin_url('admin-ajax.php'), 'vgwort_defaultoptinout' => get_option('dsdvo_vgwort_optinoutsetting'), 'koko_defaultoptinout' => get_option('dsdvo_koko_optinoutsetting'), 'ga_defaultoptinout' => get_option('dsdvo_ga_optinoutsetting'), 'notice_design' =>  $notice_design, 'expiretime' =>  get_option("dsdvo_cookie_time"), 'noticestyle' =>  'style'.get_option("dsgvo_notice_style", "3"), 'backgroundcolor' => '#333', 'textcolor' => '#ffffff', 'buttonbackground' => '#fff', 'buttontextcolor' => '#333', 'buttonlinkcolor' => get_option("dsgvo_cookienotice_linkcolor"), 'cookietext' => wp_kses($cookietextnotice, $kses_allowed_html), 'cookieaccepttext' => $cookieaccepttext, 'btn_text_customize' => $btncustomizetxt, 'cookietextscroll' => $cookietextscroll, 'imprinturl' => esc_url( get_permalink($dsdvo_imprint_site) ), 'policyurl' => esc_url( get_permalink($dsdvo_policy_site) ), 'policyurltext' => 'Hier finden Sie unsere Datenschutzbestimmungen', 'ablehnentxt' => $dsgvo_btn_txt_reject, 'ablehnentext' => $dsgvo_btn_txt_reject_text, 'ablehnenurl' => $dsgvo_btn_txt_reject_url, 'showrejectbtn' => $dsdvo_show_rejectbtn, 'popupagbs' => dsgvo_show_policy_popup(), 'languageswitcher' => $languageswitcher, 'pixelorderid' => $pixelorderid, 'fbpixel_content_type' => $fbpixel_content_type, 'fbpixel_content_ids' => $fbpixel_content_ids, 'fbpixel_currency' => $fbpixel_currency, 'fbpixel_product_cat' => $fbpixel_product_cat, 'fbpixel_content_name' => $fbpixel_content_name, 'fbpixel_product_price' => $fbpixel_product_price, 'isbuyedsendet' => $isbuyedsendet, 'pixelevent' => $pixelevent, 'pixeleventcurrency' => $pixeleventcurrency, 'pixeleventamount' => $pixeleventamount, 'outgoing_text' => $outgoing_text, 'youtube_spt' => $youtube_layer, 'twitter_spt' => $twitter_layer, 'linkedin_spt' => $linkedin_layer, 'shareaholic_spt' => $shareaholic_layer, 'vimeo_spt' => $vimeo_layer, 'vgwort_spt' => $vgwort_layer, 'accepttext' => $accepttext, 'policytextbtn' => $policytextbtn, 'show_layertext' => $show_layertext));
 
 				wp_enqueue_script('dsdvo_tarteaucitron');			
 
@@ -4161,9 +4441,21 @@ class dsdvo_wp_frontend {
 
 					float: left;
 
-					width: 60% !important;
+					width: 80% !important;
 
 				}
+				
+				.dsdvo-cookie-notice.style1 #tarteaucitronAlertBig #tarteaucitronCloseAlert, .dsdvo-cookie-notice.style1 #tarteaucitronPersonalize {
+					
+					margin-bottom: 15px !important;
+				
+				}	
+
+				.dsdvo-cookie-notice.style1 #tarteaucitronDisclaimerAlert .tarteaucitronDisclaimerAlertInner {
+					
+					padding-top: 15px;
+					
+				}				
 
 			}
 			
@@ -4300,6 +4592,8 @@ class dsdvo_wp_frontend {
 							
 							tarteaucitron.user.kokoanalyticscode = '<?php echo urlencode(get_option('dsgvo_kokocode', ''));?>';
 							
+							tarteaucitron.user.kokoanalyticsscript = '<?php echo urlencode(get_option('dsgvo_kokoscript', ''));?>';
+							
 					<?php } ?>	
 					
 					<?php if (get_option("dsdvo_use_vgwort") == "on") { ?>		
@@ -4398,6 +4692,7 @@ class dsdvo_wp_frontend {
 
 		public static function dsgvo_show_imprint( $atts, $content = "" ) {
 			
+			
 			$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
 			
 			include(dirname(__FILE__).'/core/inc/imprint.php');	
@@ -4447,41 +4742,25 @@ class dsdvo_wp_frontend {
 			$content = str_replace('[dsgvophone]', stripcslashes(wp_kses(get_option("dsgvoaiophone", ""), $kses_allowed_html)), $content);
 			
 			$content = str_replace('[dsgvofax]', stripcslashes(wp_kses(get_option("dsgvoaiofax", ""), $kses_allowed_html)), $content);
-			
-			if(extension_loaded('gd') && get_option("dsdvo_spamemail", "yes") == "yes"){
-				
-				if (!file_exists(WP_CONTENT_DIR ."/dsgvo-all-in-one-wp")) {
-					
-					wp_mkdir_p( WP_CONTENT_DIR ."/dsgvo-all-in-one-wp" );
-					
-				}				
-				
-				$mailstringcount = strlen(wp_kses(get_option("dsgvoaiomail", ""), $kses_allowed_html));
-				
-				if ($mailstringcount < 1) {
-					
-					$mailstringcount = 1;
-					
+							
+			if(get_option("dsdvo_spamemail", "yes") == "yes"){
+						
+				$email = wp_kses(get_option("dsgvoaiomail", ""), $kses_allowed_html);
+						
+				if ($email != "") {
+							
+					$email = explode("@", $email);
+							
+					if (isset($email[0]) && isset($email[1])) {
+								
+						$email = '<span style="display: none !important;">2SzmTMAjftG6tBG</span>'.$email[0].'<span style="display: none !important;">PJAUapdXvdPT7sQ</span>@<span style="display: none !important;">HMimZ5eGOrHQiER</span>'.$email[1].'<span style="display: none !important;">AkHPhMEWWUHZu1G</span>';
+							
+					}
+						
 				}
-
-				$im = imagecreatetruecolor($mailstringcount*9, 23);
-
-				$white = imagecolorallocatealpha($im, 255, 255, 255,0);
-
-				$grey = imagecolorallocate($im, 128, 128, 128);
-
-				$black = imagecolorallocate($im, 0, 0, 0);
-
-				imagefilledrectangle($im, 0, 0, 399, 29, $white);
-
-				$font = plugin_dir_path(__FILE__ )."/assets/font/arial.ttf";
-
-				imagettftext($im, 14, 0, 10, 20, $black, $font, wp_kses(get_option("dsgvoaiomail", ""), $kses_allowed_html));		
-
-				imagepng($im, WP_CONTENT_DIR .'/dsgvo-all-in-one-wp/sserdaliame.png');			
-				
-				$content = str_replace('[dsgvoemail]', '<img class="dsgvoaio_emailpng" src="'.content_url().'/dsgvo-all-in-one-wp/sserdaliame.png'.'">', $content);
-				
+						
+				$content = str_replace('[dsgvoemail]', $email ,$content);
+					
 			} else {
 				
 				$content = str_replace('[dsgvoemail]', stripslashes(wp_kses(get_option("dsgvoaiomail", ""), $kses_allowed_html)), $content);
@@ -5068,39 +5347,23 @@ class dsdvo_wp_frontend {
 
 				if (get_option('dsgvoaiomail')) {
 					
-					if(extension_loaded('gd') && get_option("dsdvo_spamemail", "yes") == "yes"){
+					if(get_option("dsdvo_spamemail", "yes") == "yes"){
 						
-						if (!file_exists(WP_CONTENT_DIR ."/dsgvo-all-in-one-wp")) {
+						$email = wp_kses(get_option("dsgvoaiomail", ""), $kses_allowed_html);
+						
+						if ($email != "") {
 							
-							wp_mkdir_p( WP_CONTENT_DIR ."/dsgvo-all-in-one-wp" );
+							$email = explode("@", $email);
 							
+							if (isset($email[0]) && isset($email[1])) {
+								
+								$email = '<span style="display: none !important;">2SzmTMAjftG6tBG</span>'.$email[0].'<span style="display: none !important;">PJAUapdXvdPT7sQ</span>@<span style="display: none !important;">HMimZ5eGOrHQiER</span>'.$email[1].'<span style="display: none !important;">AkHPhMEWWUHZu1G</span>';
+							
+							}
+						
 						}
 						
-						$mailstringcount = strlen(stripcslashes(wp_kses(get_option('dsgvoaiomail'), $kses_allowed_html)));
-
-						if ($mailstringcount < 1) {
-							
-							$mailstringcount = 1;
-							
-						}
-
-						$im = imagecreatetruecolor($mailstringcount*9, 23);
-
-						$white = imagecolorallocatealpha($im, 255, 255, 255,127);
-
-						$grey = imagecolorallocate($im, 128, 128, 128);
-
-						$black = imagecolorallocate($im, 0, 0, 0);
-
-						imagefilledrectangle($im, 0, 0, 399, 29, $white);
-
-						$font = plugin_dir_path(__FILE__ )."/assets/font/arial.ttf";
-
-						imagettftext($im, 14, 0, 10, 20, $black, $font, wp_kses(get_option("dsgvoaiomail", ""), $kses_allowed_html));		
-
-						imagepng($im, WP_CONTENT_DIR .'/dsgvo-all-in-one-wp/sserdaliame.png');	
-						
-						$content = str_replace('[mail]',"<p>".__("E-Mail:", "dsgvo-all-in-one-for-wp")."&nbsp;<img class='dsgvoaio_emailpng' src='".content_url()."/dsgvo-all-in-one-wp/sserdaliame.png'>" ,$content);
+						$content = str_replace('[mail]',"<p>".__("E-Mail:", "dsgvo-all-in-one-for-wp")."&nbsp;".$email ,$content);
 					
 					} else {
 						

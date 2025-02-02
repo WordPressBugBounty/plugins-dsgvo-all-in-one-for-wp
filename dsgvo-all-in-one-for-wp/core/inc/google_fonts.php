@@ -27,7 +27,7 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 	
 	$now = new DateTime();
 	
-	$last_run = get_option("dsdvo_last_run");
+	$last_run = get_option("dsdvo_last_runn");
 	
 	$x = 0;
 	
@@ -42,7 +42,7 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 			preg_match('#href=["\']?([^"\'>]+)["\']?#is', $sheets[0], $url);
 					
 				if (!empty($url[1])) {
-					
+
 					if (stripos($url[1], 'fonts.googleapis.com') !== false) {
 									
 						if ($url[1] != "") {
@@ -76,6 +76,46 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 			}
 				
 		}, $html);	
+		
+		
+		$html = preg_replace_callback('/url(\((["|\']?))(.+)(["|\']?\))/', function($sheets){
+
+			if(isset($sheets[0])){
+				
+				if (str_contains($sheets[0], 'fonts.gstatic.com')) {
+				
+					preg_match('/\((.*?)\)/', $sheets[0], $url);			
+						
+					if (!empty($url[1])) {
+										
+							if ($url[1] != "") {
+
+								update_option('dsgvoaio_gfonts_stylesheet_url_'. sanitize_url(urldecode($url[1])), sanitize_url(urldecode($url[1])), false);							
+												
+								return $sheets[0];
+									
+							} else {
+											
+								return $sheets[0];
+											
+							}
+									
+									
+					} else  {
+									
+						return $sheets[0];	
+								
+					}
+				
+				}
+
+			} else {
+					
+				return $sheets[0];
+					
+			}
+				
+		}, $html);			
 
 
 		$changed = false;
@@ -292,7 +332,7 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 		}
 
 		if (isset($stylesheet_urls)) {
-			
+
 			foreach ($stylesheet_urls as $stylesheet_url) {
 				
 				if (isset($stylesheet_url->option_value)) {
@@ -320,10 +360,13 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 			if ($storeddata !== serialize($all_gfonts)) {
 						
 				update_option('dsgvoaio_gfonts_all_fonts_new', $all_gfonts);
+				
+				update_option('dsgvoaio_gfonts_found_new', 1);
 						
 			} else {
 						
 				update_option('dsgvoaio_gfonts_all_fonts', $all_gfonts);
+				
 						
 			}
 
