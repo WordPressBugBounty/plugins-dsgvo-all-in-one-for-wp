@@ -4,7 +4,7 @@ $imprint_template = "";
 $country = get_option("dsgvoaiocountry", "");
 if ($country == "" or $country == "Deutschland" or $country == "deutschland" or $country == "de" or $country == "DE" or $country == "De" or $country == "Germany" or $country == "germany") {
 	$imprint_template .= "<p><b>".__("Information according to § 5 DDG ", "dsgvo-all-in-one-for-wp")."</b></p>";
-} else if ($country == "&Ouml;sterreich" or $country == "&ouml;sterreich" or $country == "at" or $country == "AT" or $country == "At" or $country == "Austria" or $country == "austria") {
+} else if ($country == "&Ouml;sterreich" or $country == "&ouml;sterreich" or $country == "at" or $country == "AT" or $country == "At" or $country == "Austria" or $country == "austria" or $country == "Österreich") {
 	$imprint_template .= "<p><b>".__("Duty to inform according to § 5 para. 1 E-Commerce Act and § 25 Media Act", "dsgvo-all-in-one-for-wp")."</b></p>";
 } else {
 	$imprint_template .= "<p><b>".__("Information according to § 5 DDG", "dsgvo-all-in-one-for-wp")."</b></p>";	

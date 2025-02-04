@@ -3,7 +3,7 @@
 
  * Plugin Name: DSGVO All in one for WP
 
- * Version: 4.7
+ * Version: 4.8
 
  * Plugin URI: http://www.dsgvo-for-wp.com
 
@@ -1382,7 +1382,7 @@ class dsdvo_wp_frontend {
 
 		add_action( 'init', __CLASS__ . '::dsgvoaiofree_downoad_pdf' );	
 
-		if (get_option("dsdvo_language_reloaded_44") !== "1") {		
+		if (get_option("dsdvo_language_reloaded_47") !== "1") {		
 		
 			add_action( 'wp_loaded', __CLASS__ .'::dsgvoaio_renew_language_files' );
 			
@@ -2492,7 +2492,7 @@ class dsdvo_wp_frontend {
 			
 		}
 		
-		update_option('dsdvo_language_reloaded_44', '1', false);
+		update_option('dsdvo_language_reloaded_47', '1', false);
 	
 	}	
 	
@@ -3818,6 +3818,8 @@ class dsdvo_wp_frontend {
 				}
 
 				if (!isset($language)) $language = wf_get_language();
+				
+				$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
 
 				if ($language == "de") {
 
@@ -3857,9 +3859,7 @@ class dsdvo_wp_frontend {
 					
 					$checkbox_statistics_label = "Statistiken";
 					
-					$checkbox_externals_label = "Externe Dienste";					
-
-					$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
+					$checkbox_externals_label = "Externe Dienste";
 
 					if (get_option("dsdvo_outgoing_text")) { $outgoing_text = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_outgoing_text"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $outgoing_text = "<p><strong>Sie verlassen nun unsere Internetpräsenz</strong></p><p>Da Sie auf einen externen Link geklickt haben verlassen Sie nun unsere Internetpräsenz.</p><p>Sind Sie damit einverstanden so klicken Sie auf den nachfolgenden Button:</p>"; }									
 

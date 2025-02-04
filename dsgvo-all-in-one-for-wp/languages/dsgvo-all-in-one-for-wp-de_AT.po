@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DSGVO All in one for WP\n"
-"POT-Creation-Date: 2025-02-02 16:31+0100\n"
-"PO-Revision-Date: 2025-02-02 16:33+0100\n"
+"POT-Creation-Date: 2025-02-04 17:31+0100\n"
+"PO-Revision-Date: 2025-02-04 17:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: mlfactory\n"
 "Language: de\n"
@@ -115,12 +115,12 @@ msgstr "Postleitzahl"
 
 #: core/inc/backend_settings.php:1211 core/inc/backend_settings.php:2869
 #: core/inc/backend_settings.php:2972 core/inc/user_remove_form.php:142
-#: dsgvo_all_in_one_wp.php:5512
+#: dsgvo_all_in_one_wp.php:5530
 msgid "City"
 msgstr "Ort"
 
 #: core/inc/backend_settings.php:1213 core/inc/backend_settings.php:2977
-#: core/inc/user_remove_form.php:158 dsgvo_all_in_one_wp.php:5536
+#: core/inc/user_remove_form.php:158 dsgvo_all_in_one_wp.php:5554
 msgid "Country"
 msgstr "Land"
 
@@ -619,7 +619,7 @@ msgid "Do you want use the X Share Button?"
 msgstr "Verwendest du den X Teilen Button?"
 
 #: core/inc/backend_settings.php:1560 core/inc/user_remove_form.php:79
-#: dsgvo_all_in_one_wp.php:5414
+#: dsgvo_all_in_one_wp.php:5432
 msgid "Username"
 msgstr "Benutzername"
 
@@ -1198,7 +1198,7 @@ msgstr "Willst du diese Aktion sicher ausführen?"
 
 #: core/inc/backend_settings.php:2112 core/inc/backend_settings.php:2133
 #: core/inc/backend_show_log.php:208 core/inc/backend_show_log.php:260
-#: core/inc/backend_show_log.php:318 dsgvo_all_in_one_wp.php:1079
+#: core/inc/backend_show_log.php:318 dsgvo_all_in_one_wp.php:1097
 msgid "An error has occurred. Please contact the support."
 msgstr "Es ist ein Fehler aufgetreten. Bitte wende dich an den Support."
 
@@ -1455,15 +1455,15 @@ msgstr "Ist die Eintragung in ein Register für dein Unternehmen erforderlich?"
 msgid "Register"
 msgstr "Register"
 
-#: core/inc/backend_settings.php:2856 dsgvo_all_in_one_wp.php:4696
+#: core/inc/backend_settings.php:2856 dsgvo_all_in_one_wp.php:4714
 msgid "Commercial register"
 msgstr "Handelsregister"
 
-#: core/inc/backend_settings.php:2857 dsgvo_all_in_one_wp.php:4700
+#: core/inc/backend_settings.php:2857 dsgvo_all_in_one_wp.php:4718
 msgid "Association register"
 msgstr "Vereinsregister"
 
-#: core/inc/backend_settings.php:2858 dsgvo_all_in_one_wp.php:4704
+#: core/inc/backend_settings.php:2858 dsgvo_all_in_one_wp.php:4722
 msgid "Partnership register"
 msgstr "Partnerschaftsregister"
 
@@ -1479,15 +1479,15 @@ msgstr "Registernummer"
 msgid "Profession with duty to inform"
 msgstr "Beruf mit Informationspflicht"
 
-#: core/inc/backend_settings.php:2887 dsgvo_all_in_one_wp.php:4812
+#: core/inc/backend_settings.php:2887 dsgvo_all_in_one_wp.php:4830
 msgid "Doctor"
 msgstr "Arzt"
 
-#: core/inc/backend_settings.php:2888 dsgvo_all_in_one_wp.php:4816
+#: core/inc/backend_settings.php:2888 dsgvo_all_in_one_wp.php:4834
 msgid "Dentist"
 msgstr "Zahnarzt"
 
-#: core/inc/backend_settings.php:2889 dsgvo_all_in_one_wp.php:4819
+#: core/inc/backend_settings.php:2889 dsgvo_all_in_one_wp.php:4837
 msgid "Architect"
 msgstr "Architekt"
 
@@ -1495,19 +1495,19 @@ msgstr "Architekt"
 msgid "Tax consultant"
 msgstr "Steuerberater"
 
-#: core/inc/backend_settings.php:2891 dsgvo_all_in_one_wp.php:4827
+#: core/inc/backend_settings.php:2891 dsgvo_all_in_one_wp.php:4845
 msgid "Lawyer"
 msgstr "Rechtsanwalt"
 
-#: core/inc/backend_settings.php:2892 dsgvo_all_in_one_wp.php:4831
+#: core/inc/backend_settings.php:2892 dsgvo_all_in_one_wp.php:4849
 msgid "Notary"
 msgstr "Notar"
 
-#: core/inc/backend_settings.php:2893 dsgvo_all_in_one_wp.php:4835
+#: core/inc/backend_settings.php:2893 dsgvo_all_in_one_wp.php:4853
 msgid "Duditor"
 msgstr "Wirtschaftsprüfer"
 
-#: core/inc/backend_settings.php:2894 dsgvo_all_in_one_wp.php:4839
+#: core/inc/backend_settings.php:2894 dsgvo_all_in_one_wp.php:4857
 msgid "Pharmacists"
 msgstr "Apotheker"
 
@@ -1526,15 +1526,15 @@ msgstr ""
 msgid "State"
 msgstr "Staat"
 
-#: core/inc/backend_settings.php:2920 dsgvo_all_in_one_wp.php:4849
+#: core/inc/backend_settings.php:2920 dsgvo_all_in_one_wp.php:4867
 msgid "Germany"
 msgstr "Deutschland"
 
-#: core/inc/backend_settings.php:2921 dsgvo_all_in_one_wp.php:4853
+#: core/inc/backend_settings.php:2921 dsgvo_all_in_one_wp.php:4871
 msgid "Austria"
 msgstr "Österreich"
 
-#: core/inc/backend_settings.php:2922 dsgvo_all_in_one_wp.php:4857
+#: core/inc/backend_settings.php:2922 dsgvo_all_in_one_wp.php:4875
 msgid "Switzerland"
 msgstr "Schweiz"
 
@@ -2114,7 +2114,7 @@ msgstr ""
 "Status, ob der jeweilige Dienst genehmigt oder abgelehnt wurde (Opt-in / Opt-"
 "out)."
 
-#: core/inc/backend_show_log.php:31 dsgvo_all_in_one_wp.php:5572
+#: core/inc/backend_show_log.php:31 dsgvo_all_in_one_wp.php:5590
 msgid "IP Adress"
 msgstr "IP Adresse"
 
@@ -2122,11 +2122,11 @@ msgstr "IP Adresse"
 msgid "Date / Time"
 msgstr "Zeitpunkt"
 
-#: core/inc/backend_show_log.php:47 dsgvo_all_in_one_wp.php:1021
+#: core/inc/backend_show_log.php:47 dsgvo_all_in_one_wp.php:1039
 msgid "Approved"
 msgstr "Zugestimmt"
 
-#: core/inc/backend_show_log.php:51 dsgvo_all_in_one_wp.php:1025
+#: core/inc/backend_show_log.php:51 dsgvo_all_in_one_wp.php:1043
 msgid "Rejected"
 msgstr "Abgelehnt"
 
@@ -2158,7 +2158,7 @@ msgstr "Log anhand einer UID exportieren"
 msgid "Clear/Delete Log"
 msgstr "Log leeren/löschen"
 
-#: core/inc/backend_show_log.php:142 dsgvo_all_in_one_wp.php:2174
+#: core/inc/backend_show_log.php:142 dsgvo_all_in_one_wp.php:2192
 msgid "Info"
 msgstr "Info"
 
@@ -2196,47 +2196,60 @@ msgstr ""
 "einzelnen Version detailiert aufgelistet."
 
 #: core/inc/changelog.php:24
-msgid "Version 4.7 (current)"
-msgstr "Version 4.7 (aktuell)"
+msgid "Version 4.8 (current)"
+msgstr "Version 4.8 (aktuell)"
 
-#: core/inc/changelog.php:26
-msgid "Changes"
-msgstr "Änderungen"
-
-#: core/inc/changelog.php:28
-msgid "Policy changed for Germany"
-msgstr "Datenschutztexte für Deutschland geändert"
-
-#: core/inc/changelog.php:29
-msgid "Cookie Notice Design revised"
-msgstr "Cookie Notiz Design überarbeitet"
-
-#: core/inc/changelog.php:32
-msgid "Version 4.6"
-msgstr "Version 4.6"
-
-#: core/inc/changelog.php:34 core/inc/changelog.php:41
-#: core/inc/changelog.php:48 core/inc/changelog.php:62
-#: core/inc/changelog.php:70 core/inc/changelog.php:83
-#: core/inc/changelog.php:95 core/inc/changelog.php:103
-#: core/inc/changelog.php:113 core/inc/changelog.php:131
-#: core/inc/changelog.php:140 core/inc/changelog.php:154
-#: core/inc/changelog.php:169 core/inc/changelog.php:179
-#: core/inc/changelog.php:191 core/inc/changelog.php:206
-#: core/inc/changelog.php:218 core/inc/changelog.php:228
-#: core/inc/changelog.php:236
+#: core/inc/changelog.php:26 core/inc/changelog.php:38
+#: core/inc/changelog.php:46 core/inc/changelog.php:54
+#: core/inc/changelog.php:61 core/inc/changelog.php:75
+#: core/inc/changelog.php:83 core/inc/changelog.php:96
+#: core/inc/changelog.php:108 core/inc/changelog.php:116
+#: core/inc/changelog.php:126 core/inc/changelog.php:144
+#: core/inc/changelog.php:153 core/inc/changelog.php:167
+#: core/inc/changelog.php:182 core/inc/changelog.php:192
+#: core/inc/changelog.php:204 core/inc/changelog.php:219
+#: core/inc/changelog.php:231 core/inc/changelog.php:241
+#: core/inc/changelog.php:249
 msgid "Bugfixes"
 msgstr "Bugfixes"
 
+#: core/inc/changelog.php:28
+msgid "Bugfix - Fixed display issues with v4.7"
+msgstr "Fehlerbehebung - Darstellungsproblem durch v4.7 behoben"
+
+#: core/inc/changelog.php:31
+msgid "Version 4.7"
+msgstr "Version 4.7"
+
+#: core/inc/changelog.php:33
+msgid "Changes"
+msgstr "Änderungen"
+
+#: core/inc/changelog.php:35
+msgid "Policy changed for Germany"
+msgstr "Datenschutztexte für Deutschland geändert"
+
 #: core/inc/changelog.php:36
+msgid "Cookie Notice Design revised"
+msgstr "Cookie Notiz Design überarbeitet"
+
+#: core/inc/changelog.php:40 core/inc/changelog.php:48
 msgid "Bugfix - Security issue fixed"
 msgstr "Bugfix - Sicherheitslücke behoben"
 
-#: core/inc/changelog.php:39
+#: core/inc/changelog.php:41 core/inc/changelog.php:49
+msgid "Bugfix - Email Adress Spam protection display issues fixed"
+msgstr "Fehlerbehebung: Email Adresse Spam Schutz Darstellungsproblem behoben."
+
+#: core/inc/changelog.php:44
+msgid "Version 4.6"
+msgstr "Version 4.6"
+
+#: core/inc/changelog.php:52
 msgid "Version 4.5"
 msgstr "Version 4.5"
 
-#: core/inc/changelog.php:43
+#: core/inc/changelog.php:56
 msgid ""
 "Bugfix - Files not fund  (google_fonts.php, tooltipster.bundle.min, "
 "tooltipster.min.css)"
@@ -2244,46 +2257,46 @@ msgstr ""
 "Bugfix - Dateien nicht gefunden (google_fonts.php, tooltipster.bundle.min, "
 "tooltipster.min.css)"
 
-#: core/inc/changelog.php:46
+#: core/inc/changelog.php:59
 msgid "Version 4.4"
 msgstr "Version 4.4"
 
-#: core/inc/changelog.php:50
+#: core/inc/changelog.php:63
 msgid "Important security fix (CSRF)"
 msgstr "Wichtiger Sicherheitsfix (CSRF)"
 
-#: core/inc/changelog.php:51
+#: core/inc/changelog.php:64
 msgid "E-Mail spam protection revised"
 msgstr "E-Mail-Spamschutz überarbeitet"
 
-#: core/inc/changelog.php:53 core/inc/changelog.php:74
-#: core/inc/changelog.php:121 core/inc/changelog.php:144
-#: core/inc/changelog.php:160 core/inc/changelog.php:195
+#: core/inc/changelog.php:66 core/inc/changelog.php:87
+#: core/inc/changelog.php:134 core/inc/changelog.php:157
+#: core/inc/changelog.php:173 core/inc/changelog.php:208
 msgid "New features"
 msgstr "Neue Funktionen"
 
-#: core/inc/changelog.php:55
+#: core/inc/changelog.php:68
 msgid "Google Fonts Checker integrated"
 msgstr "Google Fonts Checker integriert"
 
-#: core/inc/changelog.php:56
+#: core/inc/changelog.php:69
 msgid "Vimeo - added to the Free Version (Shortcode only)"
 msgstr ""
 "Vimeo - in die KOSTENLOSE Version integriert (Einbindung nur via Shortcode)"
 
-#: core/inc/changelog.php:60
+#: core/inc/changelog.php:73
 msgid "Version 4.3"
 msgstr "Version 4.3"
 
-#: core/inc/changelog.php:64
+#: core/inc/changelog.php:77
 msgid "Some Code changes according to the WordPress Codex"
 msgstr "Einige Code-Änderungen gemäß dem WordPress Codex"
 
-#: core/inc/changelog.php:68
+#: core/inc/changelog.php:81
 msgid "Version 4.2"
 msgstr "Version 4.2"
 
-#: core/inc/changelog.php:72
+#: core/inc/changelog.php:85
 msgid ""
 "Important security fix - added wp_kses to frontend output to prevent xss "
 "injection"
@@ -2291,94 +2304,94 @@ msgstr ""
 "Wichtiges Sicherheitsupdate - wp_kses zur Ausgabe im Frontend hinzugefügt um "
 "XSS Attacken entgegenzuwirken"
 
-#: core/inc/changelog.php:76
+#: core/inc/changelog.php:89
 msgid "Added Public-law foundation (KöR) under Legal form"
 msgstr "Körperschaft des öffentlichen Rechts hinzugefügt unter Rechtsform"
 
-#: core/inc/changelog.php:77
+#: core/inc/changelog.php:90
 msgid "\"Accept all\" button removed if no external service is used"
 msgstr ""
 "\"Alle akzeptieren\" Button wird nicht mehr angezeigt wenn kein externer "
 "Dienst genutzt wird"
 
-#: core/inc/changelog.php:81
+#: core/inc/changelog.php:94
 msgid "Version 4.1"
 msgstr "Version 4.1"
 
-#: core/inc/changelog.php:85
+#: core/inc/changelog.php:98
 msgid "Facebook Pixel - WooCommerce fix"
 msgstr "Facebook Pixel - WooCommerce Fehler behoben"
 
-#: core/inc/changelog.php:86
+#: core/inc/changelog.php:99
 msgid "Some CSS fixes"
 msgstr "Einige CSS Änderungen durchgeführt"
 
-#: core/inc/changelog.php:87
+#: core/inc/changelog.php:100
 msgid "Piwik / Matomo Policy updated"
 msgstr "Piwik / Matomo Datenschutztext überarbeitet"
 
-#: core/inc/changelog.php:88
+#: core/inc/changelog.php:101
 msgid "Multilanguage Fix"
 msgstr "Mehrsprachigkeit Problem behoben"
 
-#: core/inc/changelog.php:89
+#: core/inc/changelog.php:102
 msgid "Fatal Error PHP >8.0 fixed"
 msgstr "Fataler Fehler PHP >8.0 behoben"
 
-#: core/inc/changelog.php:93
+#: core/inc/changelog.php:106
 msgid "Version 4.0"
 msgstr "Version 4.0"
 
-#: core/inc/changelog.php:97
+#: core/inc/changelog.php:110
 msgid "Important Security Fix - dsgvoaio_write_log"
 msgstr "Wichtiger Sicherheitsfix - dsgvoaio_write_log"
 
-#: core/inc/changelog.php:101
+#: core/inc/changelog.php:114
 msgid "Version 3.9"
 msgstr "Version 3.9"
 
-#: core/inc/changelog.php:105
+#: core/inc/changelog.php:118
 msgid "jQuery render error fixed (jQuery 3.5.1)"
 msgstr "jQuery Fehler behoben (jQuery 3.5.1)"
 
-#: core/inc/changelog.php:106
+#: core/inc/changelog.php:119
 msgid "Imprint - input error fixed"
 msgstr "Impressum - Eingabe Fehler behoben"
 
-#: core/inc/changelog.php:107
+#: core/inc/changelog.php:120
 msgid "Google Analytics function updated"
 msgstr "Google Analytics Funktion überarbeitet"
 
-#: core/inc/changelog.php:111
+#: core/inc/changelog.php:124
 msgid "Version 3.8"
 msgstr "Version 3.8"
 
-#: core/inc/changelog.php:115
+#: core/inc/changelog.php:128
 msgid "Imprint - Umlauts Bugfix"
 msgstr "Impressum - Bugfix Umlaute"
 
-#: core/inc/changelog.php:116
+#: core/inc/changelog.php:129
 msgid "Imprint - imagecreate PHP Warning fixed"
 msgstr "Impressum - PHP imagecreate Warnung behoben"
 
-#: core/inc/changelog.php:117
+#: core/inc/changelog.php:130
 msgid "Imprint - Layout revised (br tags removed)"
 msgstr "Impressum - Layout überarbeitet (br Tags)"
 
-#: core/inc/changelog.php:118
+#: core/inc/changelog.php:131
 msgid "German translation improved"
 msgstr "Deutsche Übersetzung überarbeitet"
 
-#: core/inc/changelog.php:119
+#: core/inc/changelog.php:132
 msgid "VG Wort - Auto replace function bugfix"
 msgstr "VG Wort - Automatisch ersetzen Funktion überarbeitet"
 
-#: core/inc/changelog.php:123
+#: core/inc/changelog.php:136
 msgid "YouTube - added to the Free Version (Shortcode only)"
 msgstr ""
 "YouTube - in die KOSTENLOSE Version integriert (Einbindung nur via Shortcode)"
 
-#: core/inc/changelog.php:124
+#: core/inc/changelog.php:137
 msgid ""
 "Function added - Close Personalize Popup after approval or rejection of all "
 "services"
@@ -2386,80 +2399,80 @@ msgstr ""
 "Funktion hinzugefügt - Personalisieren Popup schließen nach der Zustimmung "
 "oder Ablehnung aller Dienste"
 
-#: core/inc/changelog.php:125
+#: core/inc/changelog.php:138
 msgid ""
 "Inline Privacy Policy texts added (VG Wort, YouTube, Shareaholic, LinkedIn)"
 msgstr ""
 "Geblockte Dienste Layer - Datenschutztexte hinzugefügt (VG Wort, YouTube, "
 "Shareaholic, LinkedIn)"
 
-#: core/inc/changelog.php:129
+#: core/inc/changelog.php:142
 msgid "Version 3.7"
 msgstr "Version 3.7"
 
-#: core/inc/changelog.php:133
+#: core/inc/changelog.php:146
 msgid "Imprint - Own Text - Bug fixed"
 msgstr "Impressum - Eigene Texte - Bug behoben"
 
-#: core/inc/changelog.php:134
+#: core/inc/changelog.php:147
 msgid "Translation / Localization revised"
 msgstr "Übersetzungen / Localization überarbeitet"
 
-#: core/inc/changelog.php:138
+#: core/inc/changelog.php:151
 msgid "Version 3.6"
 msgstr "Version 3.6"
 
-#: core/inc/changelog.php:142
+#: core/inc/changelog.php:155
 msgid "Cookie Notice - small bugfixes regarding design"
 msgstr "Cookie Notice - kleine Bugfixes bzgl. Design"
 
-#: core/inc/changelog.php:146
+#: core/inc/changelog.php:159
 msgid "Italian language added"
 msgstr "Sprache Italienisch hinzugefügt"
 
-#: core/inc/changelog.php:147
+#: core/inc/changelog.php:160
 msgid "Imprint - Spam protection - Graphic or text now selectable"
 msgstr "Impressum - Spamschutz - Grafik oder Text nun wählbar"
 
-#: core/inc/changelog.php:148
+#: core/inc/changelog.php:161
 msgid "Close button (X) in the cookie notice can now be disabled and enabled"
 msgstr ""
 "Schließen Button (X) in der Cookie Notice kann nun deaktiviert und aktiviert "
 "werden"
 
-#: core/inc/changelog.php:152
+#: core/inc/changelog.php:165
 msgid "Version 3.5"
 msgstr "Version 3.5"
 
-#: core/inc/changelog.php:156
+#: core/inc/changelog.php:169
 msgid "MonsterInsights + Analytify Code improved"
 msgstr "MonsterInsights + Analytify Code verbessert"
 
-#: core/inc/changelog.php:157
+#: core/inc/changelog.php:170
 msgid "PDF data extract umlauts revised"
 msgstr "PDF Datenauszug Umlaute überarbeitet"
 
-#: core/inc/changelog.php:158
+#: core/inc/changelog.php:171
 msgid "Imprint revised"
 msgstr "Impressum überarbeitet"
 
-#: core/inc/changelog.php:162
+#: core/inc/changelog.php:175
 msgid "Notice for outgoing links added"
 msgstr "Notice für ausgehende Links hinzugefügt"
 
-#: core/inc/changelog.php:163
+#: core/inc/changelog.php:176
 msgid "Koko Analytics added"
 msgstr "Koko Analytics hinzugefügt"
 
-#: core/inc/changelog.php:167
+#: core/inc/changelog.php:180
 msgid "Version 3.4"
 msgstr "Version 3.4"
 
-#: core/inc/changelog.php:171
+#: core/inc/changelog.php:184
 msgid "MonsterInsights bug fixed"
 msgstr "MonsterInsights Bug behoben"
 
-#: core/inc/changelog.php:172
+#: core/inc/changelog.php:185
 msgid ""
 "Facebook Pixel Events revised (PageView, Purchase, AddToCart, "
 "InitiateCheckout)"
@@ -2467,18 +2480,18 @@ msgstr ""
 "Facebook Pixel Events überarbeitet (PageView, Purchase, AddToCart, "
 "InitiateCheckout)"
 
-#: core/inc/changelog.php:173
+#: core/inc/changelog.php:186
 msgid ""
 "Gutenberg Blocks are no longer loaded if Wordpress is installed under V5.0"
 msgstr ""
 "Gutenberg Blocks werden nicht mehr geladen wenn WordPress unter V5.0 "
 "installiert ist"
 
-#: core/inc/changelog.php:177
+#: core/inc/changelog.php:190
 msgid "Version 3.3"
 msgstr "Version 3.3"
 
-#: core/inc/changelog.php:181
+#: core/inc/changelog.php:194
 msgid ""
 "Loading speed significantly improved - files from js/dist - for Gutenberg "
 "Block is no longer loaded in the frontend"
@@ -2486,31 +2499,31 @@ msgstr ""
 "Ladegeschwindigkeit deutlich verbessert - Dateien von js/dist - für "
 "Gutenberg-Block wird nicht mehr im Frontend geladen"
 
-#: core/inc/changelog.php:182
+#: core/inc/changelog.php:195
 msgid "Imprint - Pharmacist added"
 msgstr "Impressum - Apotheker hinzugefügt"
 
-#: core/inc/changelog.php:183
+#: core/inc/changelog.php:196
 msgid "Text \"To be defined under imprint\" removed"
 msgstr "Text \"Wird unter Impressum definiert\" entfernt"
 
-#: core/inc/changelog.php:184
+#: core/inc/changelog.php:197
 msgid "JS files compressed"
 msgstr "JS Dateien komprimiert"
 
-#: core/inc/changelog.php:185
+#: core/inc/changelog.php:198
 msgid "Cookie Notice Mobile - scrolling bug fixed"
 msgstr "Bug Cookie Notiz Mobil - scrollen behoben"
 
-#: core/inc/changelog.php:189
+#: core/inc/changelog.php:202
 msgid "Version 3.2"
 msgstr "Version 3.2"
 
-#: core/inc/changelog.php:193
+#: core/inc/changelog.php:206
 msgid "Facebook comments - bug fixed"
 msgstr "Facebook Kommentare - Bug behoben"
 
-#: core/inc/changelog.php:197
+#: core/inc/changelog.php:210
 msgid ""
 "Gutenberg Blocks integrated - to be found under Edit Page - Add Block - "
 "Search Term = DSGVO"
@@ -2518,15 +2531,15 @@ msgstr ""
 "Gutenberg Blocks integriert - auffindbar unter Seite bearbeiten - Block "
 "hinzufügen - Suchbegriff = DSGVO"
 
-#: core/inc/changelog.php:198
+#: core/inc/changelog.php:211
 msgid "Imprint Generator integrated"
 msgstr "Impressum Generator integriert"
 
-#: core/inc/changelog.php:199
+#: core/inc/changelog.php:212
 msgid "Email address encrypted in source code"
 msgstr "Email Adresse im Quellcode verschlüsselt"
 
-#: core/inc/changelog.php:200
+#: core/inc/changelog.php:213
 msgid ""
 "Cookie Notice Design/Layout 3 - language switch (for multilingualism) + "
 "close function added"
@@ -2534,63 +2547,63 @@ msgstr ""
 "Cookie Notice Design/Layout 3 - Sprachumschalter (bei Mehrsprachigkeit) + "
 "schließen Funktion hinzugefügt"
 
-#: core/inc/changelog.php:204
+#: core/inc/changelog.php:217
 msgid "Version 3.1"
 msgstr "Version 3.1"
 
-#: core/inc/changelog.php:208
+#: core/inc/changelog.php:221
 msgid "Cookie Notice Animation added - duration freely selectable"
 msgstr "Cookie Notice Animation hinzugefügt - Dauer frei wählbar"
 
-#: core/inc/changelog.php:209
+#: core/inc/changelog.php:222
 msgid "MonsterInsights integrated (Google Analytics)"
 msgstr "MonsterInsights integriert (Google Analytics)"
 
-#: core/inc/changelog.php:210
+#: core/inc/changelog.php:223
 msgid "Analytify integrated (Google Analytics)"
 msgstr "Analytify integriert (Google Analytics)"
 
-#: core/inc/changelog.php:211
+#: core/inc/changelog.php:224
 msgid "Import / Export Funktion integrated"
 msgstr "Import / Export Funktion integriert"
 
-#: core/inc/changelog.php:212
+#: core/inc/changelog.php:225
 msgid "Log - delete Function integrated"
 msgstr "Log - löschen Funktion integriert"
 
-#: core/inc/changelog.php:216
+#: core/inc/changelog.php:229
 msgid "Version 3.0"
 msgstr "Version 3.0"
 
-#: core/inc/changelog.php:220
+#: core/inc/changelog.php:233
 msgid "Cookie Notice - HTML bug fixed when saving"
 msgstr "Cookie Notice - HTML Bug behoben beim speichern"
 
-#: core/inc/changelog.php:221
+#: core/inc/changelog.php:234
 msgid "Data extraction via PDF - function / PHP code renewed"
 msgstr "Datenauszug via PDF - Funktion / PHP Code erneuert"
 
-#: core/inc/changelog.php:226
+#: core/inc/changelog.php:239
 msgid "Version 2.9"
 msgstr "Version 2.9"
 
-#: core/inc/changelog.php:230
+#: core/inc/changelog.php:243
 msgid "Update because of small bugfixes (button/table/font sizes) + umlauts"
 msgstr "Update wegen kleinen Bugfixes (Button/Tabelle/Schriftgrößen) + Umlaute"
 
-#: core/inc/changelog.php:234
+#: core/inc/changelog.php:247
 msgid "Version 2.8"
 msgstr "Version 2.8"
 
-#: core/inc/changelog.php:238
+#: core/inc/changelog.php:251
 msgid "Umlauts problem fixed"
 msgstr "Umlaute Problem"
 
-#: core/inc/changelog.php:239
+#: core/inc/changelog.php:252
 msgid "Elementor Preview Mode"
 msgstr "Elementor Preview Mode"
 
-#: core/inc/changelog.php:240
+#: core/inc/changelog.php:253
 msgid "Formatting of the tables improved"
 msgstr "Formatierung der Tabellen verbessert"
 
@@ -2843,16 +2856,16 @@ msgid "Fistname"
 msgstr "Vorname"
 
 #: core/inc/user_remove_form.php:95 core/inc/user_remove_form.php:126
-#: dsgvo_all_in_one_wp.php:5436 dsgvo_all_in_one_wp.php:5488
+#: dsgvo_all_in_one_wp.php:5454 dsgvo_all_in_one_wp.php:5506
 msgid "Lastname"
 msgstr "Nachname"
 
 #: core/inc/user_remove_form.php:103 core/inc/user_remove_form.php:166
-#: dsgvo_all_in_one_wp.php:5454 dsgvo_all_in_one_wp.php:5548
+#: dsgvo_all_in_one_wp.php:5472 dsgvo_all_in_one_wp.php:5566
 msgid "E-mail Adress"
 msgstr "Email Adresse"
 
-#: core/inc/user_remove_form.php:111 dsgvo_all_in_one_wp.php:5466
+#: core/inc/user_remove_form.php:111 dsgvo_all_in_one_wp.php:5484
 msgid "Billing Adress"
 msgstr "Rechnungsadresse"
 
@@ -2864,7 +2877,7 @@ msgstr "Straße"
 msgid "Zip"
 msgstr "Postleitzahl"
 
-#: core/inc/user_remove_form.php:190 dsgvo_all_in_one_wp.php:5578
+#: core/inc/user_remove_form.php:190 dsgvo_all_in_one_wp.php:5596
 msgid "Saved IP Adress"
 msgstr "Gespeicherte IP Adresse"
 
@@ -2942,22 +2955,22 @@ msgstr ""
 "Es wurde kein Key übergeben. Wenn dieser Fehler weiterhin auftritt, wenden "
 "Sie sich bitte an den Plugin-Entwickler."
 
-#: dsgvo_all_in_one_wp.php:953
+#: dsgvo_all_in_one_wp.php:971
 msgid ""
 "Error: No entries were found for the specified UID. Please check the UID."
 msgstr ""
 "Fehler: Für die angegebene UID wurden keine Einträge gefunden. Bitte "
 "überprüfe die UID."
 
-#: dsgvo_all_in_one_wp.php:1073
+#: dsgvo_all_in_one_wp.php:1091
 msgid "The log file was successfully exported as PDF file."
 msgstr "Die Protokolldatei wurde erfolgreich als PDF-Datei exportiert."
 
-#: dsgvo_all_in_one_wp.php:1073
+#: dsgvo_all_in_one_wp.php:1091
 msgid "Download Log"
 msgstr "Log herunterladen"
 
-#: dsgvo_all_in_one_wp.php:1224
+#: dsgvo_all_in_one_wp.php:1242
 msgid ""
 "The respective policy text was reloaded. The page will now reload to make "
 "the changes effective."
@@ -2965,7 +2978,7 @@ msgstr ""
 "Der jeweilige Datenschutztext wurde neu geladen. Die Seite wird nun neu "
 "geladen um die Änderungen wirksam zu machen."
 
-#: dsgvo_all_in_one_wp.php:1251
+#: dsgvo_all_in_one_wp.php:1269
 msgid ""
 "The query was successful but there are no IP addresses to delete in the "
 "database because there are none stored."
@@ -2973,7 +2986,7 @@ msgstr ""
 "Die Abfrage war erfolgreich aber es existieren keine IP Adressen in der "
 "Datenbank für eine Löschung."
 
-#: dsgvo_all_in_one_wp.php:1255
+#: dsgvo_all_in_one_wp.php:1273
 #, php-format
 msgid ""
 "The IP addresses stored in the comments were successfully deleted. %s IP "
@@ -2982,24 +2995,24 @@ msgstr ""
 "Die in den Kommentaren gespeicherten IP-Adressen wurden erfolgreich "
 "gelöscht. %s IP-Adressen wurden gelöscht."
 
-#: dsgvo_all_in_one_wp.php:1260
+#: dsgvo_all_in_one_wp.php:1278
 msgid "Nonce not valid! Please reload the page."
 msgstr "Nonce nicht valid! Bitte laden Sie diese Seite erneut."
 
-#: dsgvo_all_in_one_wp.php:1266
+#: dsgvo_all_in_one_wp.php:1284
 msgid "You lack the necessary rights to perform this action!"
 msgstr "Du verfügst nicht über ausreichend Rechte um diese Aktion auszuführen!"
 
-#: dsgvo_all_in_one_wp.php:1272
+#: dsgvo_all_in_one_wp.php:1290
 msgid "An error occurred, no parameter was passed."
 msgstr "Es ist ein Fehler aufgetreten, es wurden keine Parameter übertragen."
 
-#: dsgvo_all_in_one_wp.php:2150 dsgvo_all_in_one_wp.php:5348
-#: dsgvo_all_in_one_wp.php:5352
+#: dsgvo_all_in_one_wp.php:2168 dsgvo_all_in_one_wp.php:5366
+#: dsgvo_all_in_one_wp.php:5370
 msgid "E-Mail:"
 msgstr "E-Mail:"
 
-#: dsgvo_all_in_one_wp.php:2174
+#: dsgvo_all_in_one_wp.php:2192
 msgid ""
 "Please save the settings in the backend under \"DSGVO AIO\" to output the "
 "text of the privacy policy here"
@@ -3007,15 +3020,15 @@ msgstr ""
 "Bitte speichere  die Einstellungen im Backend unter \"DSGVO AIO\" um den "
 "Text der Datenschutzbedingungen hier auszugeben"
 
-#: dsgvo_all_in_one_wp.php:2744
+#: dsgvo_all_in_one_wp.php:2762
 msgid "Achtung - Cache / Minify Plugin gefunden!"
 msgstr "Achtung - Cache / Minify Plugin gefunden!"
 
-#: dsgvo_all_in_one_wp.php:2746
+#: dsgvo_all_in_one_wp.php:2764
 msgid "Sie verwenden"
 msgstr "Du verwendest"
 
-#: dsgvo_all_in_one_wp.php:2750
+#: dsgvo_all_in_one_wp.php:2768
 msgid ""
 "Dies kann zu Problemen führen. Sie müssen die Plugineinstellungen eventuell "
 "anpassen  damit alles funktioniert sollte die Cookie Notice nicht angezeigt "
@@ -3029,59 +3042,59 @@ msgstr ""
 "<a href=\"https://wordpress.org/plugins/dsgvo-all-in-one-for-wp/\" "
 "target=\"blank\">WordPress Plugin Seite</a> unter FAQ."
 
-#: dsgvo_all_in_one_wp.php:3419
+#: dsgvo_all_in_one_wp.php:3437
 msgid "No ID defined in shortcode!"
 msgstr "Keine ID im Shortcode definiert!"
 
-#: dsgvo_all_in_one_wp.php:3555
+#: dsgvo_all_in_one_wp.php:3573
 msgid "Error: You must accept the privacy policy to post a comment..."
 msgstr ""
 "Fehler: Du musst die Datenschutzbedingungen akzeptieren um ein Kommentar zu "
 "posten..."
 
-#: dsgvo_all_in_one_wp.php:4666
+#: dsgvo_all_in_one_wp.php:4684
 msgid "You must be logged in to perform this action."
 msgstr "Du musst eingeloggt sein um diese Aktion durchzuführen."
 
-#: dsgvo_all_in_one_wp.php:4708
+#: dsgvo_all_in_one_wp.php:4726
 msgid "Cooperative register"
 msgstr "Genossenschaftsregister"
 
-#: dsgvo_all_in_one_wp.php:4823
+#: dsgvo_all_in_one_wp.php:4841
 msgid "Tax Consultant"
 msgstr "Steuerberater"
 
-#: dsgvo_all_in_one_wp.php:5404
+#: dsgvo_all_in_one_wp.php:5422
 msgid "Here is a list of all data that is stored in our system about you."
 msgstr ""
 "Hier sind alle Daten aufgelistet die in unserem System über dich gespeichert "
 "sind."
 
-#: dsgvo_all_in_one_wp.php:5424 dsgvo_all_in_one_wp.php:5476
+#: dsgvo_all_in_one_wp.php:5442 dsgvo_all_in_one_wp.php:5494
 msgid "Firstname"
 msgstr "Vorname"
 
-#: dsgvo_all_in_one_wp.php:5500
+#: dsgvo_all_in_one_wp.php:5518
 msgid "Adress"
 msgstr "Adresse"
 
-#: dsgvo_all_in_one_wp.php:5524
+#: dsgvo_all_in_one_wp.php:5542
 msgid "Zip Code"
 msgstr "Postleitzahl"
 
-#: dsgvo_all_in_one_wp.php:5608
+#: dsgvo_all_in_one_wp.php:5626
 msgid "Download as PDF"
 msgstr "Als PDF herunterladen"
 
-#: dsgvo_all_in_one_wp.php:5612
+#: dsgvo_all_in_one_wp.php:5630
 msgid "Delete user account and all data"
 msgstr "Benutzerkonto sowie Daten löschen"
 
-#: dsgvo_all_in_one_wp.php:5646
+#: dsgvo_all_in_one_wp.php:5664
 msgid "Error"
 msgstr "Fehler"
 
-#: dsgvo_all_in_one_wp.php:5646
+#: dsgvo_all_in_one_wp.php:5664
 msgid "You must be logged in to perform this action"
 msgstr "Du musst dich einloggen um diese Aktion durchzuführen"
 

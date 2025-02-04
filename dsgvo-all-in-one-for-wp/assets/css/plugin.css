@@ -8,6 +8,22 @@
     padding: 0 15px 15px 15px;
 }
 
+#tarinnerinner {
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#tarinnerinner::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#tarinnerinner {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .youtube_player.display_bottom .tac_activate .tac_float {
     display: block;
     bottom: 0px;
@@ -74,7 +90,7 @@ background: rgb(234, 234, 234, .8) !important;
 }
 
 .dsdvo-cookie-notice.style3 #dsgvoaio-checkbox-wrapper {
-    padding: 0px 0px 50px 0px;
+        padding: 0px 10px 50px 10px;
 }
 
 #dsgvoaio-checkbox-wrapper li {

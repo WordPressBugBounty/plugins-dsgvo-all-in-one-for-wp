@@ -27,7 +27,7 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 	
 	$now = new DateTime();
 	
-	$last_run = get_option("dsdvo_last_runn");
+	$last_run = get_option("dsdvo_last_run");
 	
 	$x = 0;
 	
@@ -107,6 +107,8 @@ function dsgvoaio_googlefonts_func($content_of_the_buffer){
 								
 					}
 				
+				} else {
+					return $sheets[0];
 				}
 
 			} else {
