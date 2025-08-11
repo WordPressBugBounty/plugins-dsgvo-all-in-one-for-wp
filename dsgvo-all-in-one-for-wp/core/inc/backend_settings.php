@@ -1,14 +1,48 @@
-﻿<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+﻿<?php if ( ! defined( 'ABSPATH' ) ) { exit; } ?>
 <?php include("texts.php"); ?>
-<div class="wrap">
+<div class="dsgvoaio_wrap wrap">
 <?php
 	if (!isset($language)) $language = wf_get_language();
+
+	$languages = array();
 
 	if ( is_plugin_active( 'polylang/polylang.php' ) or
 	is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) or is_plugin_active( 'sitepress-multilingual-cms-develop/sitepress.php' ) or
 	is_plugin_active( 'sitepress-multilingual-cms-master-/sitepress.php' ) or is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) or
 	is_plugin_active( 'translatepress-multilingual/index.php' )) {
-		$showpolylangoptions = true;
+
+
+		if (function_exists('icl_get_languages')){
+			$languages = icl_get_languages('skip_missing=N&orderby=KEY&order=DIR&link_empty_to=str');
+			foreach($languages as $language){
+				$language_code =  $language['language_code'];
+				$languages[$language_code] = $language_code;
+				
+			}
+		}
+		
+
+		if (function_exists('pll_languages_list')) {
+			if (null != pll_languages_list(array('fields' => array()))) {
+				foreach (pll_languages_list(array('fields' => array())) as $lang) {
+					$languages[$lang->slug] = $lang->name;
+				}
+			}
+		}
+		
+		$translatepress_settings = get_option('trp_settings');
+
+		if (isset($translatepress_settings['publish-languages'])) {
+			foreach ($translatepress_settings['publish-languages'] as $tp_language) {
+				$tp_language = substr($tp_language, 0, 2);
+				if (isset($tp_language)) {
+					$languages[$tp_language] = $tp_language;
+				}
+			}	
+		}
+		
+		$showpolylangoptions = true;	
+
 	} else {
 		$showpolylangoptions = false;		
 	}
@@ -111,6 +145,8 @@
 			if (isset($_POST["use_koko"])) { $use_koko = sanitize_text_field($_POST["use_koko"]);	} else { $use_koko = ""; }
 			if (isset($_POST["remove_vgwort"])) { $remove_vgwort = sanitize_text_field($_POST["remove_vgwort"]);	} else { $remove_vgwort = ""; }			
 			if (isset($_POST["remove_gtagmanager"])) { $remove_gtagmanager = sanitize_text_field($_POST["remove_gtagmanager"]);	} else { $remove_gtagmanager = ""; }						
+			if (isset($_POST["ga_consent_mode"])) { $ga_consent_mode = sanitize_text_field($_POST["ga_consent_mode"]);	} else { $ga_consent_mode = ""; }
+			if (isset($_POST["ga_consent_modegtag"])) { $ga_consent_modegtag = sanitize_text_field($_POST["ga_consent_modegtag"]);	} else { $ga_consent_modegtag = ""; }
 			if (isset($_POST["use_twitter"])) { $use_twitter = sanitize_text_field($_POST["use_twitter"]);	} else { $use_twitter = ""; }						
 			if (isset($_POST["btn_txt_reject"])) { $btn_txt_reject = stripslashes(esc_html($_POST["btn_txt_reject"]));	} else { $btn_txt_reject = ""; }			
 			if (isset($_POST["position_service_control"])) { $position_service_control = sanitize_text_field($_POST["position_service_control"]);	} else { $position_service_control = ""; }						
@@ -174,7 +210,7 @@
 				$shareaholic_layer = "";	
 			}				
 			
-			if ($showpolylangoptions == true or $language == "it") {
+			if ($showpolylangoptions == true && array_key_exists("it", $languages) or $language == "it") {
 				if (isset($_POST["outgoing_text_it"])) { $dsdvo_outgoing_text_it = wp_kses_post($_POST["outgoing_text_it"]);	} else { $dsdvo_outgoing_text_it = ""; }							
 				if (isset($_POST["cookie_text_it"])) { $dsdvo_cookie_text_it = wp_kses_post($_POST["cookie_text_it"]);	} else { $dsdvo_cookie_text_it = ""; }			
 				if (isset($_POST["cookie_text_scroll_it"])) { $dsdvo_cookie_text_scroll_it = wp_kses_post($_POST["cookie_text_scroll_it"]);	} else { $dsdvo_cookie_text_scroll_it = ""; }			
@@ -237,7 +273,7 @@
 				}				
 			}
 			
-			if ($showpolylangoptions == true or $language == "it") {
+			if ($showpolylangoptions == true && array_key_exists("it", $languages) or $language == "it") {
 				if (isset($_POST["outgoing_text_it"])) { update_option("dsdvo_outgoing_text_it", wp_kses_post($_POST["outgoing_text_it"]), false);	}							
 				if (isset($_POST["cookie_text_it"])) { update_option("dsdvo_cookie_text_it", wp_kses_post($_POST["cookie_text_it"]), false);	}			
 				if (isset($_POST["cookie_text_scroll_it"])) { update_option("dsdvo_cookie_text_scroll_it", wp_kses_post($_POST["cookie_text_scroll_it"]), false);	}		
@@ -284,7 +320,7 @@
 				}				
 			}				
 			
-			if ($showpolylangoptions == true or $language == "en") {
+			if ($showpolylangoptions == true && array_key_exists("en", $languages) or $language == "en") {
 				if (isset($_POST["outgoing_text_en"])) { $dsdvo_outgoing_text_en = wp_kses_post($_POST["outgoing_text_en"]);	} else { $dsdvo_outgoing_text_en = ""; }							
 				if (isset($_POST["cookie_text_en"])) { $dsdvo_cookie_text_en = wp_kses_post($_POST["cookie_text_en"]);	} else { $dsdvo_cookie_text_en = ""; }			
 				if (isset($_POST["cookie_text_scroll_en"])) { $dsdvo_cookie_text_scroll_en = wp_kses_post($_POST["cookie_text_scroll_en"]);	} else { $dsdvo_cookie_text_scroll_en = ""; }			
@@ -342,7 +378,7 @@
 				}				
 			}
 			
-			if ($showpolylangoptions == true or $language == "en") {
+			if ($showpolylangoptions == true && array_key_exists("en", $languages) or $language == "en") {
 				if (isset($_POST["outgoing_text_en"])) { update_option("dsdvo_outgoing_text_en", wp_kses_post($_POST["outgoing_text_en"]), false);	}							
 				if (isset($_POST["cookie_text_en"])) { update_option("dsdvo_cookie_text_en", wp_kses_post($_POST["cookie_text_en"]), false);	}			
 				if (isset($_POST["cookie_text_scroll_en"])) { update_option("dsdvo_cookie_text_scroll_en", wp_kses_post($_POST["cookie_text_scroll_en"]), false);	}		
@@ -470,6 +506,8 @@
 			if (isset($_POST["use_koko"])) { update_option("dsdvo_use_koko", sanitize_text_field($_POST["use_koko"]), false);	} else { update_option("dsdvo_use_koko", "", false); }	
 			if (isset($_POST["remove_vgwort"])) { update_option("dsdvo_remove_vgwort", sanitize_text_field($_POST["remove_vgwort"]), false);	} else { update_option("dsdvo_remove_vgwort", "", false); }	
 			if (isset($_POST["remove_gtagmanager"])) { update_option("dsdvo_remove_gtagmanager", sanitize_text_field($_POST["remove_gtagmanager"]), false);	} else { update_option("dsdvo_remove_gtagmanager", "", false); }	
+			if (isset($_POST["ga_consent_mode"])) { update_option("dsdvo_ga_consent_mode", sanitize_text_field($_POST["ga_consent_mode"]), false);	} else { update_option("dsdvo_ga_consent_mode", "", false); }
+			if (isset($_POST["ga_consent_modegtag"])) { update_option("dsdvo_ga_consent_modegtag", sanitize_text_field($_POST["ga_consent_modegtag"]), false);	} else { update_option("dsdvo_ga_consent_modegtag", "", false); }
 			if (isset($_POST["use_twitter"])) { update_option("dsdvo_use_twitter", sanitize_text_field($_POST["use_twitter"]), false);	} else { update_option("dsdvo_use_twitter", "", false); }	
 			if (isset($_POST["btn_txt_reject"])) { update_option("dsgvo_btn_txt_reject", wp_kses_post($_POST["btn_txt_reject"]), false);	}				
 			if (isset($_POST["btn_txt_not_accept"])) { update_option("dsgvo_btn_txt_not_accept", wp_kses_post($_POST["btn_txt_not_accept"]), false);	}		
@@ -611,6 +649,17 @@
 				$remove_gtagmanager = "";
 			}				
 			
+			if ($ga_consent_mode == "on") {
+				$ga_consent_mode = "checked='checked'";
+			} else {
+				$ga_consent_mode = "";
+			}				
+			
+			if ($ga_consent_modegtag == "on") {
+				$ga_consent_modegtag = "checked='checked'";
+			} else {
+				$ga_consent_modegtag = "";
+			}							
 			
 			if ($use_twitter == "on") {
 				$use_twitter = "checked='checked'";
@@ -683,18 +732,34 @@
 				$dsgvo_remove_ipaddr_auto = "";
 			}
 			
-			//save update date
 			$now = new DateTime();
+			
 			$update_date = $now->format('d.m.Y');
-			update_option("dsdvo_policy_update_date", $update_date );
+						
+			$saved_policy_text_1 = get_option("dsdvo_policy_text_1");
+
+			update_option("dsdvo_policy_update_date", $update_date, false);
+
+			if ( function_exists( 'rocket_clean_domain' ) ) {
+				rocket_clean_domain();
+			}	
+			if ( function_exists( 'wpfc_clear_all_cache' ) ) {
+				wpfc_clear_all_cache(true);
+			}		
+			if ( class_exists( 'autoptimizeCache' ) ) {
+				autoptimizeCache::clearall();
+			}
+			if ( function_exists( 'w3tc_flush_all' ) ) {
+				w3tc_flush_all();
+			}
 
 			echo '<div class="notice notice-success" class="updated fade"><p>'.wp_kses(__('Settings saved successfully', 'dsgvo-all-in-one-for-wp'), array('a' => array( 'href' => array(), 'title' => array()), 'br' => array(), 'em' => array(), 'strong' => array())).'<span class="dashicons dashicons-yes"></span></p></div>';
+		
 		}
 		
 	} else {
 		
 			$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
-		
 			$cookie_time = sanitize_text_field(get_option("dsdvo_cookie_time"));
 			$blog_agb = sanitize_text_field(get_option("dsdvo_blog_agb"));
 			$dsdvo_policy_site = sanitize_text_field(get_option("dsdvo_policy_site"));
@@ -785,6 +850,8 @@
 			$use_koko = sanitize_text_field(get_option("dsdvo_use_koko"));
 			$remove_vgwort = sanitize_text_field(get_option("dsdvo_remove_vgwort"));
 			$remove_gtagmanager = sanitize_text_field(get_option("dsdvo_remove_gtagmanager"));
+			$ga_consent_mode = sanitize_text_field(get_option("dsdvo_ga_consent_mode"));
+			$ga_consent_modegtag = sanitize_text_field(get_option("dsdvo_ga_consent_modegtag"));
 			$use_twitter = sanitize_text_field(get_option("dsdvo_use_twitter"));
 			$btn_txt_reject = stripslashes(esc_html(get_option("dsgvo_btn_txt_reject")));
 			$btn_txt_not_accept = wp_kses_post(get_option("dsgvo_btn_txt_not_accept"));			
@@ -827,7 +894,7 @@
 			$piwik_host = stripslashes(esc_html(get_option("dsgvo_piwik_host")));
 			$piwik_siteid = stripslashes(esc_html(get_option("dsgvo_piwik_siteid")));
 
-			if ($showpolylangoptions == true or $language == "en") {
+			if ($showpolylangoptions == true && array_key_exists("en", $languages) or $language == "en") {
 			$dsdvo_outgoing_text_en = wp_kses_post(get_option('dsdvo_outgoing_text_en'));
 			$dsdvo_cookie_text_en = wp_kses_post(get_option('dsdvo_cookie_text_en'));
 			$dsdvo_cookie_text_scroll_en = wp_kses_post(get_option("dsdvo_cookie_text_scroll_en"));
@@ -865,7 +932,7 @@
 			}
 			
 
-			if ($showpolylangoptions == true or $language == "it") {
+			if ($showpolylangoptions == true && array_key_exists("it", $languages) or $language == "it") {
 			$dsdvo_outgoing_text_it = wp_kses_post(get_option('dsdvo_outgoing_text_it'));
 			$dsdvo_cookie_text_it = wp_kses_post(get_option('dsdvo_cookie_text_it'));
 			$dsdvo_cookie_text_scroll_it = wp_kses_post(get_option("dsdvo_cookie_text_scroll_it"));
@@ -1069,6 +1136,18 @@
 				$remove_gtagmanager = "checked='checked'";
 			} else {
 				$remove_gtagmanager = "";
+			}	
+
+			if ($ga_consent_mode == "on") {
+				$ga_consent_mode = "checked='checked'";
+			} else {
+				$ga_consent_mode = "";
+			}		
+
+			if ($ga_consent_modegtag == "on") {
+				$ga_consent_modegtag = "checked='checked'";
+			} else {
+				$ga_consent_modegtag = "";
 			}				
 				
 			if ($use_twitter == "on") {
@@ -1287,6 +1366,12 @@
 					<?php echo wp_kses(__("Format: UA-XXXXXXXXX-X / G-XXXXXXXXXXX", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					</label>
 					<br />
+					<b><?php echo wp_kses(__("Google Consent Mode V2", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
+					<input  class="dsdvo_input ga_consent_mode" type="checkbox" name="ga_consent_mode" <?php echo esc_html($ga_consent_mode); ?>/><br />
+					<label><?php echo wp_kses(__("Would you like to use <a href=\"https://developers.google.com/tag-platform/security/guides/consent?hl=de&consentmode=basic\" target=\"blank\">Google Consent Mode v2</a>?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
+					</label>
+					<br/>					
+					<br />
 					<b><?php echo wp_kses(__("Standard OptIn / OptOut", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<select  class="dsdvo_input"  name="ga_optinoutsetting">
 						<?php
@@ -1348,6 +1433,12 @@
 					<?php echo wp_kses(__("Format: GTM-XXXXXXX", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					</label>
 					<br />
+					<b><?php echo wp_kses(__("Google Consent Mode V2", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
+					<input  class="dsdvo_input ga_consent_modegtag" type="checkbox" name="ga_consent_modegtag" <?php echo esc_html($ga_consent_modegtag); ?>/><br />
+					<label><?php echo wp_kses(__("Would you like to use <a href=\"https://developers.google.com/tag-platform/security/guides/consent?hl=de&consentmode=basic\" target=\"blank\">Google Consent Mode v2</a>?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
+					</label>
+					<br/>					
+					<br />					
 					<b><?php echo wp_kses(__("Replace integration automatically [Beta]", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 					<input  class="dsdvo_input remove_gtagmanager" type="checkbox" name="remove_gtagmanager" <?php echo esc_html($remove_gtagmanager); ?>/><br />
 					<label><?php echo wp_kses(__("Should ALL existing Google Tag Manager integrations be replaced according to GDPR (2 click solution)?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
@@ -1372,7 +1463,7 @@
 					<b><?php echo wp_kses(__("Important", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>&nbsp;<?php echo wp_kses(__("You have to adapt the text of the privacy policy! ([PLEASE CHECK if this is the case with your publisher!])", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>
 					<br />
 					<br />
-					<b><?php echo wp_kses(__('Shortcode for embedding VG Wort:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b>
+					<b><?php echo wp_kses(__('Shortcode for embedding VG Wort:<br />', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></b><br />
 					<input class="dsdvo_input amazonshortcode" type="text" name="amazonshortcode" value='[dsgvo_vgwort id="XXXXXXXXXXXXXXXX"]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate VG Wort GDPR compliant on any desired page.', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					<br />
@@ -1618,7 +1709,7 @@
 					<b><?php echo wp_kses(__('Shortcode for embedding Vimeo Videos', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 					<input class="dsdvo_input vimeoshortcode" type="text" name="vimeoshortcode" value='[dsgvo_vimeo videoID="89543842" thumbnail="true"]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate Vimeo Videos GDPR/DSGVO compliant on any desired page', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>.<br />
-					<?php echo wp_kses(__('Additional parameters: width="width" height="height" thumbnail="true | false"', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
+					<?php echo wp_kses(__('Additional parameters: width="width" height="height" thumbnail="true|false|url"', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					<br />
 					<b><?php echo wp_kses(__('Replace existing embeddings automatically GDPR/DSGVO compliant', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />					
 					<?php echo wp_kses(__('The PRO Version offers the feature to automatically replace all existing vimeo integrations', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>.<br />					
@@ -1637,7 +1728,7 @@
 					<b><?php echo wp_kses(__('Shortcode for embedding Youtube Videos', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 					<input class="dsdvo_input youtubeshortcode" type="text" name="youtubeshortcode" value='[dsgvo_youtube videoID="LXb3EKWsInQ" thumbnail="true"]' readonly/><br />
 					<?php echo wp_kses(__('With the shortcode you can integrate Youtube Videos GDPR/DSGVO compliant on any desired page', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>.<br />
-					<?php echo wp_kses(__('Additional parameters: width="width" height="height" autoplay="0|1" rel="0|1" thumbnail="true|false|bildurl"<br />(With Thumbnail you can also define your own image. Simply enter the URL)', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
+					<?php echo wp_kses(__('Additional parameters: width="width" height="height" autoplay="0|1" rel="0|1" thumbnail="true|false|url"', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 					<br />	
 					<b><?php echo wp_kses(__('Replace existing embeddings automatically GDPR/DSGVO compliant', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />					
 					<?php echo wp_kses(__('The PRO Version offers the feature to automatically replace all existing youtube integrations', "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>.<br />					
@@ -1697,7 +1788,7 @@
 							?>
 						</select>
 						<br />
-						<label><?php echo wp_kses(__("In which corner the service control should be displayed?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>?</label>						
+						<label><?php echo wp_kses(__("In which corner the service control should be displayed?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></label>						
 						</span>
 					</p>
 
@@ -1715,9 +1806,7 @@
 							<option value="7" <?php if ($notice_style == 7) { echo "selected";} ?> disabled><?php echo wp_kses(__("Block - top right corner (Pro Version)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>							
 						</select><br />
 						<label>
-						<?php echo wp_kses(__("Select the design/position of the cookie notice.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
-						<?php echo wp_kses(__("<b style='color:orange;'>Very important:</b> We recommend you to choose option #3! This way the user <u>immediately</u> has an overview of the privacy conditions.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
-						<?php echo wp_kses(__("Option #3 corresponds to the current GDPR.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>
+						<?php echo wp_kses(__("Select the layout/position of the cookie notice.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?><br />
 						</label>
 					</p>
 
@@ -1731,8 +1820,8 @@
 					<p class="dsdvo_options">
 						<b><?php echo wp_kses(__("Cookie Notice Design", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>  <br />
 						<select name="notice_design">
-							<option value="dark" <?php if ($notice_design == "dark") { echo "selected";} ?>><?php echo wp_kses(__("Dark - Grey", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>
-							<option value="clear" <?php if ($notice_design == "clear") { echo "selected";} ?>><?php echo wp_kses(__("Light - Grey", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>							
+							<option value="clear" <?php if ($notice_design == "clear") { echo "selected";} ?>><?php echo wp_kses(__("Light - Grey", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>						
+							<option value="dark" <?php if ($notice_design == "dark") { echo "selected";} ?>><?php echo wp_kses(__("Dark - Grey", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></option>							
 							
 						</select><br />
 						<label><?php echo wp_kses(__("Select the design of the cookie notice.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></label>
@@ -1741,19 +1830,19 @@
 					<br />
 					<p class="dsdvo_options">
 						<b><?php echo wp_kses(__("Button Text (Accept)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>						
 						<input class="dsdvo_input" type="text" name="btn_txt_accept" value="<?php if ($btn_txt_accept) {echo esc_html($btn_txt_accept);} else { echo "Alle akzeptieren";}?>" /><br />
 						<?php } ?>
-						<?php if ($showpolylangoptions == true or $language == "en") { ?>
+						<?php if ($showpolylangoptions == true && array_key_exists("en", $languages) or $language == "en") { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
 						<input class="dsdvo_input" type="text" name="btn_txt_accept_en" value="<?php if ($btn_txt_accept_en) {echo esc_html($btn_txt_accept_en);} else { echo "Accept all";}?>" /><br />
 						<?php } ?>
-						<?php if ($showpolylangoptions == true or $language == "it") { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
@@ -1767,19 +1856,19 @@
 						<br />
 						
 						<b><?php echo wp_kses(__("Button Text (Personalize)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>						
 						<input class="dsdvo_input" type="text" name="btn_txt_customize" value="<?php if ($btn_txt_customize) {echo esc_html($btn_txt_customize);} else { echo "Personalisieren";}?>" /><br />
 						<?php } ?>
-						<?php if ($showpolylangoptions == true or $language == "en") { ?>
+						<?php if ($showpolylangoptions == true && array_key_exists("en", $languages) or $language == "en") { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>	
 						<input class="dsdvo_input" type="text" name="btn_txt_customize_en" value="<?php if ($btn_txt_customize_en) {echo esc_html($btn_txt_customize_en);} else { echo "Customize";}?>" /><br />
 						<?php } ?>		
-						<?php if ($showpolylangoptions == true or $language == "it") { ?>
+						<?php if ($showpolylangoptions == true && array_key_exists("it", $languages) or $language == "it") { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>	
@@ -1803,19 +1892,19 @@
 								<p><?php echo wp_kses(__("Info: If no external service is activated the reject button is not displayed!", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?></p>
 								<br />
 								<b><?php echo wp_kses(__("Button Text (Reject)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
-								<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+								<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
 								<input class="dsdvo_input" type="text" name="btn_txt_reject" value="<?php if ($btn_txt_reject) {echo esc_html($btn_txt_reject);} else { echo "Ablehnen";}?>" /><br />
 								<?php } ?>
-								<?php if ($showpolylangoptions == true or $language == "en") { ?>
+								<?php if ($showpolylangoptions == true && array_key_exists("en", $languages) or $language == "en") { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>
 								<input class="dsdvo_input" type="text" name="btn_txt_reject_en" value="<?php if ($btn_txt_reject_en) {echo esc_html($btn_txt_reject_en);} else { echo "Reject";}?>" /><br />
 								<?php } ?>	
-								<?php if ($showpolylangoptions == true or $language == "it") { ?>
+								<?php if ($showpolylangoptions == true && array_key_exists("it", $languages) or $language == "it") { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>
@@ -1879,19 +1968,19 @@
 						<b><?php echo wp_kses(__("Conditions/Consent Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 						<a href="#" class="reset_policy_service" data-service="cookietext" title="<?php echo wp_kses(__("Cookie Notice Text neu laden", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 						</span>						
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
 						<?php wp_editor(stripslashes(wp_kses_post($dsdvo_cookie_text)), 'cookie_text', array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE ) ); ?>								
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
 						<?php wp_editor(stripslashes(wp_kses_post($dsdvo_cookie_text_en)), 'cookie_text_en', array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE ) ); ?>								
 						<?php } ?>
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
@@ -1973,7 +2062,7 @@
 						<b><?php echo wp_kses(__("General Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 						<a href="#" class="reset_policy_service" data-service="mainpolicy" title="<?php echo wp_kses(__("Reload Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 						</span>						
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>						
@@ -1993,7 +2082,7 @@
 							wp_editor(stripslashes(wp_kses_post($editor_content)), $editor_id, array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE ) );
 						?>
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<br />	
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
@@ -2011,7 +2100,7 @@
 							wp_editor(stripslashes(wp_kses_post($editor_content_en)), $editor_id_en, array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE ) );
 						?>
 						<?php } ?>
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<br />	
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
@@ -2044,7 +2133,7 @@
 							<b><?php echo wp_kses(__("Privacy Policy of WordPress & Plugins", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="wordpress" title="<?php echo wp_kses(__("Reload WordPress Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2059,7 +2148,7 @@
 							<br />
 								
 							<?php } ?>								
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2073,7 +2162,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($wordpress_policy_editor_en)), 'wordpress_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2154,7 +2243,7 @@
 							<b><?php echo wp_kses(__("Facebook Pixel", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>						
 							<a href="#" class="reset_policy_service" data-service="fbpixel" title="<?php echo wp_kses(__("Reload Facebook Pixel Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2169,7 +2258,7 @@
 							<br />
 								
 							<?php } ?>								
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2183,7 +2272,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($fbpixel_policy_editor_en)), 'fbpixel_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2204,7 +2293,7 @@
 							<b><?php echo wp_kses(__("Facebook Like/Comments", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="fb" title="<?php echo wp_kses(__("Reload Facebook Like/Comments Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2219,7 +2308,7 @@
 							<br />
 								
 							<?php } ?>								
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2233,7 +2322,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($facebook_policy_editor_en)), 'facebook_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2254,7 +2343,7 @@
 							<b><?php echo wp_kses(__("X (Twitter)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="twitter" title="<?php echo wp_kses(__("Reload X Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2269,7 +2358,7 @@
 							<br />
 								
 							<?php } ?>								
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2283,7 +2372,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($twitter_policy_editor_en)), 'twitter_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2305,7 +2394,7 @@
 							<b><?php echo wp_kses(__("Google Analytics", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="ga" title="<?php echo wp_kses(__("Reload Google Analytics Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2319,7 +2408,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($ga_policy_editor)), 'ga_policy', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>		
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>		
@@ -2333,7 +2422,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($ga_policy_editor_en)), 'ga_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>		
@@ -2355,7 +2444,7 @@
 							<b><?php echo wp_kses(__("Google Tag Manager", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="gtag" title="<?php echo wp_kses(__("Reload Google Tag Manager Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2369,7 +2458,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($gtagmanager_policy_editor)), 'gtagmanager_policy', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>		
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>		
@@ -2383,7 +2472,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($gtagmanager_policy_editor_en)), 'gtagmanager_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>		
@@ -2400,7 +2489,7 @@
 							<?php } ?>	
 
 							<?php if (get_option('dsdvo_use_piwik') == "on") { ?> 							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd">
 								<b><?php echo wp_kses(__("Matomo", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 								<a href="#" class="reset_policy_service" data-service="matomo" title="<?php echo wp_kses(__("Reload Matomo Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
@@ -2418,7 +2507,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($piwik_policy_editor)), 'piwik_policy', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2432,7 +2521,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($piwik_policy_editor_en)), 'piwik_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2454,7 +2543,7 @@
 							<b><?php echo wp_kses(__("VG Wort", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="vgwort" title="<?php echo wp_kses(__("Reload VG Wort Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2469,7 +2558,7 @@
 							<br />
 								
 							<?php } ?>								
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2483,7 +2572,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($vgwort_policy_editor_en)), 'vgwort_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2505,7 +2594,7 @@
 							<b><?php echo wp_kses(__("Koko Analytics", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="koko" title="<?php echo wp_kses(__("Reload Koko Analytics Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2520,7 +2609,7 @@
 							<br />
 								
 							<?php } ?>								
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2534,7 +2623,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($koko_policy_editor_en)), 'koko_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />
 							<?php } ?>	
@@ -2556,7 +2645,7 @@
 							<b><?php echo wp_kses(__("Shareaholic", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="shareaholic" title="<?php echo wp_kses(__("Reload Shareaholic Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>														
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>	
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>	
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2570,7 +2659,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($shareaholic_policy_editor)), 'shareaholic_policy', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2584,7 +2673,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($shareaholic_policy_editor_en)), 'shareaholic_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2605,7 +2694,7 @@
 							<b><?php echo wp_kses(__("LinkedIn", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="linkedin" title="<?php echo wp_kses(__("Reload LinkedIn Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>																					
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>		
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>		
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2619,7 +2708,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($linkedin_policy_editor)), 'linkedin_policy', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2633,7 +2722,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($linkedin_policy_editor_en)), 'linkedin_policy_en', array ('textarea_rows' => 5, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2651,7 +2740,7 @@
 							
 							
 							<?php if (get_option('dsdvo_use_vimeo') == "on") { ?> 
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("Vimeo", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="reset_policy_service" data-service="vimeo" title="<?php echo wp_kses(__("Reload Vimeo Privacy Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
@@ -2666,7 +2755,7 @@
 								<?php wp_editor(html_entity_decode(stripslashes($vimeo_policy_editor), ENT_COMPAT, get_option('blog_charset')), 'vimeo_policy', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />	
 							<?php } ?>
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2680,7 +2769,7 @@
 								<?php wp_editor(html_entity_decode(stripslashes($vimeo_policy_editor_en), ENT_COMPAT, get_option('blog_charset')), 'vimeo_policy_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>	
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2701,7 +2790,7 @@
 							<b><?php echo wp_kses(__("YouTube", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>
 							<a href="#" class="reset_policy_service" data-service="youtube" title="<?php echo wp_kses(__("Reload Youtube Privacy Policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a>
 							</span>																					
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 								<?php } ?>								
@@ -2715,7 +2804,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($youtube_policy_editor)), 'youtube_policy', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -2729,7 +2818,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($youtube_policy_editor_en)), 'youtube_policy_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3013,7 +3102,7 @@
 
 					<span class="owntextsimprint_container dsdvo_options">	
 					
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>						
@@ -3026,7 +3115,7 @@
 							wp_editor(stripslashes(wp_kses_post($editor_content)), $editor_id_customimprint, array ('wpautop' => true, 'textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE ) );
 						?>
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<br />	
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
@@ -3040,7 +3129,7 @@
 							wp_editor(stripslashes(wp_kses_post($editor_content_en)), $editor_id_customimprint_en, array ('wpautop' => true, 'textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE ) );
 						?>
 						<?php } ?>
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<br />	
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
@@ -3100,19 +3189,19 @@
 					<div class="dsgvoaio_blog_policy_wrap">
 					<span class="dsdvo_options">
 						<b><?php echo wp_kses(__("Text next to the checkbox for acceptance of the privacy policy", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>  <br />
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>	
 						<?php wp_editor(stripslashes($dsgvo_policy_blog_text), 'dsgvo_policy_blog_text', array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE ) ); ?>						
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
 						<?php wp_editor(stripslashes($dsgvo_policy_blog_text_en), 'dsgvo_policy_blog_text_en', array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE ) ); ?>								
 						<?php } ?>
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
@@ -3123,19 +3212,19 @@
 					<br />
 					<p class="dsdvo_options">
 						<b><?php echo wp_kses(__("Text if the conditions were not accepted", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>  <br />
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>						
 						<textarea class="dsdvo_input" rows="2" cols="10" name="dsgvo_error_policy_blog"><?php echo esc_textarea($dsgvo_error_policy_blog); ?></textarea><br />
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
 						<textarea class="dsdvo_input"  rows="5" cols="10" name="dsgvo_error_policy_blog_en"><?php echo esc_textarea($dsgvo_error_policy_blog_en); ?></textarea><br />
 						<?php } ?>						
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
@@ -3175,7 +3264,7 @@
 					
 							<?php if (get_option('dsdvo_use_vimeo') == "on") { ?>
 							<?php $count = $count+1; ?>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("Vimeo", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="vimeo" title="<?php echo wp_kses(__("Edit Vimeo Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="vimeo" title="<?php echo wp_kses(__("Reload Vimeo Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text vimeo">
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3191,7 +3280,7 @@
 								<?php wp_editor(html_entity_decode(stripslashes($vimeo_layer_editor), ENT_COMPAT, get_option('blog_charset')), 'vimeo_layer', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3205,7 +3294,7 @@
 								<?php wp_editor(html_entity_decode(stripslashes($vimeo_layer_editor_en), ENT_COMPAT, get_option('blog_charset')), 'vimeo_layer_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3224,7 +3313,7 @@
 					
 							<?php if (get_option('dsdvo_use_youtube') == "on") { ?>
 							<?php $count = $count+1; ?>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("Youtube", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="youtube" title="<?php echo wp_kses(__("Edit Youtube Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="youtube" title="<?php echo wp_kses(__("Reload Youtube Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text youtube">
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3240,7 +3329,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($youtube_layer_editor)), 'youtube_layer', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3254,7 +3343,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($youtube_layer_editor_en)), 'youtube_layer_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3273,7 +3362,7 @@
 							
 							<?php if (get_option('dsdvo_use_linkedin') == "on") { ?>
 							<?php $count = $count+1; ?>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("Linkedin", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="linkedin" title="<?php echo wp_kses(__("Edit Linkedin Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="linkedin" title="<?php echo wp_kses(__("Reload Linkedin Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text linkedin">
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3289,7 +3378,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($linkedin_layer_editor)), 'linkedin_layer', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3303,7 +3392,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($linkedin_layer_editor_en)), 'linkedin_layer_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3322,7 +3411,7 @@
 
 							<?php if (get_option('dsdvo_use_twitter') == "on") { ?>
 							<?php $count = $count+1; ?>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("X (Twitter)", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="twitter" title="<?php echo wp_kses(__("Edit VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="twitter" title="<?php echo wp_kses(__("Reload VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text twitter">
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3338,7 +3427,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($twitter_layer_editor)), 'twitter_layer', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3352,7 +3441,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($twitter_layer_editor_en)), 'twitter_layer_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3372,7 +3461,7 @@
 
 							<?php if (get_option('dsdvo_use_vgwort') == "on") { ?>
 							<?php $count = $count+1; ?>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("VG Wort", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="vgwort" title="<?php echo wp_kses(__("Edit VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="vgwort" title="<?php echo wp_kses(__("Reload VG Wort Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text vgwort">
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3388,7 +3477,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($vgwort_layer_editor)), 'vgwort_layer', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3402,7 +3491,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($vgwort_layer_editor_en)), 'vgwort_layer_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3423,7 +3512,7 @@
 
 							<?php if (get_option('dsdvo_use_shareaholic') == "on") { ?>
 							<?php $count = $count+1; ?>							
-							<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 								<span class="dsgvoaio_lang_info scnd"><b><?php echo wp_kses(__("Shareaholic", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><a href="#" class="load_layer_policy" data-service="shareaholic" title="<?php echo wp_kses(__("Edit Shareaholic Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-edit"></span></a><a href="#" class="reset_layertext_service" data-service="shareaholic" title="<?php echo wp_kses(__("Reload Shareaholic Layer Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>"><span class="dashicons dashicons-image-rotate"></span></a></span>																
 								<span class="dsgvoaio_inner_tab dsgvoaio_layer_text shareaholic">
 								<?php if ($showpolylangoptions == true) { ?>
@@ -3439,7 +3528,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($shareaholic_layer_editor)), 'shareaholic_layer', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />
 							<?php } ?>					
-							<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3453,7 +3542,7 @@
 								<?php wp_editor(stripslashes(wp_kses_post($shareaholic_layer_editor_en)), 'shareaholic_layer_en', array ('textarea_rows' => 60, 'media_buttons' => FALSE, 'teeny' => FALSE, 'tinymce' => TRUE, 'quicktags' => TRUE )); ?>
 							<br />		
 							<?php } ?>		
-							<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+							<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 							<?php if ($showpolylangoptions == true) { ?>
 								<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b><br />		
 							<?php } ?>	
@@ -3552,19 +3641,19 @@
 					<br />
 					<p class="dsdvo_options">
 						<b><?php echo wp_kses(__("PDF output of the data", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> (<?php echo wp_kses(__("Information Text", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>) <br />
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>							
 						<textarea class="dsdvo_input"  rows="5" cols="10" name="dsgvo_pdf_text"  ><?php echo esc_textarea($dsgvo_pdf_text); ?></textarea><br />
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>	
 						<textarea class="dsdvo_input"  rows="5" cols="10" name="dsgvo_pdf_text_en"><?php echo esc_textarea($dsgvo_pdf_text_en); ?></textarea><br />
 						<?php } ?>						
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>	
@@ -3609,19 +3698,19 @@
 					<span class="outgoingnoticewrap">
 					<span class="dsdvo_options">
 						<b><?php echo wp_kses(__("Text of the notice for the outgoing links", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b>  <br />
-						<?php if ($language == "de" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "de" or $showpolylangoptions == true && array_key_exists("de", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("German", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>	
 						<?php wp_editor(stripslashes(wp_kses_post($dsdvo_outgoing_text)), 'outgoing_text', array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE ) ); ?>						
 						<?php } ?>
-						<?php if ($language == "en" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "en" or $showpolylangoptions == true && array_key_exists("en", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("English", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
 						<?php wp_editor(stripslashes(wp_kses_post($dsdvo_outgoing_text_en)), 'outgoing_text_en', array ('wpautop' => true, 'textarea_rows' => 30, 'media_buttons' => FALSE, 'teeny' => TRUE, 'tinymce' => TRUE, 'quicktags' => TRUE ) ); ?>								
 						<?php } ?>
-						<?php if ($language == "it" or $showpolylangoptions == true) { ?>
+						<?php if ($language == "it" or $showpolylangoptions == true && array_key_exists("it", $languages)) { ?>
 						<?php if ($showpolylangoptions == true) { ?>
 						<b class="dsgvoaio_lang_info"><?php echo wp_kses(__("Italian", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>:</b> <br />
 						<?php } ?>
@@ -3668,8 +3757,7 @@
 			?>
 		</form>
 	</div>
-	</div>
-</div><!-- .wrap -->
+</div>
 
 <div id="dsdvo_right">
 	
@@ -3730,7 +3818,6 @@
 	<?php
 		global $wpdb;
 		$shortcodecount = 0;
-		/**Query Shortcode**/
 		$resultblockoioo = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_content LIKE '%wp:dsgvo-all-in-one-for-wp/opt-in-out%' AND post_type LIKE  '%page%' AND post_status LIKE  '%publish%'" );					
 		$resultoioo = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_content LIKE '%[dsgvo_service_control]%' AND post_type LIKE  '%page%' AND post_status LIKE  '%publish%'" );
 		  if (isset($resultoioo) or isset($resultblockoioo)) {
@@ -3957,3 +4044,5 @@
 	</span>
 	</a>
 </div>
+
+</div><!-- .wrap -->

@@ -129,7 +129,7 @@ if (get_option("dsdvo_owntextsimprint", "no") == "yes") {
 		$imprint_template .= wpautop(html_entity_decode(stripcslashes(wp_kses(get_option("dsdvo_customimprinttext"), $kses_allowed_html))));
 	}
 	
-	if ($language == "en") {
+	if ($language == "en" or $language != "de" && $language != "it") {
 		$imprint_template .= wpautop(html_entity_decode(stripcslashes(wp_kses(get_option("dsdvo_customimprinttext_en"), $kses_allowed_html))));
 	}	
 	

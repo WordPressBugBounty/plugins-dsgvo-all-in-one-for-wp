@@ -1532,7 +1532,7 @@ $wordpress_policy_sample_en = '
    <tr>
     <td>ab</td>
     <td>Is used for A / B testing of new features.</td>
-    <td>Session</tds>
+    <td>Session</td>
   </tr>      
    <tr>
     <td>akm_mobile</td>
@@ -2095,7 +2095,7 @@ $wordpress_policy_sample_it = '
    <tr>
     <td>ab</td>
     <td>Viene utilizzato per il test A/B delle nuove caratteristiche.</td>
-    <td>Sessione</tds>
+    <td>Sessione</td>
   </tr>      
    <tr>
     <td>akm_mobile</td>
@@ -2108,23 +2108,23 @@ $wordpress_policy_sample_it = '
 
 $gtagmanager_policy_sample_it = '
 <h3 >Google Tag Manager</h3>
-<p>Questo sito web utilizza Google Tag Manager (Google LLC. 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Google Tag Manager consente di gestire i tag dei siti web commercializzati tramite un\'interfaccia. Lo stesso strumento Tag Manager (che implementa i tag) è un dominio senza cookie e non registra dati personali. Lo strumento fa sì che vengano attivati altri tag che possono, dal canto loro, registrare dati in determinate circostanze. Google Tag Manager non accede a queste informazioni. Se la registrazione è stata disattivata a livello di dominio o di cookie, questa impostazione rimane valida per tutti i tag di tracciamento implementati con Google Tag Manager.</p>.
+<p>Questo sito web utilizza Google Tag Manager (Google LLC. 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Google Tag Manager consente di gestire i tag dei siti web commercializzati tramite un\'interfaccia. Lo stesso strumento Tag Manager (che implementa i tag) è un dominio senza cookie e non registra dati personali. Lo strumento fa sì che vengano attivati altri tag che possono, dal canto loro, registrare dati in determinate circostanze. Google Tag Manager non accede a queste informazioni. Se la registrazione è stata disattivata a livello di dominio o di cookie, questa impostazione rimane valida per tutti i tag di tracciamento implementati con Google Tag Manager.</p>
 ';
 
 $ga_policy_sample_it = '
 <h3>Google Analytics</h3>
 <p>Questo sito web utilizza vari servizi forniti da Google Ireland Limited, Gordon House, Barrow Street, Dublino 4, Irlanda. L\'utilizzo di questi singoli servizi è descritto più dettagliatamente qui di seguito.</p>
 <p>Il nostro utilizzo dei seguenti servizi e la relativa raccolta di dati personali (in particolare gli indirizzi IP) si basa generalmente sul nostro legittimo interesse ad analizzare, migliorare e far apparire attraente il contenuto del nostro sito web, nonché sul nostro legittimo interesse ad adattare qualsiasi pubblicità alle vostre esigenze (articolo 6 (1) f GDPR).</p>
-<p>Google Analytics utilizza i cookie (vedi anche 3.1 "Cookies"). I cookie vengono memorizzati sul vostro computer e consentono a Google di analizzare il modo in cui utilizzate questo sito web. Le informazioni generate dal cookie sull\'utilizzo di questo sito web vengono generalmente trasmesse e memorizzate su un server di Google negli USA.</p>.
+<p>Google Analytics utilizza i cookie (vedi anche 3.1 "Cookies"). I cookie vengono memorizzati sul vostro computer e consentono a Google di analizzare il modo in cui utilizzate questo sito web. Le informazioni generate dal cookie sull\'utilizzo di questo sito web vengono generalmente trasmesse e memorizzate su un server di Google negli USA.</p>
 <p> <strong>Anonimizzazione IP</strong> </p>
-<p>Abbiamo attivato l\'anonimizzazione IP sul nostro sito web. Ciò significa che Google accorcerà il vostro indirizzo IP prima di trasmetterlo agli Stati Uniti, a condizione che l\'indirizzo IP provenga da uno Stato membro dell\'Unione Europea o da uno Stato che è parte dell\'Accordo sullo Spazio Economico Europeo. Il gestore di questo sito web commissiona a Google l\'utilizzo di queste informazioni per valutare il vostro utilizzo del sito web, per creare report sulle attività del sito web e per fornire altri servizi relativi all\'utilizzo del sito web e di internet. L\'indirizzo IP trasmesso dal vostro browser durante il processo di Google Analytics non è collegato ad altri dati posseduti da Google.</p>.
+<p>Abbiamo attivato l\'anonimizzazione IP sul nostro sito web. Ciò significa che Google accorcerà il vostro indirizzo IP prima di trasmetterlo agli Stati Uniti, a condizione che l\'indirizzo IP provenga da uno Stato membro dell\'Unione Europea o da uno Stato che è parte dell\'Accordo sullo Spazio Economico Europeo. Il gestore di questo sito web commissiona a Google l\'utilizzo di queste informazioni per valutare il vostro utilizzo del sito web, per creare report sulle attività del sito web e per fornire altri servizi relativi all\'utilizzo del sito web e di internet. L\'indirizzo IP trasmesso dal vostro browser durante il processo di Google Analytics non è collegato ad altri dati posseduti da Google.</p>
 <p> <strong>Il vostro diritto di opporvi alla raccolta dei vostri dati</strong> </p>
-<p>È possibile bloccare la memorizzazione dei cookie modificando di conseguenza le impostazioni del browser; si prega di notare, tuttavia, che in questi casi potrebbe non essere possibile utilizzare tutte le funzioni disponibili su questo sito web. Potete anche impedire a Google di raccogliere ed elaborare i dati generati dal cookie sull\'utilizzo del sito web (compreso il vostro indirizzo IP) scaricando e installando il plugin del browser disponibile al seguente link:&nbsp; <a href="https://tools.google.com/dlpage/gaoptout?hl=en" target="_blank" rel="nofollow noopener">https://tools.google.com/dlpage/gaoptout?hl=en</a>.</p>.
-<p>Per ulteriori informazioni sul trattamento dei dati da parte di Google Analytics consultare l\'informativa sulla privacy di Google:&nbsp; <a href="https://support.google.com/analytics/answer/6004245?hl=en" target="_blank" rel="nofollow noopener">https://support.google.com/analytics/answer/6004245?hl=en</a>.</p>.
+<p>È possibile bloccare la memorizzazione dei cookie modificando di conseguenza le impostazioni del browser; si prega di notare, tuttavia, che in questi casi potrebbe non essere possibile utilizzare tutte le funzioni disponibili su questo sito web. Potete anche impedire a Google di raccogliere ed elaborare i dati generati dal cookie sull\'utilizzo del sito web (compreso il vostro indirizzo IP) scaricando e installando il plugin del browser disponibile al seguente link:&nbsp; <a href="https://tools.google.com/dlpage/gaoptout?hl=en" target="_blank" rel="nofollow noopener">https://tools.google.com/dlpage/gaoptout?hl=en</a>.</p>
+<p>Per ulteriori informazioni sul trattamento dei dati da parte di Google Analytics consultare l\'informativa sulla privacy di Google:&nbsp; <a href="https://support.google.com/analytics/answer/6004245?hl=en" target="_blank" rel="nofollow noopener">https://support.google.com/analytics/answer/6004245?hl=en</a>.</p>
 <p> <strong>Il trattamento dei dati per nostro conto</strong> </p>
 <p>Abbiamo stipulato un contratto di elaborazione dei dati per il nostro utilizzo di Google Analytics e rispettiamo pienamente le severe disposizioni delle autorità tedesche per la protezione dei dati nell\'utilizzo di questo servizio.</p>
-<p> <strong>Raccolta di dati demografici da Google Analytics</strong> </p>.
-<p>Questo sito web utilizza la funzione Demographics di Google Analytics. Questa funzione consente di creare report che contengono dichiarazioni sull\'età, il sesso e gli interessi dei visitatori di questo sito. Questi dati vengono raccolti dalla pubblicità personalizzata di Google e dai dati dei visitatori di fornitori terzi. Questi dati non possono essere attribuiti ad individui specifici. È possibile disattivare questa funzione in qualsiasi momento modificando le impostazioni degli annunci nel proprio account Google, oppure è possibile vietare la raccolta generale dei propri dati da parte di Google Analytics seguendo la procedura descritta sopra.</p>.
+<p> <strong>Raccolta di dati demografici da Google Analytics</strong> </p>
+<p>Questo sito web utilizza la funzione Demographics di Google Analytics. Questa funzione consente di creare report che contengono dichiarazioni sull\'età, il sesso e gli interessi dei visitatori di questo sito. Questi dati vengono raccolti dalla pubblicità personalizzata di Google e dai dati dei visitatori di fornitori terzi. Questi dati non possono essere attribuiti ad individui specifici. È possibile disattivare questa funzione in qualsiasi momento modificando le impostazioni degli annunci nel proprio account Google, oppure è possibile vietare la raccolta generale dei propri dati da parte di Google Analytics seguendo la procedura descritta sopra.</p>
 <b>Cookies di Google Analytics</b>
 <table style="width:100%">
   <tr>
@@ -2144,7 +2144,7 @@ $ga_policy_sample_it = '
   </tr>
   <tr>
     <td>_gat_gat_gtag_UA_<property-id></td></td>
-    <td>Usato per strozzare il tasso di richiesta. Se Google Analytics viene fornito tramite Google Tag Manager, questo cookie sarà denominato _dc_gtm_ <property-id>.</td>.
+    <td>Usato per strozzare il tasso di richiesta. Se Google Analytics viene fornito tramite Google Tag Manager, questo cookie sarà denominato _dc_gtm_ <property-id>.</td>
     <td>1 Verbale</td>
   </tr>
   <tr>
@@ -2154,12 +2154,12 @@ $ga_policy_sample_it = '
   </tr>
    <tr>
     <td>AMP_TOKEN</td>
-    <td>Contiene un codice token che viene utilizzato per leggere l\'ID cliente dal servizio AMP Client ID Service. Abbinando questo ID con quello di Google Analytics, gli utenti possono essere abbinati quando si passa da contenuti AMP a contenuti non AMP.</td>.
+    <td>Contiene un codice token che viene utilizzato per leggere l\'ID cliente dal servizio AMP Client ID Service. Abbinando questo ID con quello di Google Analytics, gli utenti possono essere abbinati quando si passa da contenuti AMP a contenuti non AMP.</td>
     <td>30 secondi fino a 1 anno</td>
   </tr>
    <tr>
     <td>_gat</td>
-    <td>Utilizzato per monitorare il numero di richieste del server di Google Analytics quando si utilizza Google Tag Manager.</td>.
+    <td>Utilizzato per monitorare il numero di richieste del server di Google Analytics quando si utilizza Google Tag Manager.</td>
     <td>1 minuto</td>
   </tr>   
    <tr>
@@ -2179,7 +2179,7 @@ $ga_policy_sample_it = '
   </tr>   
    <tr>
     <td>__utmb</td>
-    <td>Usato per distinguere le nuove sessioni e le nuove visite. Questo cookie viene impostato quando la libreria javascript GA.js viene caricata e non esiste un cookie __utmb esistente. Il cookie viene aggiornato ogni volta che i dati vengono inviati al server di Google Analytics.</td>.
+    <td>Usato per distinguere le nuove sessioni e le nuove visite. Questo cookie viene impostato quando la libreria javascript GA.js viene caricata e non esiste un cookie __utmb esistente. Il cookie viene aggiornato ogni volta che i dati vengono inviati al server di Google Analytics.</td>
     <td>30 Minuti</td>
   </tr>   
    <tr>
@@ -2189,17 +2189,17 @@ $ga_policy_sample_it = '
   </tr>   
    <tr>
     <td>__utmz</td>
-    <td>Contiene informazioni sulla fonte di traffico o sulla campagna che ha indirizzato l\'utente verso il sito web. Il cookie viene impostato quando il GA.js javascript viene caricato e aggiornato quando i dati vengono inviati al server di Google Anaytics.</td>.
+    <td>Contiene informazioni sulla fonte di traffico o sulla campagna che ha indirizzato l\'utente verso il sito web. Il cookie viene impostato quando il GA.js javascript viene caricato e aggiornato quando i dati vengono inviati al server di Google Anaytics.</td>
     <td>6 mesi</td>
   </tr>   
    <tr>
     <td>__utmv</td>
-    <td>Contiene informazioni personalizzate impostate dallo sviluppatore web con il metodo _setCustomVar in Google Analytics. Questo cookie viene aggiornato ogni volta che nuovi dati vengono inviati al server di Google Analytics.</td>.
+    <td>Contiene informazioni personalizzate impostate dallo sviluppatore web con il metodo _setCustomVar in Google Analytics. Questo cookie viene aggiornato ogni volta che nuovi dati vengono inviati al server di Google Analytics.</td>
     <td>2 anni</td>
   </tr>   
     <tr>
     <td>__utmx</td>
-    <td>Utilizzato per determinare se un utente è incluso in un test A / B o Multivariata.</td
+    <td>Utilizzato per determinare se un utente è incluso in un test A / B o Multivariata.</td>
     <td>18 Mesi</td>
   </tr>   
     <tr>
@@ -2214,11 +2214,11 @@ $ga_policy_sample_it = '
 $twitter_policy_sample_it = '
 <h3>Twitter</h3>
 <p>Su questo sito web, il controllore ha integrato componenti di Twitter. Twitter è un servizio di microblogging multilingue e accessibile al pubblico, sul quale gli utenti possono pubblicare e diffondere i cosiddetti "tweet", ad es. messaggi brevi, limitati a 280 caratteri. Questi brevi messaggi sono disponibili per tutti, anche per coloro che non sono collegati a Twitter. I tweet vengono visualizzati anche ai cosiddetti follower del rispettivo utente. I follower sono altri utenti di Twitter che seguono i tweet di un utente. Inoltre, Twitter consente di rivolgersi a un vasto pubblico tramite hashtag, link o retweet.</p>
-<p>La società operativa di Twitter è Twitter International Company, One Cumberland Place, Fenian Street Dublin 2, D02 AX07, Irlanda.
+<p>La società operativa di Twitter è Twitter International Company, One Cumberland Place, Fenian Street Dublin 2, D02 AX07, Irlanda.</p>
 <p>Con ogni richiamo a una delle singole pagine di questo sito Internet, che è gestito dal controller e sul quale è stato integrato un componente Twitter (pulsante Twitter), il browser Internet del sistema informatico dell\'interessato viene automaticamente invitato a scaricare una visualizzazione del corrispondente componente Twitter di Twitter. Ulteriori informazioni sui pulsanti di Twitter sono disponibili sotto <a href="https://about.twitter.com/en/resources/buttons" target="blank">https://about.twitter.com/en/resources/buttons</a>. Nel corso di questa procedura tecnica, Twitter viene a conoscenza di quale sotto-pagina specifica del nostro sito web è stata visitata dall\'interessato. Lo scopo dell\'integrazione della componente Twitter è una ritrasmissione dei contenuti di questo sito web per consentire ai nostri utenti di introdurre questa pagina web nel mondo digitale e aumentare il numero di visitatori.</p>
 <p>Se l\'interessato viene registrato contemporaneamente su Twitter, Twitter rileva ad ogni chiamata al nostro sito web da parte dell\'interessato e per tutta la durata della sua permanenza sul nostro sito internet quale sotto-pagina specifica della nostra pagina internet è stata visitata dall\'interessato. Queste informazioni vengono raccolte attraverso la componente Twitter e associate al rispettivo account Twitter dell\'interessato. Se l\'interessato clicca su uno dei pulsanti di Twitter integrati nel nostro sito Internet, Twitter assegna queste informazioni all\'account utente Twitter personale dell\'interessato e memorizza i dati personali.</p>
-<p>Twitter riceve tramite la componente Twitter l\'informazione che l\'interessato ha visitato il nostro sito web, a condizione che l\'interessato abbia effettuato il login su Twitter al momento della chiamata al nostro sito web. Ciò avviene indipendentemente dal fatto che la persona clicchi o meno sul componente Twitter. Se una tale trasmissione di informazioni a Twitter non è auspicabile per l\'interessato, questi può impedirlo disconnettendosi dal proprio account Twitter prima di effettuare una chiamata al nostro sito web.</p>.
-<p>Le disposizioni vigenti in materia di protezione dei dati di Twitter sono accessibili sotto <a href="https://twitter.com/privacy?lang=en" target="blank">https://twitter.com/privacy?lang=en</a>.</p>.
+<p>Twitter riceve tramite la componente Twitter l\'informazione che l\'interessato ha visitato il nostro sito web, a condizione che l\'interessato abbia effettuato il login su Twitter al momento della chiamata al nostro sito web. Ciò avviene indipendentemente dal fatto che la persona clicchi o meno sul componente Twitter. Se una tale trasmissione di informazioni a Twitter non è auspicabile per l\'interessato, questi può impedirlo disconnettendosi dal proprio account Twitter prima di effettuare una chiamata al nostro sito web.</p>
+<p>Le disposizioni vigenti in materia di protezione dei dati di Twitter sono accessibili sotto <a href="https://twitter.com/privacy?lang=en" target="blank">https://twitter.com/privacy?lang=en</a>.</p>
 <b>Cookies da Twitter</b>
 <table style="width:100%"> 
 <tr>
@@ -2228,7 +2228,7 @@ $twitter_policy_sample_it = '
   </tr>
   <tr>
     <td>external_referer</td>
-    <td>Raccoglie dati anonimi come il numero di visite, il tempo medio trascorso sul sito e quali pagine sono state visualizzate. Scopo della personalizzazione e del miglioramento del servizio Twitter.
+    <td>Raccoglie dati anonimi come il numero di visite, il tempo medio trascorso sul sito e quali pagine sono state visualizzate. Scopo della personalizzazione e del miglioramento del servizio Twitter.</td>
     <td>6 giorni</td>
   </tr>
   <tr>
@@ -2261,7 +2261,7 @@ $facebook_policy_sample_it = '
 <p>La società operativa di Facebook è Facebook, Inc., 1 Hacker Way, Menlo Park, CA 94025, Stati Uniti. Se una persona vive al di fuori degli Stati Uniti o del Canada, il controller è Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublino 2, Irlanda.</p>
 <p>Ad ogni richiamo di una delle singole pagine di questo sito Internet, gestito dal controller e nel quale è stato integrato un componente Facebook (plug-in Facebook), il browser web del sistema informatico dell\'interessato viene automaticamente invitato a scaricare la visualizzazione del corrispondente componente Facebook da Facebook attraverso il componente Facebook. Una panoramica di tutti i plug-in di Facebook è accessibile sotto <a href="https://facebook.com/about/privacy/" target="blank">https://developers.facebook.com/docs/plugins/</a>. Nel corso di questa procedura tecnica, Facebook viene messo a conoscenza di quale sotto-sito specifico del nostro sito web è stato visitato dall\'interessato.</p>
 <p>Se l\'interessato viene registrato contemporaneamente su Facebook, Facebook riconosce ad ogni chiamata al nostro sito web da parte dell\'interessato - e per tutta la durata della sua permanenza sul nostro sito Internet - quale sotto-sito specifico della nostra pagina Internet è stato visitato dall\'interessato. Queste informazioni vengono raccolte attraverso il componente Facebook e associate al rispettivo account Facebook dell\'interessato. Se l\'interessato clicca su uno dei pulsanti di Facebook integrati nel nostro sito web, ad esempio il pulsante "Mi piace", o se l\'interessato invia un commento, allora Facebook abbina queste informazioni con l\'account utente personale di Facebook dell\'interessato e memorizza i dati personali.</p>
-<p>Facebook riceve sempre, attraverso il componente Facebook, informazioni sulla visita al nostro sito web da parte dell\'interessato, ogni volta che l\'interessato viene registrato contemporaneamente su Facebook durante la chiamata al nostro sito web. Ciò avviene indipendentemente dal fatto che l\'interessato clicchi o meno sul componente Facebook. Se una tale trasmissione di informazioni a Facebook non è auspicabile per l\'interessato, questi può impedirlo disconnettendosi dal proprio account Facebook prima di effettuare una chiamata al nostro sito web.</p>.
+<p>Facebook riceve sempre, attraverso il componente Facebook, informazioni sulla visita al nostro sito web da parte dell\'interessato, ogni volta che l\'interessato viene registrato contemporaneamente su Facebook durante la chiamata al nostro sito web. Ciò avviene indipendentemente dal fatto che l\'interessato clicchi o meno sul componente Facebook. Se una tale trasmissione di informazioni a Facebook non è auspicabile per l\'interessato, questi può impedirlo disconnettendosi dal proprio account Facebook prima di effettuare una chiamata al nostro sito web.</p>
 <p>La direttiva sulla protezione dei dati pubblicata da Facebook, disponibile all\'indirizzo <a href="https://facebook.com/about/privacy/" target="blank">https://facebook.com/about/privacy/</a>, fornisce informazioni sulla raccolta, l\'elaborazione e l\'utilizzo dei dati personali da parte di Facebook. Inoltre, viene spiegato quali sono le possibilità di impostazione offerte da Facebook per proteggere la privacy della persona interessata. Inoltre, sono disponibili diverse opzioni di configurazione per consentire l\'eliminazione della trasmissione dei dati a Facebook. Queste applicazioni possono essere utilizzate dall\'interessato per eliminare una trasmissione di dati a Facebook.
 <b>Cookies da Facebook</b>
 <table style="width:100%">
@@ -2294,7 +2294,7 @@ $fbpixel_policy_sample_it = '
   </tr>
   <tr>
     <td>act, c_user, datr, fr, pl, presence, sd, wd, xs</td>
-    <td>Facebook utilizza diversi cookie per la sessione di identificazione e analisi. Questi sono utilizzati per rilevare se si è connessi come utente su Facebook, per scopi di tracciamento e da quale URL viene utilizzata la funzione Condividi / Mi piace.</td>.
+    <td>Facebook utilizza diversi cookie per la sessione di identificazione e analisi. Questi sono utilizzati per rilevare se si è connessi come utente su Facebook, per scopi di tracciamento e da quale URL viene utilizzata la funzione Condividi / Mi piace.</td>
     <td>variabile</td>
   </tr>   
  </table>
@@ -2338,12 +2338,12 @@ $linkedin_policy_sample_it = '
   </tr>  
   <tr>
     <td>trkCode</td>
-    <td>Questo cookie è utilizzato da LinkedIn per supportare la funzionalità di aggiunta di un pannello di invito con l\'etichetta \'Follow Us\'</td>.
+    <td>Questo cookie è utilizzato da LinkedIn per supportare la funzionalità di aggiunta di un pannello di invito con l\'etichetta \'Follow Us\'</td>
     <td>1 anno</td>
   </tr>    
   <tr>
     <td>trkInfo</td>
-    <td>Questo cookie è utilizzato da LinkedIn per supportare la funzionalità di aggiunta di un pannello di invito con l\'etichetta \'Follow Us\'</td>.
+    <td>Questo cookie è utilizzato da LinkedIn per supportare la funzionalità di aggiunta di un pannello di invito con l\'etichetta \'Follow Us\'</td>
     <td>1 anno</td>
   </tr>   
   <tr>
@@ -2353,17 +2353,17 @@ $linkedin_policy_sample_it = '
   </tr>  
   <tr>
     <td>liap</td>
-    <td>Cookie utilizzato per l\'accesso con Linkedin e/o per consentire la funzione Linkedin follow.</td>.
+    <td>Cookie utilizzato per l\'accesso con Linkedin e/o per consentire la funzione Linkedin follow.</td>
     <td>90 giorni</td>
   </tr>   
   <tr>
     <td>lissc</td>
-    <td>Cookie utilizzato per l\'accesso con Linkedin e/o per consentire la funzione Linkedin follow.</td>.
+    <td>Cookie utilizzato per l\'accesso con Linkedin e/o per consentire la funzione Linkedin follow.</td>
     <td>1 anno</td>
   </tr>    
   <tr>
     <td>spectroscopyId</td>
-    <td>Questi cookie sono impostati da LinkedIn per scopi pubblicitari, tra cui: tracciare i visitatori in modo che possano essere presentati annunci più rilevanti, consentendo agli utenti di utilizzare le funzioni \'Applica con LinkedIn\' o \'Accedi con LinkedIn\', raccogliendo informazioni su come i visitatori utilizzano il sito, ecc.</td>.
+    <td>Questi cookie sono impostati da LinkedIn per scopi pubblicitari, tra cui: tracciare i visitatori in modo che possano essere presentati annunci più rilevanti, consentendo agli utenti di utilizzare le funzioni \'Applica con LinkedIn\' o \'Accedi con LinkedIn\', raccogliendo informazioni su come i visitatori utilizzano il sito, ecc.</td>
     <td>Sessione</td>
   </tr>     
 </table>
@@ -2422,7 +2422,7 @@ $shareaholic_policy_sample_it = '
   </tr>      
   <tr>
     <td>hsfirstvisit</td>
-    <td>Shareaholic.com utilizza questo cookie su tutte le pagine. Viene utilizzato per salvare il tempo della prima chiamata.</td>.
+    <td>Shareaholic.com utilizza questo cookie su tutte le pagine. Viene utilizzato per salvare il tempo della prima chiamata.</td>
     <td>10 anni</td>
   </tr>      
   <tr>
@@ -2538,7 +2538,7 @@ $matomo_policy_sample_it = '
 <p> Questo sito web utilizza il servizio di analisi web Matomo (ex Piwik) per analizzare e migliorare regolarmente l\'uso del nostro sito web. Il servizio viene utilizzato per la nostra pagina di login per il portale clienti "Portale AGURS". Con le statistiche possiamo migliorare la nostra offerta e renderla più interessante per voi come utente. La base legale per l\'utilizzo di Matomo è l\'Art. 6 comma 1 f DSGVO. </p>
 <p> I cookie sono memorizzati sul vostro computer per questa valutazione. È possibile regolare la valutazione eliminando i cookie esistenti e impedendo la memorizzazione dei cookie. Se impedite la memorizzazione dei cookie, vi segnaliamo che potreste non essere in grado di utilizzare questo sito web nella sua interezza. Impedire la memorizzazione dei cookie è possibile impostando il vostro browser. </p>
 <p> Questo sito web utilizza Matomo con l\'estensione "AnonymizeIP". In questo modo gli indirizzi IP vengono elaborati abbreviati e si può quindi escludere una relazione diretta con la persona. L\'indirizzo IP trasmesso da Matomo dal vostro browser non verrà unito ad altre informazioni da noi raccolte. </p>
-<p> Il programma Matomo è un progetto open source. Le informazioni sulla privacy di terzi sono disponibili all\'indirizzo <a href="https://matomo.org/privacy/"> https://matomo.org/privacy/ </a> </p>.
+<p> Il programma Matomo è un progetto open source. Le informazioni sulla privacy di terzi sono disponibili all\'indirizzo <a href="https://matomo.org/privacy/"> https://matomo.org/privacy/ </a> </p>
 <b>Cookies da Matomo</b>
 <table style="width:100%">
 <tr>
@@ -2563,7 +2563,7 @@ $matomo_policy_sample_it = '
   </tr>
   <tr>
     <td>piwik_ignore</td>
-    <td>Cookie è impostato quando un utente vieta l\'uso di Matomo per il tracciamento. Una volta impostato il cookie, nessun dato dell\'utente viene inviato al server Matomo.</td>.
+    <td>Cookie è impostato quando un utente vieta l\'uso di Matomo per il tracciamento. Una volta impostato il cookie, nessun dato dell\'utente viene inviato al server Matomo.</td>
     <td>2 anni</td>
   </tr>  
    <tr>
@@ -2647,7 +2647,7 @@ $wpml_policy_text_it = '
   </tr>  
    <tr>
     <td>wpml_referer_url</td>
-    <td>Salva l\'ultimo URL richiesto nel frontend.</td>.
+    <td>Salva l\'ultimo URL richiesto nel frontend.</td>
     <td>1 anno</td>
   </tr>    
  </table>
@@ -2713,7 +2713,7 @@ $wordpress_policy_sample_it = '
   </tr> 
    <tr>
     <td>wordpress_akm_mobile</td>
-    <td>Questi cookie vengono utilizzati solo per l\'area di amministrazione di WordPress.</td>.
+    <td>Questi cookie vengono utilizzati solo per l\'area di amministrazione di WordPress.</td>
     <td>1 anno</td>
   </tr>   
    <tr>
@@ -2734,7 +2734,7 @@ $wordpress_policy_sample_it = '
    <tr>
     <td>ab</td>
     <td>È utilizzato per il test A / B delle nuove funzionalità.</td>
-    <td>Sessione</tds
+    <td>Sessione</td>
   </tr>      
    <tr>
     <td>akm_mobile</td>
@@ -2832,10 +2832,10 @@ Sollten Sie ein YouTube-Konto haben und angemeldet sein, werden diese Daten Ihre
 
 $youtube_policy_sample_it = '
 <h3>YouTube</h3>
-<p> In questa pagina di servizio video, utilizziamo YouTube, la società YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. </p>
-<p> Accedendo alle pagine del nostro sito web che hanno integrato i video di YouTube, i dati saranno trasmessi a YouTube, memorizzati e valutati. <br />
+<p>In questa pagina di servizio video, utilizziamo YouTube, la società YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. </p>
+<p>Accedendo alle pagine del nostro sito web che hanno integrato i video di YouTube, i dati saranno trasmessi a YouTube, memorizzati e valutati. <br />
 Se hai un account YouTube e hai effettuato l\'accesso, queste informazioni saranno associate al tuo account personale e ai dati in esso memorizzati. </p>
-<p> Quali dati raccoglie Google e a cosa servono questi dati si possono trovare su <a href="https://www.google.com/intl/en/policies/privacy/" leggere class="external" rel="nofollow"> https://www.google.com/intl/en/policies/privacy/ </a>. </p>
+<p>Quali dati raccoglie Google e a cosa servono questi dati si possono trovare su <a href="https://www.google.com/intl/en/policies/privacy/" leggere class="external" rel="nofollow"> https://www.google.com/intl/en/policies/privacy/ </a>. </p>
 <b>Cookies da Youtube</b>
 <table style="width:100%">
   <tr>
@@ -2845,12 +2845,12 @@ Se hai un account YouTube e hai effettuato l\'accesso, queste informazioni saran
   </tr>
   <tr>
     <td>SID</td>
-    <td>Google utilizza cookie come i cookie NID e SID per personalizzare la pubblicità nei prodotti Google, come ad esempio la ricerca Google. Utilizzando tali cookie, Google registra, ad esempio, le vostre ultime ricerche, le vostre precedenti interazioni con gli annunci o i risultati di ricerca di un inserzionista e le vostre visite al sito web di un inserzionista. In questo modo, Google può visualizzare la pubblicità personalizzata su Google. Anche altri prodotti Google, come YouTube o Doubleclick, utilizzano questi cookie per selezionare pubblicità più rilevanti.</td>.
+    <td>Google utilizza cookie come i cookie NID e SID per personalizzare la pubblicità nei prodotti Google, come ad esempio la ricerca Google. Utilizzando tali cookie, Google registra, ad esempio, le vostre ultime ricerche, le vostre precedenti interazioni con gli annunci o i risultati di ricerca di un inserzionista e le vostre visite al sito web di un inserzionista. In questo modo, Google può visualizzare la pubblicità personalizzata su Google. Anche altri prodotti Google, come YouTube o Doubleclick, utilizzano questi cookie per selezionare pubblicità più rilevanti.</td>
     <td>1 anno</td>
   </tr>
   <tr>
     <td>VISITOR_INFO1_LIVE</td>
-    <td>Si tratta di un cookie che YouTube imposta per calcolare la larghezza di banda dell\'utente. Questa informazione viene utilizzata per determinare se l\'utente deve utilizzare la nuova o la vecchia interfaccia utente del lettore.</td>.
+    <td>Si tratta di un cookie che YouTube imposta per calcolare la larghezza di banda dell\'utente. Questa informazione viene utilizzata per determinare se l\'utente deve utilizzare la nuova o la vecchia interfaccia utente del lettore.</td>
     <td>0-365 giorni</td>
   </tr>
   <tr>
@@ -2860,7 +2860,7 @@ Se hai un account YouTube e hai effettuato l\'accesso, queste informazioni saran
   </tr>  
   <tr>
     <td>APISID</td>
-    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>.
+    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>
     <td>10 anni</td>
   </tr>   
   <tr>
@@ -2870,17 +2870,17 @@ Se hai un account YouTube e hai effettuato l\'accesso, queste informazioni saran
   </tr>  
   <tr>
     <td>GPS</td>
-    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>.
+    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>
     <td>1 Giorno</td>
   </tr>    
     <tr>
     <td>SSID</td>
-    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>.
+    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>
     <td>1 anno</td>
   </tr>    
     <tr>
     <td>LOGIN_INFO</td>
-    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>.
+    <td>YouTube è una piattaforma per la fornitura e la pubblicazione di video e fa parte di Google. YouTube raccoglie i dati degli utenti attraverso i video incorporati nei siti web, che vengono uniti ai dati del profilo di altri servizi di Google. In questo modo è possibile mostrare ai visitatori del sito web pubblicità mirata attraverso una vasta gamma di siti web propri e di terzi.</td>
     <td>2 anni</td>
   </tr>    
     <tr>
@@ -3004,7 +3004,7 @@ $vimeo_policy_sample = '
 </table>
 ';
 
-$vimeo_policy_sample_en = '
+$vimeo_policy_sample_it = '
 <h3>Vimeo</h3>
 <p>Il nostro sito web include i plugin del Vimeo Video Portal di Vimeo, LLC, 555 West 18th Street, NY, New York 10011, USA. Ogni volta che visitate una pagina che offre uno o più video clip Vimeo, viene stabilita una connessione diretta tra il vostro browser e un server Vimeo negli Stati Uniti. Queste informazioni sulla vostra visita e il vostro indirizzo IP sono memorizzati lì. Attraverso le interazioni con i plugin Vimeo (ad esempio, cliccando sul pulsante Start), anche queste informazioni vengono trasmesse a Vimeo e lì memorizzate. Per ulteriori informazioni sulla raccolta e l\'utilizzo dei dati sulla privacy da parte di Vimeo, consultare la Vimeo <a href="http://vimeo.com/privacy"> Privacy Policy </a>.</p>
 <p>Se hai un account utente Vimeo e non vuoi che Vimeo raccolga informazioni su di te da questo sito web e le colleghi ai tuoi dati utente memorizzati con Vimeo, devi effettuare il logout da Vimeo prima di visitare questo sito web.</p>
@@ -3029,7 +3029,7 @@ $vimeo_policy_sample_en = '
   </tr>
   <tr>
     <td>vuid</td>
-    <td>Analisi del traffico: Analitica ID.</td> Unico ID.</td>
+    <td>Analisi del traffico: Analitica ID.</td>
     <td>2 anni</td>
   </tr>
   <tr>
@@ -3045,7 +3045,7 @@ $vimeo_policy_sample_en = '
 </table>
 ';
 
-$vimeo_policy_sample_it = '
+$vimeo_policy_sample_en = '
 <h3>Vimeo</h3>
 <p>Our website includes plugins from Vimeo Video Portal of Vimeo, LLC, 555 West 18th Street, NY, New York 10011, USA. Each time you visit a page that offers one or more Vimeo video clips, a direct connection is established between your browser and a Vimeo server in the United States. This information about your visit and your IP address are stored there. Through interactions with the Vimeo plugins (for example, clicking the Start button), this information is also transmitted to Vimeo and stored there. For more information about Vimeo\'s collection and use of your privacy data, see the Vimeo <a href="http://vimeo.com/privacy"> Privacy Policy </a>.</p>
 <p>If you have a Vimeo user account and do not want Vimeo to collect information about you from this website and link it to your member data stored with Vimeo, you must log out of Vimeo before visiting this website.</p>

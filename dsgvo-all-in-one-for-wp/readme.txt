@@ -3,9 +3,9 @@ Contributors: mlfactory
 Donate link: https://www.paypal.me/dsgvoallinoneforwp
 Tags: DSGVO, Cookie Notice, cookie, GDPR, Datenschutz
 Requires at least: 4.5
-Tested up to: 6.7
+Tested up to: 6.8.2
 Requires PHP: 5.6
-Stable tag: 4.8
+Stable tag: 4.9
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -17,18 +17,17 @@ Bring Wordpress up to date according to the General Data Protection Regulation G
 
 Responsive Cookie Notice - Imprint + Privacy Policy Generator - 2 click solution for external Services
 
-For a better overview of the functions please visit our website <a href="http://dsgvo-for-wp.com" target="blank">www.dsgvo-for-wp.com</a>
+<a href="https://dsgvo-for-wp.com" target="blank">For a better overview www.dsgvo-for-wp.com</a> - <a href="https://dsgvo-for-wp.com/pro-version-demo/">Demo</a>
 
-**DE - AT - CH**
-**Supports Polylang - TranslatePress - qTranslate X & WPML (DE - EN - IT)**
+**The Pro version offers many more features...**
 
-**In the Pro Version you have some more features...**
+All colors & texts easily changeable, more Cookie Notice Layouts, over 70 external services.
 
-All colors & texts easily changeable.
+**The Pro version supports more than 70 external services:**
+Google Adsense, Google Analytics, Google Fonts, Google Maps, Font Library, Adobe Fonts, FontAwesome, Amazon Ads, reCAPTCHA, hCaptcha, OpenStreetMap, AddThis, AddToAny, YouTube, Dailymotion, Vimeo, Soundcloud, Mixcloud, Hearthis and many more.
 
-**The Pro version supports more than 70 external services:** such as Google Adsense, Google Fonts, Font Library, Amazon Ads, Google Maps, reCAPTCHA, OpenStreetMap, AddThis, AddToAny, YouTube, Dailymotion, Vimeo, Soundcloud und viele weitere.
-
-**Makes the following plugins GDPR compliant:** Contact Form 7, Gravity Forms, WooCommerce, Slimstat Analytics, OneSignal, LeafLetMap, Analytify, MonsterInsights.
+**Makes the following plugins GDPR compliant:** 
+<a href="https://wordpress.org/plugins/hcaptcha-for-forms-and-more/" target="blank">hCaptcha for WP</a>, <a href="https://wordpress.org/plugins/contact-form-7/" target="blank">Contact Form 7</a>, <a href="https://www.gravityforms.com/" target="blank">Gravity Forms</a>, <a href="https://wordpress.org/plugins/woocommerce" target="blank">WooCommerce</a>, <a href="https://wordpress.org/plugins/wp-slimstat/" target="blank">Slimstat Analytics</a>, <a href="https://wordpress.org/plugins/onesignal-free-web-push-notifications/" target="blank">OneSignal</a>, <a href="https://wordpress.org/plugins/leaflet-map/" target="blank">LeafLetMap</a>, <a href="https://wordpress.org/plugins/wp-analytify/" target="blank">Analytify</a>, <a href="https://wordpress.org/plugins/google-analytics-for-wordpress/" target="blank">MonsterInsights</a>.
 
 **Supports all popular Pagebuilders** such as Elementor, WPBakery, Visual Composer, Fusion Builder, Divi Builder
 
@@ -36,36 +35,46 @@ All colors & texts easily changeable.
 <h3>🆓 Features Free Version</h3>
 
 * **Cookie Notice**
-Responsive - selective Opt-In & Opt-Out - with animation
+Fully Responsive - selective Opt-In & Opt-Out - with animation
 Selectable between 2 color schemes (light & dark gray).
 Selectable between 3 layouts (sticky at the bottom of the screen / popup / popup + privacy policy).
-The most important texts can be changed by you.
+The most important texts can be changed.
 
 * **Service Control**
 Overview of accepted cookies and external services.
 Provides the user with information about the current status of the services after acceptance / rejection of cookies / services.
-Can also be used on any page via shortcode.
- 
-* **Automatically generated Privacy Policy**
+
+
+* **Privacy Policy Generator**
 Always up-to-date - also for the external services used (including listing of cookies and their details)
-Depending on the selected external services and used WordPress Plugins, the Privacy Policy are automatically generated for these services.
+Includes privacy texts and cookie usage list for WordPress and WordPress Plugins.
 
 * **Imprint Generator**
 The Imprint Generator automatically creates a legally compliant Imprint including disclaimer and copyright passage.
 
-* **Supports Polylang / TranslatePress & WPML (DE - EN & IT)**
-All Texts of the three languages included.
-
 * **Integrates the following services according to DSGVO (Opt In & Opt Out - 2 Click Solution)**
-YouTube - via Shortcode (NEW),Google Analytics, Google Tag Manager, VG Wort, Matomo (Piwik) , Facebook Pixel, Facebook Comments, Facebook "Like Button", Shareaholic, Twitter "Tweet Button", LinkendIn Button.
-The user can refuse or accept the use of the Services (Opt in - Opt out). He can also allow or deny individual services.
-If not agreed, the services will be blocked and the content of the services will be replaced by a colored box with the option to allow the respective service.
+Vimeo (Shortcode)
+YouTube (Shortcode)
+Google Analytics & Tag Manager
+VG Wort, Matomo (Piwik)
+Facebook Pixel / Comments / Like Button
+Shareaholic
+X (Twitter) Share Button
+LinkendIn Share Button
 
 * **Supports the following plugins**
-Google Analytics Dashboard Plugin for WordPress by Analytify, Google Analytics Dashboard Plugin for WordPress by MonsterInsights, Worthy (VG Wort)
+<a href="https://wordpress.org/plugins/wp-analytify/">Analytify</a> - <a href="https://wordpress.org/plugins/google-analytics-for-wordpress/">MonsterInsights</a> - <a href="https://wordpress.org/plugins/koko-analytics/">Koko Analytics</a> - <a href="https://wordpress.org/plugins/wp-worthy/">Worthy</a>
+
+* **Supports Polylang – TranslatePress – qTranslate X & WPML (DE - EN & IT)**
+All Texts of the three languages included.
+
+* **Google Fonts Scanner**
+The free version includes a Google Fonts scanner. The Scanner allows you to check if your website uses Google Fonts.
+If so, you can host the fonts locally yourself or purchase the Pro Version, which automatically saves all the used Google Fonts locally.
 
 * **Information/Extract of user data / PDF export**
-Shows the user all data stored about him. Export via PDF possible!
+Shows the user which data stored about him.
+Export function - the user can export all saved data as a PDF.
 
 * **Deletion of user data**
 The user can delete his data himself using a form.
@@ -77,7 +86,7 @@ Info: the UID contains 30 digits - the last 5 digits are anonymized before savin
 
 * **Acceptance of the Privacy Policy when posting a comment (Blog)**
 
-* PHP7 compatible
+* PHP7 & PHP8 compatible
 
 * Supports DNT (DoNotTrack)
 
@@ -92,24 +101,23 @@ Info: the UID contains 30 digits - the last 5 digits are anonymized before savin
 Full page overlay, overlay + privacy policy, sticky at the bottom of the screen, block layout (in one of the 4 corners of the website)
 
 * **Supports the following plugins**
-WooCommerce, Contact Form 7 Gravity Forms, OneSignal, Slimstat Analytics, LeafLetMap
+hCatpcha for WP, Contact Form 7, Gravity Forms, WooCommerce, Slimstat,OneSignal, LeafLetMap, Analytify, MonsterInsights, Worthy (VG Wort)
+
+* **iFrame Blocker**
+As we cannot predefine all external services, an iframe blocker is integrated. You can easily define which iframe URLs should be blocked. Additionally, you can specify a data protection text and the cookies used for the service.
 
 * **Supports many Page Builders**
 Supports Elementor, WPBakery, Visual Composer, Fusion Builder, Divi Builder.
 This means the elements of the above mentioned pagebuilders like Youtube, Vimeo or Google Maps.
 The elements of the pagebuilders can be automatically replaced by the plugin in compliance with GDPR.
 
-* **Automatic replacement of existing external integrations**
-Replace all existing integrations of Youtube, Vimeo, Dailymotion, Soundcloud, Google Maps, VG Wort, OpenStreetMap, reCAPTCHA, Soundcloud, Hearthis, Mixcloud automatically GDPR compliant (2 click solution).
-Works also with all known Page Builders.
-
-* **Automated Thumbnail**
-Currently for Youtube & Vimeo the Thumbnail can be automatically saved to your webspace/server.
-The thumbnail is shown to the user instead of the video element and the option to allow the respective service.
-Since the thumbnail is stored locally, this solution is GDPR compliant.
-
 * **Supported external services / Integrates the following services according to GDPR:**
-Google Adsense, Google Fonts, Font Library, Font Awesome, Matomo (Piwik), Komoot, Amazon Ads, Adform, Clicmanager, Google Partner Badge, Google Maps, reCAPTCHA, Statcounter, Facebook Pixel, Facebook Like, Instagram Feed, Alexa, AddThis, AddToAny share&feed, Shareaholic, Printerest, ShareThis, YouTube, YouTube Playlist, Dailymotion, Vimeo, SlideShare, Soundcloud, Mixcloud, Instagram and many more...
+Google Adsense - Google Fonts - Font Library - Adobe Fonts - Font Awesome - Matomo (Piwik) - Komoot - Amazon Ads - Adform - Clicmanager - Google Partner Badge - Google Maps - reCAPTCHA - hCaptcha - Google Docs - Google Forms - Statcounter - Facebook Pixel - Facebook Like - Instagram Feed - Alexa - AddThis - AddToAny share&feed - Shareaholic - Printerest - ShareThis - YouTube - YouTube Playlist - Dailymotion - Vimeo - SlideShare - Soundcloud - Mixcloud - Instagram - Calendly and many more...
+
+* **Automatic replacement of existing external integrations**
+Youtube, Vimeo, Dailymotion, Soundcloud, Google Maps, VG Wort, OpenStreetMap, reCAPTCHA, hCatpcha, Soundcloud, Hearthis, Mixcloud
+Simple, no adjustments or shortcodes needed. The existing integrations will automatically be replaced in compliance with GDPR (2 click solution).
+Works also with all known Page Builders.
 
 * **Google Fonts** GDPR compliant use. All used Google fonts are automatically saved on your webspace/server and at the same time the loading of the fonts from the Google servers is suppressed.
 From now on the used fonts are loaded locally and not from the Google servers.
@@ -117,6 +125,14 @@ Supports all Google Fonts embedding types i.e. also used Google Fonts by plugins
 
 * **Font Library** GDPR compliant use. All used fonts from Font Library are automatically saved to your webspace/server and at the same time the loading of fonts from the Font Library servers is suppressed.
 The used fonts are now loaded locally and not from the font library servers.
+
+* **Adobe Fonts** GDPR compliant use. All used fonts from Adobe Fonts are automatically saved to your webspace/server and at the same time the loading of fonts from the Adobe servers is suppressed.
+The used fonts are now loaded locally and not from the font library servers.
+
+* **Automated Thumbnail**
+For Youtube & Vimeo the Thumbnail can be automatically saved to your webspace/server.
+The thumbnail is shown to the user instead of the video element and the option to allow the respective service.
+Since the thumbnail is stored locally, this solution is GDPR compliant.
 
 * **ALL easily changeable**
 All texts & colors freely changeable - comfortable via the backend
@@ -379,9 +395,11 @@ Bugfixes: Dateien nicht gefunden  (google_fonts.php, tooltipster.bundle.min, too
 = 4.6 =
 Bugfixes: Security issue fixed
 = 4.7 =
-Bugfixes: Security issue fixed, Email Adress display bug fixed | Changes: Cookie Notice Design revised, Policy Text for Germany changed
+Bugfixes: Security issue fixed, Email Adress display bug fixed | Improvements: Cookie Notice Design revised, Policy Text for Germany changed
 = 4.8 =
 Bugfixes: Fixed display issues with v4.7
+= 4.9 =
+New Functions: Google Content Mode V2 | Bugfixes: Cookie Notice Layout 1 - Layout fix, Settings Import/Export fixed | Improvements: Cookie Notice Layout / Design revised, YouTube Thumbnail function revised, Vimeo Thumbnail function revised
 
 == Upgrade Notice ==
 
@@ -475,3 +493,5 @@ Bugfixes: Security issue fixed
 Bugfixes: Security issue fixed, Email Adress display bug fixed | Changes: Cookie Notice Design revised, Policy Text for Germany changed
 = 4.8 =
 Bugfixes: Fixed display issues with v4.7
+= 4.9 =
+New Functions: Google Content Mode V2 | Bugfixes: Cookie Notice Layout 1 - Layout fix, Settings Import/Export fixed | Improvements: Cookie Notice Layout / Design revised, YouTube Thumbnail function revised, Vimeo Thumbnail function revised

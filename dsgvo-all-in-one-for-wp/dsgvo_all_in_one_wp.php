@@ -3,7 +3,7 @@
 
  * Plugin Name: DSGVO All in one for WP
 
- * Version: 4.8
+ * Version: 4.9
 
  * Plugin URI: http://www.dsgvo-for-wp.com
 
@@ -15,7 +15,7 @@
 
  * Requires at least: 4.5
 
- * Tested up to: 6.7
+ * Tested up to: 6.8.2
 
  * License: GPLv2
 
@@ -100,7 +100,6 @@ class dsdvo_wp_backend {
 			
 			add_action( 'admin_notices', __CLASS__ . '::dsgvoaiofree_new_gfont_found' );
 			
-			//update_option('dsgvoaio_gfonts_found_new', 0);
 		}
 	}
 	
@@ -191,7 +190,7 @@ class dsdvo_wp_backend {
 
 	public static function dsgvoaiofree_process_settings_import() {
 		
-		//$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
+		$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
 	
 		if( empty( $_POST['dsgvoaiofree_action'] ) || 'import_settings' != $_POST['dsgvoaiofree_action'] )
 			return;
@@ -201,8 +200,10 @@ class dsdvo_wp_backend {
 
 		if( ! current_user_can( 'manage_options' ) )
 			return;
-
-		$extension = end( explode( '.', $_FILES['import_file']['name'] ) );
+		
+		$extension = explode( '.', $_FILES['import_file']['name'] );
+	
+		$extension = end($extension) ;
 
 		if( $extension != 'json' ) {
 			
@@ -211,15 +212,23 @@ class dsdvo_wp_backend {
 		}
 
 		$import_file = $_FILES['import_file']['tmp_name'];
-
+		
 		if( empty( $import_file ) ) {
 			
 			wp_die( wp_kses(__( 'Please select a file', 'dsgvo-all-in-one-for-wp' ), $kses_allowed_html) );
 			
 		}
+
+		if(!file_exists(WP_CONTENT_DIR ."/dsgvo-all-in-one-for-wp")) {
+						
+			wp_mkdir_p(WP_CONTENT_DIR ."/dsgvo-all-in-one-for-wp");
+						
+		}
 		
-		$settings = json_decode( wp_remote_get( $import_file ), true );
-	
+		move_uploaded_file($_FILES['import_file']['tmp_name'], WP_CONTENT_DIR.'/dsgvo-all-in-one-for-wp/import.json');
+
+		$settings = wp_json_file_decode(WP_CONTENT_DIR.'/dsgvo-all-in-one-for-wp/import.json');
+
 		if (isset($settings)) {
 			
 			foreach($settings as $optionname => $optionvalue) {
@@ -230,7 +239,13 @@ class dsdvo_wp_backend {
 			
 		}
 		
-		update_option( 'dismissed-dsgvo_msg_import', FALSE );
+		update_option('dismissed-dsgvo_msg_import', FALSE );
+		
+		if(file_exists(WP_CONTENT_DIR.'/dsgvo-all-in-one-for-wp/import.json')) {
+		
+			wp_delete_file(WP_CONTENT_DIR.'/dsgvo-all-in-one-for-wp/import.json');
+		
+		}
 
 		wp_safe_redirect( admin_url( 'admin.php?page=dsgvoaio-free-settings-page&parm=importsuccess' ) ); exit;
 
@@ -386,6 +401,8 @@ class dsdvo_wp_backend {
 			if ($_GET['parm'] == 'importsuccess') {
 					
 				if ( ! get_option('dismissed-dsgvo_msg_import', FALSE ) ) {
+					
+					$kses_allowed_html = dsdvo_wp_frontend::dsdvo_kses_allowed();
 						
 					echo '
 					<script>
@@ -473,7 +490,7 @@ class dsdvo_wp_backend {
 			$key = sanitize_text_field($_POST['key']);
 
 			if ($key == "wordpressmain") {
-
+//TODO IT
 				$plugins_policy = "";
 
 				if ($language == "de") {
@@ -536,7 +553,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_ga_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_ga_policy_en');
 
@@ -558,7 +575,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_fbpixel_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_fbpixel_policy_en');
 
@@ -580,7 +597,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_koko_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_koko_policy_en');
 
@@ -602,7 +619,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_piwik_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_piwik_policy_en');
 
@@ -624,7 +641,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_vgwort_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_vgwort_policy_en');
 
@@ -646,7 +663,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_gtagmanager_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_gtagmanager_policy_en');
 
@@ -668,7 +685,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_facebook_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_facebook_policy_en');
 
@@ -690,7 +707,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_facebook_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_facebook_policy_en');
 
@@ -712,7 +729,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_linkedin_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_linkedin_policy_en');
 
@@ -734,7 +751,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_youtube_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_youtube_policy_en');
 
@@ -756,7 +773,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_vimeo_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_vimeo_policy_en');
 
@@ -778,7 +795,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_shareaholic_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_shareaholic_policy_en');
 
@@ -800,7 +817,7 @@ class dsdvo_wp_backend {
 
 					$policytext = get_option('dsdvo_twitter_policy');
 
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 
 					$policytext = get_option('dsdvo_twitter_policy_en');
 
@@ -1121,6 +1138,8 @@ class dsdvo_wp_backend {
 
 					update_option("dsdvo_ga_policy_en", wp_kses_post($ga_policy_sample_en), false);
 
+					update_option("dsdvo_ga_policy_it", wp_kses_post($ga_policy_sample_it), false);
+					
 				}
 
 				if ($_POST['service'] == "mainpolicy" or $_POST['service'] == "allpolicys") {
@@ -1129,6 +1148,7 @@ class dsdvo_wp_backend {
 
 					update_option("dsdvo_policy_text_en", wp_kses_post($policy_demo_text_en), false);
 
+					update_option("dsdvo_policy_text_it", wp_kses_post($policy_demo_text_it), false);
 				}		
 
 				if ($_POST['service'] == "matomo" or $_POST['service'] == "allpolicys" or $_POST['service'] == "updatev31") {
@@ -1136,6 +1156,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_piwik_policy", wp_kses_post($matomo_policy_sample), false);
 
 					update_option("dsdvo_piwik_policy_en", wp_kses_post($matomo_policy_sample_en), false);
+					
+					update_option("dsdvo_piwik_policy_it", wp_kses_post($matomo_policy_sample_it), false);
 
 				}		
 
@@ -1144,6 +1166,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_fbpixel_policy", wp_kses_post($fbpixel_policy_sample), false);
 
 					update_option("dsdvo_fbpixel_policy_en", wp_kses_post($fbpixel_policy_sample_en), false);
+					
+					update_option("dsdvo_fbpixel_policy_it", wp_kses_post($fbpixel_policy_sample_it), false);
 
 				}	
 
@@ -1152,6 +1176,9 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_gtagmanager_policy", wp_kses_post($gtagmanager_policy_sample), false);
 
 					update_option("dsdvo_gtagmanager_policy_en", wp_kses_post($gtagmanager_policy_sample_en), false);
+					
+					update_option("dsdvo_gtagmanager_policy_it", wp_kses_post($gtagmanager_policy_sample_it), false);
+					
 
 				}	
 
@@ -1160,6 +1187,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_vgwort_policy", wp_kses_post($vgwort_policy_sample), false);
 
 					update_option("dsdvo_vgwort_policy_en", wp_kses_post($vgwort_policy_sample_en), false);
+					
+					update_option("dsdvo_vgwort_policy_it", wp_kses_post($vgwort_policy_sample_it), false);
 
 				}	
 					
@@ -1168,6 +1197,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_koko_policy", wp_kses_post($koko_policy_sample), false);
 
 					update_option("dsdvo_koko_policy_en", wp_kses_post($koko_policy_sample_en), false);
+					
+					update_option("dsdvo_koko_policy_it", wp_kses_post($koko_policy_sample_it), false);
 
 				}	
 				
@@ -1176,6 +1207,9 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_wordpress_policy", wp_kses_post($wordpress_policy_sample), false);
 
 					update_option("dsdvo_wordpress_policy_en", wp_kses_post($wordpress_policy_sample_en), false);
+					
+					update_option("dsdvo_wordpress_policy_it", wp_kses_post($wordpress_policy_sample_it), false);
+					
 
 				}			
 
@@ -1185,6 +1219,8 @@ class dsdvo_wp_backend {
 
 					update_option("dsdvo_shareaholic_policy_en", wp_kses_post($shareaholic_policy_sample_en), false);
 
+					update_option("dsdvo_shareaholic_policy_it", wp_kses_post($shareaholic_policy_sample_it), false);
+					
 				}	
 
 				if ($_POST['service'] == "fb" or $_POST['service'] == "allpolicys") {
@@ -1192,6 +1228,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_facebook_policy", wp_kses_post($facebook_policy_sample), false);
 
 					update_option("dsdvo_facebook_policy_en", wp_kses_post($facebook_policy_sample_en), false);
+					
+					update_option("dsdvo_facebook_policy_it", wp_kses_post($facebook_policy_sample_it), false);
 
 				}	
 
@@ -1200,6 +1238,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_twitter_policy", hwp_kses_post($twitter_policy_sample), false);
 
 					update_option("dsdvo_twitter_policy_en", wp_kses_post($twitter_policy_sample_en), false);
+					
+					update_option("dsdvo_twitter_policy_it", wp_kses_post($twitter_policy_sample_it), false);
 
 				}		
 
@@ -1208,6 +1248,9 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_linkedin_policy", wp_kses_post($linkedin_policy_sample), false);
 
 					update_option("dsdvo_linkedin_policy_en", wp_kses_post($linkedin_policy_sample_en), false);
+					
+					update_option("dsdvo_linkedin_policy_it", wp_kses_post($linkedin_policy_sample_it), false);
+	
 
 				}
 
@@ -1216,14 +1259,28 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_youtube_policy", wp_kses_post($youtube_policy_sample), false);
 
 					update_option("dsdvo_youtube_policy_en", wp_kses_post($youtube_policy_sample_en), false);
+					
+					update_option("dsdvo_youtube_policy_it", wp_kses_post($youtube_policy_sample_it), false);
 
 				}
+				
+				if ($_POST['service'] == "vimeo" or $_POST['service'] == "allpolicys" or $_POST['service'] == "updatev31") {
+
+					update_option("dsdvo_vimeo_policy", wp_kses_post($vimeo_policy_sample), false);
+
+					update_option("dsdvo_vimeo_policy_en", wp_kses_post($vimeo_policy_sample_en), false);
+					
+					update_option("dsdvo_vimeo_policy_it", wp_kses_post($vimeo_policy_sample_it), false);
+
+				}				
 
 				if ($_POST['service'] == "allpolicys") {
 
 					update_option("dsdvo_policy_text_1", wp_kses_post($policy_demo_text), false);
 
 					update_option("dsdvo_policy_text_en", wp_kses_post($policy_demo_text_en), false);
+					
+					update_option("dsdvo_policy_text_it", wp_kses_post($policy_demo_text_it), false);
 
 					update_option("dsdvo_allpolicyreloaded", "1", false);
 
@@ -1234,6 +1291,8 @@ class dsdvo_wp_backend {
 					update_option("dsdvo_cookie_text", wp_kses_post("Wir verwenden technisch notwendige Cookies auf unserer Webseite sowie externe Dienste.<br />Standardmäßig sind alle externen Dienste deaktiviert. Sie können diese jedoch nach belieben aktivieren & deaktivieren.<br/>Für weitere Informationen lesen Sie unsere Datenschutzbestimmungen."), false);
 
 					update_option("dsdvo_cookie_text_en", wp_kses_post("We use technically necessary cookies on our website and external services.<br/>By default, all services are disabled. You can turn or off each service if you need them or not.<br />For more informations please read our privacy policy."), false);
+					
+					update_option("dsdvo_cookie_text_it", wp_kses_post("Utilizziamo cookie tecnicamente necessari sul nostro sito web e sui servizi esterni.<br/>Per impostazione predefinita, tutti i servizi sono disabilitati. Puoi disattivare o disattivare ciascun servizio se ne hai bisogno o meno.<br />Per maggiori informazioni, consulta la nostra informativa sulla privacy."), false);
 
 					update_option("dsdvo_cookietextreloaded", "1", false);
 
@@ -1325,7 +1384,7 @@ class dsdvo_wp_backend {
 
 	public static function dsgvo_aio_admin_menu(){
 		
-		$notification_count_changelog = get_option('dsgvoaio_notification_count_v47', '1');
+		$notification_count_changelog = get_option('dsgvoaio_notification_count_v49', '1');
 
 		add_menu_page( 'DSGVO All in one for WP', 'DSGVO AIO ', 'manage_options', 'dsgvoaio-free-settings-page', __CLASS__ . '::dsdvo_settings' );
 
@@ -1382,7 +1441,7 @@ class dsdvo_wp_frontend {
 
 		add_action( 'init', __CLASS__ . '::dsgvoaiofree_downoad_pdf' );	
 
-		if (get_option("dsdvo_language_reloaded_47") !== "1") {		
+		if (get_option("dsdvo_language_reloaded_49") !== "1") {		
 		
 			add_action( 'wp_loaded', __CLASS__ .'::dsgvoaio_renew_language_files' );
 			
@@ -1560,7 +1619,7 @@ class dsdvo_wp_frontend {
 
 			}
 
-			if ($language == "en") {
+			if ($language == "en" or $language != "de" && $language != "it") {
 
 				$policy_text_1 = get_option("dsdvo_policy_text_en");
 
@@ -1580,7 +1639,7 @@ class dsdvo_wp_frontend {
 
 			$now = new DateTime();
 
-			$update_date = $now->format('d.m.Y');
+			$update_date = get_option("dsdvo_policy_update_date", $now->format('d.m.Y'));
 
 			$content = "";
 
@@ -1685,7 +1744,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripslashes(get_option("dsdvo_vgwort_policy_en")));
 
@@ -1709,7 +1768,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_koko_policy_en")));
 
@@ -1733,7 +1792,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_fbpixel_policy_en")));
 
@@ -1757,7 +1816,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_facebook_policy_en")));
 
@@ -1781,7 +1840,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_twitter_policy_en")));
 
@@ -1805,7 +1864,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_ga_policy_en")));
 
@@ -1829,7 +1888,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_disqus_policy_en")));
 
@@ -1853,7 +1912,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_pinterest_policy_en")));
 
@@ -1877,7 +1936,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_sharethis_policy_en")));
 
@@ -1901,7 +1960,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_shareaholic_policy_en")));
 
@@ -1925,7 +1984,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_addthis_policy_en")));
 
@@ -1949,7 +2008,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_addtoany_policy_en")));
 
@@ -1973,7 +2032,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_statcounter_policy_en")));
 
@@ -1997,7 +2056,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_piwik_policy_en")));
 
@@ -2021,7 +2080,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_komoot_policy_en")));
 
@@ -2045,7 +2104,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_youtube_policy_en")));
 
@@ -2069,7 +2128,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wp_kses_post(stripcslashes(get_option("dsdvo_vimeo_policy_en")));
 
@@ -2492,8 +2551,63 @@ class dsdvo_wp_frontend {
 			
 		}
 		
-		update_option('dsdvo_language_reloaded_47', '1', false);
+		update_option('dsdvo_language_reloaded_49', '1', false);
 	
+	}	
+	
+	public static function dsgvoaio_utf8_decode($s)
+	{
+		if (version_compare(PHP_VERSION, '8.1.999', 'le'))
+		{
+			return utf8_decode($s);
+		}
+
+		if (function_exists('mb_convert_encoding'))
+		{
+			return mb_convert_encoding($s, 'ISO-8859-1', 'UTF-8');
+		}
+
+		if (class_exists('UConverter'))
+		{
+			return UConverter::transcode($s, 'ISO-8859-1', 'UTF8');
+		}
+
+		if (function_exists('iconv'))
+		{
+			return iconv('UTF-8', 'ISO-8859-1', $s);
+		}
+
+		/**
+		 * Fallback to the pure PHP implementation from Symfony Polyfill for PHP 7.2
+		 *
+		 * @see https://github.com/symfony/polyfill-php72/blob/v1.26.0/Php72.php
+		 */
+		$s = (string) $s;
+		$len = \strlen($s);
+
+		for ($i = 0, $j = 0; $i < $len; ++$i, ++$j) {
+			switch ($s[$i] & "\xF0") {
+				case "\xC0":
+				case "\xD0":
+					$c = (\ord($s[$i] & "\x1F") << 6) | \ord($s[++$i] & "\x3F");
+					$s[$j] = $c < 256 ? \chr($c) : '?';
+					break;
+
+				case "\xF0":
+					++$i;
+				// no break
+
+				case "\xE0":
+					$s[$j] = '?';
+					$i += 2;
+					break;
+
+				default:
+					$s[$j] = $s[$i];
+			}
+		}
+
+		return substr($s, 0, $j);
 	}	
 	
 	
@@ -2842,7 +2956,6 @@ class dsdvo_wp_frontend {
 				if (get_option("dsgvo_notice_design") == "clear") {
 
 					$content .= "
-					#tarteaucitronCookieImg { background: url(/assets/img/cookies-dark.png);}
 					.tarteaucitronInfoBox { color: #424242 !important; }
 					.dsgvoaio_pol_header { background: #eaeaea !important;}
 					.dsgvo_hide_policy_popup .dashicons {color: #424242 !important;}					
@@ -3090,11 +3203,11 @@ class dsdvo_wp_frontend {
 			
 			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true") {
 					
-				$maindir = WP_CONTENT_DIR ."/dsgvo-all-in-one-wp/";
+				$maindir = WP_CONTENT_DIR ."/dsgvo-all-in-one-for-wp/";
 				
-				$thumbnaildir = WP_CONTENT_DIR ."/dsgvo-all-in-one-wp/thumbnails/";
+				$thumbnaildir = WP_CONTENT_DIR ."/dsgvo-all-in-one-for-wp/thumbnails/";
 				
-				$videodir = WP_CONTENT_DIR ."/dsgvo-all-in-one-wp/thumbnails/".$videoID;
+				$videodir = WP_CONTENT_DIR ."/dsgvo-all-in-one-for-wp/thumbnails/".$videoID;
 								
 				if(!file_exists($videodir)) {
 					
@@ -3133,7 +3246,7 @@ class dsdvo_wp_frontend {
 				
 			}
 
-			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true") {
+			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true" or isset($atts['thumbnail']) && filter_var($atts['thumbnail'], FILTER_VALIDATE_URL)) {
 				
 				$class = "display_bottom";
 					
@@ -3159,16 +3272,44 @@ class dsdvo_wp_frontend {
 					}
 					</style>";	
 					
-			}			
+			}	
+
+			if (get_option("dsgvo_notice_design") == "clear") { $notice_design = "clear"; } else { $notice_design = "dark"; }
 				
-			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true") {	
+			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true") {
+
+				if(!file_exists(WP_CONTENT_DIR.'/dsgvo-all-in-one-for-wp/thumbnails/'.$videoID.'/'.$videoID.'.png')) {
+					
+					if (!isset($language)) $language = wf_get_language();
+					
+					if ($language == "de") {
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_de.png';
+					} else if ($language == "en" or $language != "de" && $language != "it") {
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_en.png';			
+					} else if ($language == "it"){
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_it.png';				
+					} else {
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_en.png';			
+					}				
+				
+				} else {
+					$thumbnail_url = content_url().'/dsgvo-all-in-one-for-wp/thumbnails/'.$videoID.'/'.$videoID.'.png';
+				}				
 				
 				$return .= '<style>.display_bottom.dsgvovimeo'.$uniqe.' .tac_activate {background: transparent !Important;position: absolute; bottom: 0px;} .display_bottom.dsgvovimeo'.$uniqe.' .tac_activate {    position: absolute; bottom: 0px;} .display_bottom.dsgvovimeo'.$uniqe.' .tac_float { display: block; bottom: 0px; position: absolute; padding: 15px 0px 15px 0px; background: rgb(51, 51, 51, .8); width: 100%; } .display_bottom.dsgvovimeo'.$uniqe.' {     float: left; position: relative; } </style>';
 			
-				$return .= '<div class="dsgvoaio_vimeo_wrap" style="width:'.$width.'; height:'.$height.';"><div class="vimeo_player '.$class.' dsgvovimeo'.$uniqe.'" thumb="'.content_url().'/dsgvo-all-in-one-wp/thumbnails/'.$videoID.'/'.$videoID.'.png"   videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'"></div></div>';
+				$return .= '<div class="dsgvoaio_vimeo_wrap vimeo_player_'.$notice_design.'" style="width:'.$width.'; height:'.$height.';"><div class="vimeo_player '.$class.' dsgvovimeo'.$uniqe.'" thumb="'.$thumbnail_url.'"   videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'"></div></div>';
 				
 				return $return;
 				
+			} else if (isset($atts['thumbnail']) && filter_var($atts['thumbnail'], FILTER_VALIDATE_URL)) {
+				
+				$return .= '<style>.display_bottom.dsgvovimeo'.$uniqe.' .tac_activate {background: transparent !Important;position: absolute; bottom: 0px;} .display_bottom.dsgvovimeo'.$uniqe.' .tac_activate {    position: absolute; bottom: 0px;} .display_bottom.dsgvovimeo'.$uniqe.' .tac_float { display: block; bottom: 0px; position: absolute; padding: 15px 0px 15px 0px; background: rgb(51, 51, 51, .8); width: 100%; } .display_bottom.dsgvovimeo'.$uniqe.' {     float: left; position: relative; } </style>';
+			
+				$return .= '<div class="dsgvoaio_vimeo_wrap vimeo_player_'.$notice_design.'" style="width:'.$width.'; height:'.$height.';"><div class="vimeo_player '.$class.' dsgvovimeo'.$uniqe.'" thumb="'.sanitize_url($atts['thumbnail']).'"   videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'"></div></div>';
+				
+				return $return;				
+			
 			} else {
 				
 				return '<div class="dsgvoaio_vimeo_wrap" style="width:'.$width.'; height:'.$height.';"><div class="vimeo_player shortcodenothumb '.$nowidthclass.' dsgvovimeo'.$uniqe.'"  videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'" style="width:'.$width.'; height:'.$height.';"></div></div>';
@@ -3276,8 +3417,7 @@ class dsdvo_wp_frontend {
 				$request = wp_remote_get( $url, array( 'timeout' => 220, 'httpversion' => '1.1' , 'stream' => true, 'filename'    => $videodir."/".$videoID.'.png' )  );
 
 				$body = wp_remote_retrieve_body( $request );
-							//	print_r($request);
-				//die();
+
 				$response = json_decode( $body );
 				
 				$error = ! ( isset ( $response->success ) && 1 == $response->success );				
@@ -3285,7 +3425,7 @@ class dsdvo_wp_frontend {
 			}
 			
 			
-			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true") {
+			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true" or isset($atts['thumbnail']) && filter_var($atts['thumbnail'], FILTER_VALIDATE_URL)) {
 				
 				$class = "display_bottom";
 				
@@ -3313,17 +3453,36 @@ class dsdvo_wp_frontend {
 
 			if (isset($atts['thumbnail']) && $atts['thumbnail'] == "true") {
 				
+				if(!file_exists(WP_CONTENT_DIR.'/dsgvo-all-in-one-for-wp/thumbnails/'.$videoID.'/'.$videoID.'.png')) {
+					
+					if (!isset($language)) $language = wf_get_language();
+					
+					if ($language == "de") {
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_de.png';
+					} else if ($language == "en" or $language != "de" && $language != "it") {
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_en.png';			
+					} else if ($language == "it"){
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_it.png';				
+					} else {
+						$thumbnail_url = plugin_dir_url(__FILE__).'/assets/img/notfound_en.png';			
+					}				
+				
+				} else {
+					$thumbnail_url = content_url().'/dsgvo-all-in-one-for-wp/thumbnails/'.$videoID.'/'.$videoID.'.png';
+				}
+				
 				$r .= '<style>.display_bottom.ytu_'.$uniqe.' .tac_activate {background: transparent !Important;position: absolute; bottom: 0px;} .display_bottom.ytu_'.$uniqe.' {position: relative; } </style>';
 				
-				$r .=  '<div class="youtube_player '.$class.' ytu_'.$uniqe.' yt_player_'.$notice_design.'" thumb="'.content_url().'/dsgvo-all-in-one-for-wp/thumbnails/'.$videoID.'/'.$videoID.'.png"  videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'" theme="light" controls="'.$controls.'" rel="'.$rel.'" autoplay="'.$autoplay.'"></div>';
+				$r .=  '<div class="youtube_player '.$class.' ytu_'.$uniqe.' yt_player_'.$notice_design.'" thumb="'.$thumbnail_url.'"  videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'" theme="light" controls="'.$controls.'" rel="'.$rel.'" autoplay="'.$autoplay.'"></div>';
 
-			} else if (filter_var($atts['thumbnail'], FILTER_VALIDATE_URL)) {
+			} else if (isset($atts['thumbnail']) && filter_var($atts['thumbnail'], FILTER_VALIDATE_URL)) {
 				
 				$r .= '<style>.display_bottom.ytu_'.$uniqe.' .tac_activate {background: transparent !Important;position: absolute; bottom: 0px;} .display_bottom.ytu_'.$uniqe.' {position: relative; } </style>';
 				
-				$r .=  '<div class="youtube_player '.$class.' ytu_'.$uniqe.' yt_player_'.$notice_design.'" thumb="'.sanitize_html_class($atts['thumbnail']).'"  videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'" theme="light" controls="'.$controls.'" rel="'.$rel.'" autoplay="'.$autoplay.'"></div>';
+				$r .=  '<div class="youtube_player '.$class.' ytu_'.$uniqe.' yt_player_'.$notice_design.'" thumb="'.sanitize_url($atts['thumbnail']).'"  videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'" theme="light" controls="'.$controls.'" rel="'.$rel.'" autoplay="'.$autoplay.'"></div>';
 				
 			} else {
+				
 				
 				$r .=  '<div class="youtube_player shortcodenothumb '.$nowidthclass.' ytu_'.$uniqe.' yt_player_'.$notice_design.'" style="width: '.$width.'; height: '.$height.'" videoID="'.$videoID.'" width="'.$width.'" height="'.$height.'" theme="light" controls="'.$controls.'" rel="'.$rel.'" autoplay="'.$autoplay.'"></div>';
 				
@@ -3452,32 +3611,63 @@ class dsdvo_wp_frontend {
 
 		public static function dsgvoaio_upgrade_completed( $upgrader_object, $options ) {
 
-		 $our_plugin = plugin_basename( __FILE__ );
+		$our_plugin = plugin_basename( __FILE__ );
 
-		 if( $options['action'] == 'update' && $options['type'] == 'plugin' && isset( $options['plugins'] ) ) {
+			if( $options['action'] == 'update' && $options['type'] == 'plugin' && isset( $options['plugins'] ) ) {
 
-		  foreach( $options['plugins'] as $plugin ) {
+				foreach( $options['plugins'] as $plugin ) {
 
-		   if( $plugin == $our_plugin ) {
-
+					if( $plugin == $our_plugin ) {
+		
+						$is_showed_31 = get_option( 'dismissed-dsgvo_msg_after_update_31', 'empty');
 				
-			$is_showed_31 = get_option( 'dismissed-dsgvo_msg_after_update_31', 'empty');
-			$is_showed_32 = get_option( 'dismissed-dsgvoaio_update_msg_32', 'empty');
-			
-			if ($is_showed_31 == 'empty') {
-				set_transient( 'dsgvoaioupdate-admin-notice31' , '1' );				
+						$is_showed_32 = get_option( 'dismissed-dsgvoaio_update_msg_32', 'empty');
+				
+						if ($is_showed_31 == 'empty') {
+							
+							set_transient( 'dsgvoaioupdate-admin-notice31' , '1' );
+							
+						}
+						
+						if ($is_showed_32 == 'empty') {
+							
+							update_option( 'dsgvoaioupdate-admin-notice32', '1', false );	
+							
+						}
+						
+						if ( function_exists( 'rocket_clean_domain' ) ) {
+							
+							rocket_clean_domain();
+							
+						}
+						
+						if ( function_exists( 'wpfc_clear_all_cache' ) ) {
+							
+							wpfc_clear_all_cache(true);
+							
+						}
+						
+						if ( class_exists( 'autoptimizeCache' ) ) {
+							
+							autoptimizeCache::clearall();
+							
+						}
+						
+						if ( function_exists( 'w3tc_flush_all' ) ) {
+							
+							w3tc_flush_all();
+							
+						}					
+				
+						update_option( 'dsgvoaioupdate-admin-notice33', '1', false );
+						
+						update_option( 'dsdvo_ga_consent_mode', 'on', false );
+
+					}
+
+				}
+
 			}
-			if ($is_showed_32 == 'empty') {
-				update_option( 'dsgvoaioupdate-admin-notice32', '1', false );				
-			}
-			
-			update_option( 'dsgvoaioupdate-admin-notice33', '1', false );
-
-		   }
-
-		  }
-
-		 }
 
 		}	 
 
@@ -3492,7 +3682,7 @@ class dsdvo_wp_frontend {
 
 				if ($language == "de") {
 					$text = html_entity_decode(wp_kses(get_option("dsgvo_policy_blog_text"), $dsdvo_kses_allowed), ENT_COMPAT, get_option('blog_charset'));
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 					$text = html_entity_decode(wp_kses(get_option("dsgvo_policy_blog_text_en"), $dsdvo_kses_allowed), ENT_COMPAT, get_option('blog_charset'));				
 				} else if ($language == "it"){
 					$text = html_entity_decode(wp_kses(get_option("dsgvo_policy_blog_text_it"), $dsdvo_kses_allowed), ENT_COMPAT, get_option('blog_charset'));				
@@ -3521,7 +3711,7 @@ class dsdvo_wp_frontend {
 					
 					$text = html_entity_decode(wp_kses(get_option("dsgvo_error_policy_blog"), $dsdvo_kses_allowed), ENT_COMPAT, get_option('blog_charset'));
 				
-				} else if ($language == "en") {
+				} else if ($language == "en" or $language != "de" && $language != "it") {
 					
 					$text = html_entity_decode(wp_kses(get_option("dsgvo_error_policy_blog_en"), $dsdvo_kses_allowed), ENT_COMPAT, get_option('blog_charset'));				
 				
@@ -3869,7 +4059,7 @@ class dsdvo_wp_frontend {
 
 					if (get_option("dsdvo_cookie_text_scroll")) { $onscrolltext = wp_kses(wpautop(html_entity_decode(stripslashes(get_option("dsdvo_cookie_text_scroll")), ENT_COMPAT, get_option('blog_charset'))), $kses_allowed_html); } else { $onscrolltext = "Durch das fortgesetzte blättern stimmen Sie der Benutzung von externen Diensten zu."; }								 
 					 
-					if (get_option("dsgvo_btn_txt_accept")) { $cookieaccepttext = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_accept")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookieaccepttext =  "Akzeptieren"; }
+					if (get_option("dsgvo_btn_txt_accept")) { $cookieaccepttext = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_accept")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookieaccepttext =  "Alle akzeptieren"; }
 
 					if (get_option("dsgvo_btn_txt_customize")) { $btncustomizetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_customize")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btncustomizetxt =  "Personalisieren"; }
 
@@ -3895,7 +4085,7 @@ class dsdvo_wp_frontend {
 				
 				}
 
-				if ($language == "en") {
+				if ($language == "en" or $language != "de" && $language != "it") {
 
 					$accepttext = "Allow";
 
@@ -3943,7 +4133,7 @@ class dsdvo_wp_frontend {
 
 					if (get_option("dsdvo_cookie_text_scroll_en")) { $onscrolltext = wp_kses(html_entity_decode(stripslashes(wpautop(get_option("dsdvo_cookie_text_scroll_en"))), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $onscrolltext = "By continuing to scroll, you consent to the use of external services."; }				
 
-					if (get_option("dsgvo_btn_txt_accept_en")) { $cookieaccepttext = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_accept_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookieaccepttext =  "Accept"; }
+					if (get_option("dsgvo_btn_txt_accept_en")) { $cookieaccepttext = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_accept_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $cookieaccepttext =  "Accept all"; }
 
 					if (get_option("dsgvo_btn_txt_customize_en")) { $btncustomizetxt = wp_kses(html_entity_decode(stripslashes(get_option("dsgvo_btn_txt_customize_en")), ENT_COMPAT, get_option('blog_charset')), $kses_allowed_html); } else { $btncustomizetxt =  "Customize"; }
 
@@ -4181,7 +4371,7 @@ class dsdvo_wp_frontend {
 				
 				}				
 				
-				if ($language == "en") {
+				if ($language == "en"  or $language != "de" && $language != "it") {
 
 					$script .= "var tarteaucitronForceLanguage = 'en'";
 					
@@ -4495,6 +4685,35 @@ class dsdvo_wp_frontend {
 				if (!$notice_style) { $notice_style = "3"; }
 
 				?>
+				
+				<?php if($notice_style == "2" or $notice_style == "3") { ?>
+				<style>
+					.dsdvo-cookie-notice.style<?php echo $notice_style; ?> #dsgvoaio-checkbox-wrapper ul {
+						display: flex;
+						flex-wrap: wrap;
+						margin: 0;
+						padding: 0;
+					}
+					.dsdvo-cookie-notice.style<?php echo $notice_style; ?> #dsgvoaio-checkbox-wrapper {
+							text-align: center;
+							padding-top: 10px;
+							padding-bottom: 15px;
+					}
+					.dsdvo-cookie-notice.style<?php echo $notice_style; ?> #dsgvoaio-checkbox-wrapper li {
+						width: unset;
+						float: unset;
+						margin: 0;
+						flex-grow: 1;
+						width: fit-content;
+					}	
+					.dsdvo-cookie-notice.style<?php echo $notice_style; ?> #dsgvoaio-checkbox-wrapper li label {
+						width: fit-content;
+					}		
+					.dsdvo-cookie-notice.style<?php echo $notice_style; ?> #dsgvoaio-checkbox-wrapper {
+						padding-bottom: 35px;
+					}					
+				</style>				
+				<?php } ?>
 
 				<?php if(get_option("dsdvo_show_closebtn") == "off") { ?>
 
@@ -4578,6 +4797,8 @@ class dsdvo_wp_frontend {
 
 							tarteaucitron.user.defaultoptinout = '<?php echo wp_kses(get_option("dsdvo_ga_optinoutsetting"), $kses_allowed_html); ?>';
 
+							tarteaucitron.user.googleConsentMode = <?php if (get_option('dsdvo_ga_consent_mode') == "on") { echo "true"; } else { echo "false";} ?>;
+							
 							tarteaucitron.user.analyticsMore = function () { 
 
 							};
@@ -4607,16 +4828,10 @@ class dsdvo_wp_frontend {
 							(tarteaucitron.job = tarteaucitron.job || []).push('googletagmanager');
 
 							tarteaucitron.user.googletagmanagerId = '<?php echo wp_kses_post(get_option("dsdvo_gtagmanagerid")); ?>';
-
+							
+							tarteaucitron.user.googleConsentMode = <?php if (get_option('dsdvo_ga_consent_modegtag') == "on") { echo "true"; } else { echo "false";} ?>;
+							
 					<?php } ?>			
-
-					<?php if (get_option("dsdvo_use_gtagmanager")) { ?>
-
-							(tarteaucitron.job = tarteaucitron.job || []).push('googletagmanager');
-
-							tarteaucitron.user.googletagmanagerId = '<?php echo wp_kses_post(get_option("dsdvo_gtagmanagerid")); ?>';
-
-					<?php } ?>				
 
 					<?php if ( get_option("dsdvo_fbpixelid") && get_option("dsdvo_use_fbpixel") == "on") { ?>
 
@@ -4898,7 +5113,7 @@ class dsdvo_wp_frontend {
 
 			}	
 
-			if ($language == "en") {
+			if ($language == "en"  or $language != "de" && $language != "it") {
 
 				$policy_text_1 = wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_policy_text_en"))));
 
@@ -4912,7 +5127,7 @@ class dsdvo_wp_frontend {
 
 			$now = new DateTime();
 
-			$update_date = $now->format('d.m.Y');
+			$update_date = get_option("dsdvo_policy_update_date", $now->format('d.m.Y'));
 
 			$content = "";
 
@@ -5019,7 +5234,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_fbpixel_policy_en"))));
 
@@ -5044,7 +5259,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_facebook_policy_en"))));
 
@@ -5068,7 +5283,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_twitter_policy_en"))));
 
@@ -5092,7 +5307,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_ga_policy_en"))));
 
@@ -5116,7 +5331,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_gtagmanager_policy_en"))));
 
@@ -5140,7 +5355,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_piwik_policy_en"))));
 
@@ -5165,7 +5380,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_linkedin_policy_en"))));
 
@@ -5189,7 +5404,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_youtube_policy_en"))));
 
@@ -5213,7 +5428,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_vgwort_policy_en"))));
 
@@ -5237,7 +5452,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_koko_policy_en"))));
 
@@ -5261,7 +5476,7 @@ class dsdvo_wp_frontend {
 
 					} 
 
-					if ($language == "en") {
+					if ($language == "en" or $language != "de" && $language != "it") {
 
 						$content .= wpautop(stripcslashes(wp_kses_post(get_option("dsdvo_shareaholic_policy_en"))));
 
@@ -5643,7 +5858,7 @@ class dsdvo_wp_frontend {
 
 				}
 
-				if ($language == "en") {
+				if ($language == "en" or $language != "de" && $language != "it") {
 
 					$notlogged = wp_kses(get_option("dsgvo_notloggedintext_en"), $kses_allowed_html);
 

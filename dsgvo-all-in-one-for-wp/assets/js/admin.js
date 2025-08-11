@@ -652,13 +652,22 @@ jQuery(document).ready(function ($){
 
         return false;
 
-    });						
-						
+    });	
+
+jQuery('.dsdvo_input.ga_consent_mode').on('change', function() {
+if (jQuery('.dsdvo_input.ga_consent_mode').is(':checked')) {
+jQuery('.dsdvo_input.ga_consent_modegtag').prop('checked', true);
+} else {
+jQuery('.dsdvo_input.ga_consent_modegtag').prop('checked', false);	
+}
 });	
 
-jQuery( document ).on( 'click', '.dsgvoaio_checkcookies', function(event) {
-		event.preventDefault();
-	alert("sasa");
-	
-								
+jQuery('.dsdvo_input.ga_consent_modegtag').on('change', function() {
+if (jQuery('.dsdvo_input.ga_consent_modegtag').is(':checked')) {
+jQuery('.dsdvo_input.ga_consent_mode').prop('checked', true);
+} else {
+jQuery('.dsdvo_input.ga_consent_mode').prop('checked', false);	
+}
+});	
+						
 });	

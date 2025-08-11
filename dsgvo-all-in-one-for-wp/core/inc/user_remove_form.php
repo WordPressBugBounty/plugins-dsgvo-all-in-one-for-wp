@@ -21,7 +21,7 @@ if (isset($_POST['delete_user_data'])) {
 	
 	if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'once_remove_user' ) ) {
 		
-		$output .= "Ihre Sitzung ist abgelaufen bitte aktualisieren Sie die Seite.";
+		$output .= __("Your session has expired. Please refresh the page.", "dsgvo-all-in-one-for-wp");
 		
 	} else {
 		
@@ -47,11 +47,11 @@ if ($language == "de") {
 	} else {
 		$dsgvo_deleteaccounttext = "<b>Achtung:</b> Mit dem Klick auf den Button \"Benutzerkonto löschen\" werden alle Ihre Daten aus unserer Datenbank gelöscht.<br />Ihre Daten können nicht wiederhergestellt werden nach der Löschung.";
 	}	
-} else if ($language == "en") {
+} else if ($language == "en" or $language != "de" && $language != "it") {
 	if (get_option('dsgvo_deleteaccounttext_en'))	{
 		$dsgvo_deleteaccounttext = html_entity_decode(get_option('dsgvo_deleteaccounttext_en'));
 	} else {
-		$dsgvo_deleteaccounttext = "<b> Attention: </ b> By clicking on the button \"Delete user account\" all your data will be deleted from our database. <br /> Your data can not be recovered after deletion.";
+		$dsgvo_deleteaccounttext = "<b> Attention:</b> By clicking on the button \"Delete user account\" all your data will be deleted from our database. <br /> Your data can not be recovered after deletion.";
 	}	
 } else if ($language == "it") {
 	if (get_option('dsgvo_deleteaccounttext_it'))	{

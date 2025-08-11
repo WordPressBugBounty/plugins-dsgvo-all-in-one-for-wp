@@ -12,7 +12,9 @@ update_option('dsgvoaio_notification_count_v45', '0');
 
 update_option('dsgvoaio_notification_count_v47', '0');
 
+update_option('dsgvoaio_notification_count_v48', '0');
 
+update_option('dsgvoaio_notification_count_v49', '0');
 ?>
 <div class="wrap">
 	
@@ -21,11 +23,30 @@ update_option('dsgvoaio_notification_count_v47', '0');
 	<p><?php echo wp_kses(__('Here you will find an overview of the changes and new features in each version listed in detail.', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></p>
 
 	<dl class="dsgvoaio_changlog_accordion">
-		<dt><a href="#"><?php echo wp_kses(__('Version 4.8 (current)', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
+		<dt><a href="#"><?php echo wp_kses(__('Version 4.9 (current)', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
+		<dd>
+		<b style="color: green;"><?php echo wp_kses(__('New features', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></b>
+		<ul>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Google Consent Mode V2', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+		</ul>		
+		<b><?php echo wp_kses(__('Improvements', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></b>
+		<ul>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Cookie Notice Layout / Design revised', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('YouTube Thumbnail function revised', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Vimeo Thumbnail function revised', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+		</ul>		
+		<b><?php echo wp_kses(__('Bugfixes', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></b>
+		<ul>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Settings Import/Export fixed', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Cookie Notice Layout 1 - Layout fix', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+		</ul>
+		</dd>	
+		<dt><a href="#"><?php echo wp_kses(__('Version 4.8', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
 		<dd>
 		<b><?php echo wp_kses(__('Bugfixes', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></b>
 		<ul>
-			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Bugfix - Fixed display issues with v4.7', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('Fixed display issues with v4.7', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
+			<li><span class="dashicons dashicons-yes"></span><?php echo wp_kses(__('utf8_decode & utf8_encode deprecated since PHP 8.2.0', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></li>
 		</ul>
 		</dd>	
 		<dt><a href="#"><?php echo wp_kses(__('Version 4.7', 'dsgvo-all-in-one-for-wp'), $kses_allowed_html); ?></a></dt>
@@ -257,5 +278,4 @@ update_option('dsgvoaio_notification_count_v47', '0');
 	</dl>
 
 </div>
-
 	
