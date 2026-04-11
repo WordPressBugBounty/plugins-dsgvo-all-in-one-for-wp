@@ -2183,22 +2183,25 @@
 						jQuery( document ).ready(function() {
 						
 						jQuery(".reset_policy_service").click(function(e) {
+							
 							e.preventDefault();
+							
 							if (confirm("<?php  echo wp_kses(__("You are sure that you want perform this action?", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>")) {
 
 							jQuery.ajax({
 								type: 'POST',
 								url: '<?php echo esc_js(admin_url('admin-ajax.php')); ?>',
 								data: {
-								    'service': jQuery(this).data("service"),
-									'action': 'reset_policy_service'
-								}, success: function (result) {
-
-								   alert(result);
-								   location.reload();
+									'service': jQuery(this).data("service"),
+									'action': 'reset_policy_service',
+									'nonce': '<?php echo wp_create_nonce("reset_policy_service_nonce"); ?>'
+								}, 
+								success: function (result) {
+									alert(result);
+									location.reload();
 								},
 								error: function () {
-									alert("<?php  echo wp_kses(__("An error has occurred. Please contact the support.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>");
+									alert("<?php echo wp_kses(__("An error has occurred. Please contact the support.", "dsgvo-all-in-one-for-wp"), $kses_allowed_html); ?>");
 								}
 							});
 						}

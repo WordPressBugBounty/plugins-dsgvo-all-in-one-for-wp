@@ -3,9 +3,9 @@ Contributors: mlfactory
 Donate link: https://www.paypal.me/dsgvoallinoneforwp
 Tags: DSGVO, Cookie Notice, cookie, GDPR, Datenschutz
 Requires at least: 4.5
-Tested up to: 6.8.2
+Tested up to: 6.9.4
 Requires PHP: 5.6
-Stable tag: 4.9
+Stable tag: 5.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -400,6 +400,8 @@ Bugfixes: Security issue fixed, Email Adress display bug fixed | Improvements: C
 Bugfixes: Fixed display issues with v4.7
 = 4.9 =
 New Functions: Google Content Mode V2 | Bugfixes: Cookie Notice Layout 1 - Layout fix, Settings Import/Export fixed | Improvements: Cookie Notice Layout / Design revised, YouTube Thumbnail function revised, Vimeo Thumbnail function revised
+= 5.0 =
+Security Bugfix
 
 == Upgrade Notice ==
 
@@ -495,3 +497,5 @@ Bugfixes: Security issue fixed, Email Adress display bug fixed | Changes: Cookie
 Bugfixes: Fixed display issues with v4.7
 = 4.9 =
 New Functions: Google Content Mode V2 | Bugfixes: Cookie Notice Layout 1 - Layout fix, Settings Import/Export fixed | Improvements: Cookie Notice Layout / Design revised, YouTube Thumbnail function revised, Vimeo Thumbnail function revised
+= 5.0 =
+Security Bugfix

@@ -3,7 +3,7 @@
 
  * Plugin Name: DSGVO All in one for WP
 
- * Version: 4.9
+ * Version: 5.0
 
  * Plugin URI: http://www.dsgvo-for-wp.com
 
@@ -15,7 +15,7 @@
 
  * Requires at least: 4.5
 
- * Tested up to: 6.8.2
+ * Tested up to: 6.9.4
 
  * License: GPLv2
 
@@ -1121,6 +1121,13 @@ class dsdvo_wp_backend {
 
 
 	public static function dsgvo_reset_policy_service_func() {
+		
+		check_ajax_referer( 'reset_policy_service_nonce', 'nonce' );
+		
+		if (!current_user_can('manage_options')) {
+			wp_die(__('Not allowed!'));
+		}
+		
 
 		if (isset($_POST['service'])) {
 
@@ -1384,7 +1391,7 @@ class dsdvo_wp_backend {
 
 	public static function dsgvo_aio_admin_menu(){
 		
-		$notification_count_changelog = get_option('dsgvoaio_notification_count_v49', '1');
+		$notification_count_changelog = get_option('dsgvoaio_notification_count_v50', '1');
 
 		add_menu_page( 'DSGVO All in one for WP', 'DSGVO AIO ', 'manage_options', 'dsgvoaio-free-settings-page', __CLASS__ . '::dsdvo_settings' );
 
@@ -1441,7 +1448,7 @@ class dsdvo_wp_frontend {
 
 		add_action( 'init', __CLASS__ . '::dsgvoaiofree_downoad_pdf' );	
 
-		if (get_option("dsdvo_language_reloaded_49") !== "1") {		
+		if (get_option("dsdvo_language_reloaded_50") !== "1") {		
 		
 			add_action( 'wp_loaded', __CLASS__ .'::dsgvoaio_renew_language_files' );
 			
@@ -2551,7 +2558,7 @@ class dsdvo_wp_frontend {
 			
 		}
 		
-		update_option('dsdvo_language_reloaded_49', '1', false);
+		update_option('dsdvo_language_reloaded_50', '1', false);
 	
 	}	
 	

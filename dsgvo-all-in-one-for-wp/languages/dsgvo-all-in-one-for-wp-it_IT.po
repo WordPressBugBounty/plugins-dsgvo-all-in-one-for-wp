@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DSGVO All in one for WP\n"
-"POT-Creation-Date: 2025-08-11 11:28+0200\n"
-"PO-Revision-Date: 2025-08-11 11:34+0200\n"
+"POT-Creation-Date: 2026-04-09 21:03+0200\n"
+"PO-Revision-Date: 2026-04-09 21:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: mlfactory\n"
 "Language: it\n"
@@ -29,22 +29,22 @@ msgstr "Le impostazioni non possono essere ripristinate!"
 msgid "Delete plugin including all settings"
 msgstr "Cancellare il plugin incluse tutte le impostazioni"
 
-#: core/inc/backend_settings.php:753
+#: core/inc/backend_settings.php:756
 msgid "Settings saved successfully"
 msgstr "Impostazioni salvate con successo"
 
-#: core/inc/backend_settings.php:1170
+#: core/inc/backend_settings.php:1173
 msgid "Here you can set up everything about DSGVO All in One."
 msgstr "Qui potete impostare tutto su DSGVO All in One."
 
-#: core/inc/backend_settings.php:1170
+#: core/inc/backend_settings.php:1173
 msgid ""
 "<b>Important:</b> Please take a short time and go through <u>all</u> fields."
 msgstr ""
 "<b>Importante:</b> Si prega di prendere un breve periodo di tempo e passare "
 "attraverso i campi <u>tutti</u>."
 
-#: core/inc/backend_settings.php:1171
+#: core/inc/backend_settings.php:1174
 msgid ""
 "It is important to set everything correctly because only then the plugin can "
 "do good job."
@@ -52,7 +52,7 @@ msgstr ""
 "È importante impostare tutto correttamente perché solo così il plugin può "
 "fare un buon lavoro."
 
-#: core/inc/backend_settings.php:1172
+#: core/inc/backend_settings.php:1175
 msgid ""
 "<b>Info:</b> The <a href='http://dsgvo-for-wp.com/#shop' target='blank'>PRO "
 "Version</a> offers many advantages including premium support and updates."
@@ -61,7 +61,7 @@ msgstr ""
 "Version</a> offre molti vantaggi tra cui il supporto premium e gli "
 "aggiornamenti."
 
-#: core/inc/backend_settings.php:1173
+#: core/inc/backend_settings.php:1176
 msgid ""
 "<b>Need Help?</b> Email to michaelleithold18@gmail.com or via the <a "
 "href='https://wordpress.org/support/plugin/dsgvo-all-in-one-for-wp/' "
@@ -71,7 +71,7 @@ msgstr ""
 "il <a href='https://wordpress.org/support/plugin/dsgvo-all-in-one-for-wp/' "
 "target='blank'>WordPress Forum</a>."
 
-#: core/inc/backend_settings.php:1174
+#: core/inc/backend_settings.php:1177
 msgid ""
 "<b>Cache:</b> Always clear the cache after each change (browser cache and "
 "plugin cache if necessary)."
@@ -79,82 +79,82 @@ msgstr ""
 "<b>Cache:</b> Cancellare sempre la cache dopo ogni modifica (cache del "
 "browser e cache dei plugin, se necessario)."
 
-#: core/inc/backend_settings.php:1270
+#: core/inc/backend_settings.php:1273
 msgid "Data of the Owner"
 msgstr "Dati del Titolare"
 
-#: core/inc/backend_settings.php:1270
+#: core/inc/backend_settings.php:1273
 msgid "Address data, Contact details"
 msgstr "Dati dell'indirizzo, Contatti"
 
-#: core/inc/backend_settings.php:1272
+#: core/inc/backend_settings.php:1275
 msgid "Attention!"
 msgstr "Attenzione!"
 
-#: core/inc/backend_settings.php:1272
+#: core/inc/backend_settings.php:1275
 msgid "no data set."
 msgstr "nessun set di dati."
 
-#: core/inc/backend_settings.php:1279
+#: core/inc/backend_settings.php:1282
 msgid "Company name"
 msgstr "Nome dell'azienda"
 
-#: core/inc/backend_settings.php:1281 core/inc/backend_settings.php:2877
-#: core/inc/backend_settings.php:2885 core/inc/backend_settings.php:3043
+#: core/inc/backend_settings.php:1284 core/inc/backend_settings.php:2883
+#: core/inc/backend_settings.php:2891 core/inc/backend_settings.php:3049
 msgid "Responsible person"
 msgstr "Persona responsabile"
 
-#: core/inc/backend_settings.php:1283
+#: core/inc/backend_settings.php:1286
 msgid "Street & House number"
 msgstr "Via & numero civico"
 
-#: core/inc/backend_settings.php:1285 core/inc/backend_settings.php:3053
+#: core/inc/backend_settings.php:1288 core/inc/backend_settings.php:3059
 msgid "Zip code"
 msgstr "Codice postale"
 
-#: core/inc/backend_settings.php:1287 core/inc/backend_settings.php:2955
-#: core/inc/backend_settings.php:3058 core/inc/user_remove_form.php:142
-#: dsgvo_all_in_one_wp.php:5703
+#: core/inc/backend_settings.php:1290 core/inc/backend_settings.php:2961
+#: core/inc/backend_settings.php:3064 core/inc/user_remove_form.php:142
+#: dsgvo_all_in_one_wp.php:5752
 msgid "City"
 msgstr "Città"
 
-#: core/inc/backend_settings.php:1289 core/inc/backend_settings.php:3063
-#: core/inc/user_remove_form.php:158 dsgvo_all_in_one_wp.php:5727
+#: core/inc/backend_settings.php:1292 core/inc/backend_settings.php:3069
+#: core/inc/user_remove_form.php:158 dsgvo_all_in_one_wp.php:5776
 msgid "Country"
 msgstr "Paese"
 
-#: core/inc/backend_settings.php:1291 core/inc/backend_settings.php:2895
+#: core/inc/backend_settings.php:1294 core/inc/backend_settings.php:2901
 #: core/inc/imprint.php:33
 msgid "Phone"
 msgstr "Telefono"
 
-#: core/inc/backend_settings.php:1293 core/inc/backend_settings.php:2900
+#: core/inc/backend_settings.php:1296 core/inc/backend_settings.php:2906
 #: core/inc/imprint.php:37
 msgid "Fax"
 msgstr "Fax"
 
-#: core/inc/backend_settings.php:1295 core/inc/backend_settings.php:2890
+#: core/inc/backend_settings.php:1298 core/inc/backend_settings.php:2896
 #: core/inc/imprint.php:41
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: core/inc/backend_settings.php:1297 core/inc/backend_settings.php:3021
+#: core/inc/backend_settings.php:1300 core/inc/backend_settings.php:3027
 #: core/inc/imprint.php:57
 msgid "Vat-ID"
 msgstr "Vat-ID"
 
-#: core/inc/backend_settings.php:1298
+#: core/inc/backend_settings.php:1301
 msgid "Is defined under Imprint!"
 msgstr "È definito alla voce Imprint!"
 
-#: core/inc/backend_settings.php:1299
+#: core/inc/backend_settings.php:1302
 msgid ""
 "The data defined here are used for the privacy policy and for the imprint."
 msgstr ""
 "I dati qui definiti sono utilizzati per l'informativa sulla privacy e per "
 "l'impronta."
 
-#: core/inc/backend_settings.php:1300
+#: core/inc/backend_settings.php:1303
 msgid ""
 "It is very important that you also define all necessary data under the point "
 "Imprint"
@@ -162,7 +162,7 @@ msgstr ""
 "È molto importante definire tutti i dati necessari anche sotto il punto "
 "Imprint"
 
-#: core/inc/backend_settings.php:1308
+#: core/inc/backend_settings.php:1311
 msgid ""
 "External Services <span style='font-size:13px'>(Google Analytics, Facebook "
 "Pixel & Like, X Share Button, Linkedin Button)</span>"
@@ -170,39 +170,39 @@ msgstr ""
 "Servizi esterni <span style='font-size:13px'>(Google Analytics, Facebook "
 "Pixel & Like, X Share Button, Twitter Tweet Button, Linkedin Button)</span>"
 
-#: core/inc/backend_settings.php:1312
+#: core/inc/backend_settings.php:1315
 msgid "Visitor counter services / Analytics / Counter"
 msgstr "Servizi di contatore visitatori / Analisi / Contatore"
 
-#: core/inc/backend_settings.php:1317 core/inc/backend_settings.php:2240
-#: core/inc/backend_settings.php:3953
+#: core/inc/backend_settings.php:1320 core/inc/backend_settings.php:2246
+#: core/inc/backend_settings.php:3959
 msgid "Facebook Pixel"
 msgstr "Facebook Pixel"
 
-#: core/inc/backend_settings.php:1319
+#: core/inc/backend_settings.php:1322
 msgid "Do you use Facebook Pixel?"
 msgstr "Utilizzi Facebook Pixel?"
 
-#: core/inc/backend_settings.php:1323
+#: core/inc/backend_settings.php:1326
 msgid "Facebook Pixel ID"
 msgstr "Facebook Pixel ID"
 
-#: core/inc/backend_settings.php:1326
+#: core/inc/backend_settings.php:1329
 msgid "Enter your Facebook Pixel ID here."
 msgstr "Inserisci qui il tuo Pixel ID Facebook."
 
-#: core/inc/backend_settings.php:1327
+#: core/inc/backend_settings.php:1330
 msgid "Format: 244123839385278"
 msgstr "Formato: 244123839385278"
 
-#: core/inc/backend_settings.php:1329
+#: core/inc/backend_settings.php:1332
 msgid ""
 "<u>Important:</u> Be sure to deactivate the event setup on Facebook Pixel!"
 msgstr ""
 "<u>Importante:</u> Assicuratevi di disattivare il setup dell'evento su "
 "Facebook Pixel!"
 
-#: core/inc/backend_settings.php:1330
+#: core/inc/backend_settings.php:1333
 msgid ""
 "For more information see here: <a href='https://dsgvo-for-wp.com/"
 "dokumentation/' target='blank'>Plugin Documentation</a>"
@@ -210,49 +210,49 @@ msgstr ""
 "Per maggiori informazioni vedi qui: <a href='https://dsgvo-for-wp.com/"
 "dokumentation/' target='blank'>Documentazione plug-in</a>"
 
-#: core/inc/backend_settings.php:1339 core/inc/backend_settings.php:2391
-#: core/inc/backend_settings.php:3957
+#: core/inc/backend_settings.php:1342 core/inc/backend_settings.php:2397
+#: core/inc/backend_settings.php:3963
 msgid "Google Analytics"
 msgstr "Google Analytics"
 
-#: core/inc/backend_settings.php:1341
+#: core/inc/backend_settings.php:1344
 msgid "Do you use Google Analytics?"
 msgstr "Utilizzate Google Analytics?"
 
-#: core/inc/backend_settings.php:1347
+#: core/inc/backend_settings.php:1350
 msgid "Manual integration (Without Plugin)"
 msgstr "Integrazione manuale (senza spina)"
 
-#: core/inc/backend_settings.php:1350
+#: core/inc/backend_settings.php:1353
 msgid "MonsterInsights (WordPress Plugin)"
 msgstr "MonsterInsights (WordPress Plugin)"
 
-#: core/inc/backend_settings.php:1353
+#: core/inc/backend_settings.php:1356
 msgid "Analytify (WordPress Plugin)"
 msgstr "Analytify (WordPress Plugin)"
 
-#: core/inc/backend_settings.php:1359
+#: core/inc/backend_settings.php:1362
 msgid "Google Analytics ID"
 msgstr "Google Analytics ID"
 
-#: core/inc/backend_settings.php:1360
+#: core/inc/backend_settings.php:1363
 msgid "Enter you GA ID here..."
 msgstr "Inserisci qui il tuo ID Google Analytics..."
 
-#: core/inc/backend_settings.php:1362
+#: core/inc/backend_settings.php:1365
 msgid "Enter your Google Analytics ID here."
 msgstr "Inserisci qui il tuo ID Google Analytics..."
 
-#: core/inc/backend_settings.php:1363
+#: core/inc/backend_settings.php:1366
 msgid "Format: UA-XXXXXXXXX-X / G-XXXXXXXXXXX"
 msgstr "Formato: UA-XXXXXXXXX-X / G-XXXXXXXXXXXXX"
 
-#: core/inc/backend_settings.php:1366 core/inc/backend_settings.php:1433
-#: core/inc/changelog.php:30
+#: core/inc/backend_settings.php:1369 core/inc/backend_settings.php:1436
+#: core/inc/changelog.php:39
 msgid "Google Consent Mode V2"
 msgstr "Modalità consenso Google V2"
 
-#: core/inc/backend_settings.php:1368 core/inc/backend_settings.php:1435
+#: core/inc/backend_settings.php:1371 core/inc/backend_settings.php:1438
 msgid ""
 "Would you like to use <a href=\"https://developers.google.com/tag-platform/"
 "security/guides/consent?hl=de&consentmode=basic\" target=\"blank\">Google "
@@ -262,21 +262,21 @@ msgstr ""
 "security/guides/consent?hl=de&consentmode=basic\" target=\"blank\">modalità "
 "di consenso Google v2</a>?"
 
-#: core/inc/backend_settings.php:1372 core/inc/backend_settings.php:1467
-#: core/inc/backend_settings.php:1514
+#: core/inc/backend_settings.php:1375 core/inc/backend_settings.php:1470
+#: core/inc/backend_settings.php:1517
 msgid "Standard OptIn / OptOut"
 msgstr "OptIn / OptOut standard"
 
-#: core/inc/backend_settings.php:1375 core/inc/backend_settings.php:1470
-#: core/inc/backend_settings.php:1517
+#: core/inc/backend_settings.php:1378 core/inc/backend_settings.php:1473
+#: core/inc/backend_settings.php:1520
 msgid "OptOut (need consent)"
 msgstr "OptOut (bisogno di consenso)"
 
-#: core/inc/backend_settings.php:1375
+#: core/inc/backend_settings.php:1378
 msgid "OptIn *NOT GDPR COMPLIANT* (does not require consent)"
 msgstr "OptIn *NESSUN COMPLIANTE PER GDPR* (non richiede il consenso)"
 
-#: core/inc/backend_settings.php:1391
+#: core/inc/backend_settings.php:1394
 msgid ""
 "Determine whether Google Analytics should be accepted on the first visit to "
 "the site without the user's consent (OptOut)."
@@ -284,11 +284,11 @@ msgstr ""
 "Determinare se Google Analytics deve essere accettato alla prima visita del "
 "sito senza il consenso dell'utente (OptOut)."
 
-#: core/inc/backend_settings.php:1395
+#: core/inc/backend_settings.php:1398
 msgid "The plugin MonsterInsights was found"
 msgstr "Il plugin MonsterInsights è stato trovato"
 
-#: core/inc/backend_settings.php:1396
+#: core/inc/backend_settings.php:1399
 msgid ""
 "If you activate this option you can use MonsterInsights GDPR compliant (2 "
 "click solution)."
@@ -296,7 +296,7 @@ msgstr ""
 "Se si attiva questa opzione è possibile utilizzare MonsterInsights GDPR "
 "compatibile (soluzione a 2 clic)."
 
-#: core/inc/backend_settings.php:1397 core/inc/backend_settings.php:1407
+#: core/inc/backend_settings.php:1400 core/inc/backend_settings.php:1410
 msgid ""
 "All settings are taken over by MonsterInsights. There is nothing more to do "
 "than to activate this option."
@@ -304,7 +304,7 @@ msgstr ""
 "Tutte le impostazioni vengono rilevate da MonsterInsights. Non c'è altro da "
 "fare che attivare questa opzione."
 
-#: core/inc/backend_settings.php:1399
+#: core/inc/backend_settings.php:1402
 msgid ""
 "The Google Analytics Dashboard Plugin Plugin for WordPress by "
 "MonsterInsights was not found."
@@ -312,7 +312,7 @@ msgstr ""
 "Il Google Analytics Dashboard Plugin per WordPress di MonsterInsights non è "
 "stato trovato."
 
-#: core/inc/backend_settings.php:1400 core/inc/backend_settings.php:1410
+#: core/inc/backend_settings.php:1403 core/inc/backend_settings.php:1413
 msgid ""
 "Please make sure that the plugin is installed and activated before you "
 "activate this option and save the settings!"
@@ -320,11 +320,11 @@ msgstr ""
 "Assicuratevi che il plugin sia installato e attivato prima di attivare "
 "questa opzione e salvate le impostazioni!"
 
-#: core/inc/backend_settings.php:1405
+#: core/inc/backend_settings.php:1408
 msgid "The plugin Analytify was found"
 msgstr "Il plugin Analytify è stato trovato"
 
-#: core/inc/backend_settings.php:1406
+#: core/inc/backend_settings.php:1409
 msgid ""
 "If you activate this option you can use Analytify GDPR compliant (2 click "
 "solution)."
@@ -332,7 +332,7 @@ msgstr ""
 "Se si attiva questa opzione è possibile utilizzare Analytify GDPR compliant "
 "(soluzione a 2 clic)."
 
-#: core/inc/backend_settings.php:1409
+#: core/inc/backend_settings.php:1412
 msgid ""
 "The Google Analytics Dashboard Plugin Plugin for WordPress by Analytify was "
 "not found."
@@ -340,32 +340,32 @@ msgstr ""
 "Il Google Analytics Dashboard Plugin Plugin Plugin per WordPress di "
 "Analytify non è stato trovato."
 
-#: core/inc/backend_settings.php:1420 core/inc/backend_settings.php:2441
-#: core/inc/backend_settings.php:3965
+#: core/inc/backend_settings.php:1423 core/inc/backend_settings.php:2447
+#: core/inc/backend_settings.php:3971
 msgid "Google Tag Manager"
 msgstr "Google Tag Manager"
 
-#: core/inc/backend_settings.php:1422
+#: core/inc/backend_settings.php:1425
 msgid "Do you use Google Tag Manager?"
 msgstr "Utilizzate Google Tag Manager?"
 
-#: core/inc/backend_settings.php:1426
+#: core/inc/backend_settings.php:1429
 msgid "Google Tag Manager ID"
 msgstr "Google Tag Manager ID"
 
-#: core/inc/backend_settings.php:1429
+#: core/inc/backend_settings.php:1432
 msgid "Enter your Google Tag Manager ID here."
 msgstr "Inserisci qui il tuo ID Google Tag Manager."
 
-#: core/inc/backend_settings.php:1430
+#: core/inc/backend_settings.php:1433
 msgid "Format: GTM-XXXXXXX"
 msgstr "Formato: GTM-XXXXX"
 
-#: core/inc/backend_settings.php:1439
+#: core/inc/backend_settings.php:1442
 msgid "Replace integration automatically [Beta]"
 msgstr "Sostituire l'integrazione automaticamente [Beta]"
 
-#: core/inc/backend_settings.php:1441
+#: core/inc/backend_settings.php:1444
 msgid ""
 "Should ALL existing Google Tag Manager integrations be replaced according to "
 "GDPR (2 click solution)?"
@@ -373,7 +373,7 @@ msgstr ""
 "È necessario sostituire TUTTE le integrazioni esistenti di Google Tag "
 "Manager secondo GDPR (soluzione a 2 clic)?"
 
-#: core/inc/backend_settings.php:1442
+#: core/inc/backend_settings.php:1445
 msgid ""
 "All existing integrations of the domain googletagmanager.com are "
 "automatically replaced."
@@ -381,15 +381,15 @@ msgstr ""
 "Tutte le integrazioni esistenti del dominio googletagmanager.com vengono "
 "automaticamente sostituite."
 
-#: core/inc/backend_settings.php:1453
+#: core/inc/backend_settings.php:1456
 msgid "VG Wort Pixel"
 msgstr "VG Wort Pixel"
 
-#: core/inc/backend_settings.php:1455
+#: core/inc/backend_settings.php:1458
 msgid "Do yo use VG Wort?"
 msgstr "Utilizzate l'erba VG?"
 
-#: core/inc/backend_settings.php:1459
+#: core/inc/backend_settings.php:1462
 msgid ""
 "If you use the services of VG Wort, activate this option so that the "
 "corresponding policy text is inserted in the privacy policy"
@@ -398,12 +398,12 @@ msgstr ""
 "il testo della politica corrispondente sia inserito nell'informativa sulla "
 "privacy"
 
-#: core/inc/backend_settings.php:1460 core/inc/backend_settings.php:1575
-#: core/inc/backend_settings.php:3671
+#: core/inc/backend_settings.php:1463 core/inc/backend_settings.php:1578
+#: core/inc/backend_settings.php:3677
 msgid "Important"
 msgstr "Importante"
 
-#: core/inc/backend_settings.php:1460
+#: core/inc/backend_settings.php:1463
 msgid ""
 "You have to adapt the text of the privacy policy! ([PLEASE CHECK if this is "
 "the case with your publisher!])"
@@ -411,11 +411,11 @@ msgstr ""
 "Dovete adattare il testo dell'informativa sulla privacy! ([SI PREGA DI "
 "CONTROLLARE se questo è il caso del vostro editore!)"
 
-#: core/inc/backend_settings.php:1463
+#: core/inc/backend_settings.php:1466
 msgid "Shortcode for embedding VG Wort:<br />"
 msgstr "Codice di avviamento per l'inserimento di VG Wort:<br />"
 
-#: core/inc/backend_settings.php:1465
+#: core/inc/backend_settings.php:1468
 msgid ""
 "With the shortcode you can integrate VG Wort GDPR compliant on any desired "
 "page."
@@ -423,11 +423,11 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare il VG Wort GDPR "
 "conforme a VG su qualsiasi pagina desiderata."
 
-#: core/inc/backend_settings.php:1470 core/inc/backend_settings.php:1517
+#: core/inc/backend_settings.php:1473 core/inc/backend_settings.php:1520
 msgid "OptIn (does not require consent)"
 msgstr "OptIn (non richiede il consenso)"
 
-#: core/inc/backend_settings.php:1487
+#: core/inc/backend_settings.php:1490
 msgid ""
 "Determine if VG Wort should be accepted on the first visit to the site "
 "without the user's consent (OptOut)."
@@ -435,7 +435,7 @@ msgstr ""
 "Determinare se VG Wort deve essere accettato alla prima visita del sito "
 "senza il consenso dell'utente (OptOut)."
 
-#: core/inc/backend_settings.php:1488
+#: core/inc/backend_settings.php:1491
 msgid ""
 "We do not recommend allowing the service without the user's consent as this "
 "is not compliant in our opinion!"
@@ -443,11 +443,11 @@ msgstr ""
 "Si consiglia di non consentire il servizio senza il consenso dell'utente in "
 "quanto a nostro avviso non è conforme!"
 
-#: core/inc/backend_settings.php:1490
+#: core/inc/backend_settings.php:1493
 msgid "Replace integrations automatically"
 msgstr "Sostituire automaticamente le integrazioni"
 
-#: core/inc/backend_settings.php:1492
+#: core/inc/backend_settings.php:1495
 msgid ""
 "Should ALL existing integrations of VG Wort GDPR compliant replaced (2 click "
 "solution)?"
@@ -455,27 +455,27 @@ msgstr ""
 "TUTTE le integrazioni esistenti di VG Wort GDPR compatibili con VG devono "
 "essere sostituite (soluzione a 2 clic)?"
 
-#: core/inc/backend_settings.php:1493
+#: core/inc/backend_settings.php:1496
 msgid ""
 "All existing integrations of the domain vgwort.de are automatically replaced."
 msgstr ""
 "Tutte le integrazioni esistenti del dominio vgwort.de vengono "
 "automaticamente sostituite."
 
-#: core/inc/backend_settings.php:1494
+#: core/inc/backend_settings.php:1497
 msgid "The plugin \"Worthy\" is supported."
 msgstr "Il plugin \"Worthy\" è supportato."
 
-#: core/inc/backend_settings.php:1506 core/inc/backend_settings.php:2591
-#: core/inc/backend_settings.php:3973
+#: core/inc/backend_settings.php:1509 core/inc/backend_settings.php:2597
+#: core/inc/backend_settings.php:3979
 msgid "Koko Analytics"
 msgstr "Koko Analytics"
 
-#: core/inc/backend_settings.php:1508
+#: core/inc/backend_settings.php:1511
 msgid "Do you use Koko Analytics?"
 msgstr "Utilizzate Koko Analytics?"
 
-#: core/inc/backend_settings.php:1512
+#: core/inc/backend_settings.php:1515
 msgid ""
 "If you use Koko Analytics activate this option so that the corresponding "
 "privacy text is inserted in the privacy policy"
@@ -483,7 +483,7 @@ msgstr ""
 "Se si utilizza Koko Analytics attivare questa opzione in modo che il testo "
 "corrispondente sulla privacy sia inserito nell'informativa sulla privacy"
 
-#: core/inc/backend_settings.php:1534
+#: core/inc/backend_settings.php:1537
 msgid ""
 "Determine if Koko Analytics should be accepted on the first visit to the "
 "site without user consent (OptOut)."
@@ -491,11 +491,11 @@ msgstr ""
 "Determinare se Koko Analytics deve essere accettata alla prima visita del "
 "sito senza il consenso dell'utente (OptOut)."
 
-#: core/inc/backend_settings.php:1544
+#: core/inc/backend_settings.php:1547
 msgid "Piwik/Matomo"
 msgstr "Piwik/Matomo"
 
-#: core/inc/backend_settings.php:1546
+#: core/inc/backend_settings.php:1549
 msgid ""
 "If you want to use Piwik/Matomo on your site check this option and enter all "
 "required details"
@@ -503,19 +503,19 @@ msgstr ""
 "Se vuoi usare Piwik/Matomo sul tuo sito seleziona questa opzione e inserisci "
 "tutti i dettagli richiesti"
 
-#: core/inc/backend_settings.php:1550
+#: core/inc/backend_settings.php:1553
 msgid "Host URL"
 msgstr "URL dell'host"
 
-#: core/inc/backend_settings.php:1553
+#: core/inc/backend_settings.php:1556
 msgid "Enter the host URL of Matomo here (setTrackerUrl)"
 msgstr "Inserire qui l'URL host di Matomo (setTrackerUrl)"
 
-#: core/inc/backend_settings.php:1554
+#: core/inc/backend_settings.php:1557
 msgid "Format"
 msgstr "Formato"
 
-#: core/inc/backend_settings.php:1555
+#: core/inc/backend_settings.php:1558
 msgid ""
 "the Trailing Slash / at the end is important - yes really without http/https/"
 "www and without matomo.php at the end"
@@ -523,23 +523,23 @@ msgstr ""
 "il Trailing Slash / alla fine è importante - sì davvero senza http/https/"
 "wwww e senza matomo.php alla fine"
 
-#: core/inc/backend_settings.php:1559
+#: core/inc/backend_settings.php:1562
 msgid "Tracker Endpoint"
 msgstr "Tracker Endpoint"
 
-#: core/inc/backend_settings.php:1565
+#: core/inc/backend_settings.php:1568
 msgid "Select a Endpoint."
 msgstr "Selezionare un Endpoint."
 
-#: core/inc/backend_settings.php:1569 core/inc/backend_settings.php:1602
+#: core/inc/backend_settings.php:1572 core/inc/backend_settings.php:1605
 msgid "Site ID"
 msgstr "Site ID"
 
-#: core/inc/backend_settings.php:1572
+#: core/inc/backend_settings.php:1575
 msgid "Enter here the Site ID of Matomo (setSiteId)"
 msgstr "Inserire qui l'ID del sito di Matomo (setSiteId)"
 
-#: core/inc/backend_settings.php:1576
+#: core/inc/backend_settings.php:1579
 msgid ""
 "If you use the plugin from Matomo for Wordpress please enter all necessary "
 "data here and set in the Matomo plugin settings the setting \"Add tracking "
@@ -549,28 +549,28 @@ msgstr ""
 "necessari e impostare nelle impostazioni del plugin Matomo l'impostazione "
 "\"Aggiungi codice di tracciamento\" sull'opzione \"Disabilitato\"."
 
-#: core/inc/backend_settings.php:1587
+#: core/inc/backend_settings.php:1590
 msgid "Social Networks / Sharing"
 msgstr "Social Network / Condivisione"
 
-#: core/inc/backend_settings.php:1595 core/inc/backend_settings.php:2642
-#: core/inc/backend_settings.php:3513 core/inc/backend_settings.php:3993
+#: core/inc/backend_settings.php:1598 core/inc/backend_settings.php:2648
+#: core/inc/backend_settings.php:3519 core/inc/backend_settings.php:3999
 msgid "Shareaholic"
 msgstr "Shareaholic"
 
-#: core/inc/backend_settings.php:1597
+#: core/inc/backend_settings.php:1600
 msgid "Do you use Shareaholic?"
 msgstr "Utilizzate Shareaholic?"
 
-#: core/inc/backend_settings.php:1604
+#: core/inc/backend_settings.php:1607
 msgid "Enter the Shareaholic site ID here (SiteId)"
 msgstr "Inserisci qui l'ID del sito Shareaholic (SiteId)"
 
-#: core/inc/backend_settings.php:1608
+#: core/inc/backend_settings.php:1611
 msgid "Shortcode for manual integration of Shareaholic:<br />"
 msgstr "Shortcode per l'integrazione manuale di Shareaholic:<br />"
 
-#: core/inc/backend_settings.php:1610
+#: core/inc/backend_settings.php:1613
 msgid ""
 "With the shortcode you can integrate Shareaholic GDPR compliant manually on "
 "any desired page."
@@ -578,26 +578,26 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare manualmente Shareaholic "
 "GDPR conforme a Shareaholic su qualsiasi pagina desiderata."
 
-#: core/inc/backend_settings.php:1611
+#: core/inc/backend_settings.php:1614
 msgid ""
 "This is not required - Shareaholic is also displayed without the shortcode."
 msgstr ""
 "Questo non è necessario - Shareaholic viene visualizzato anche senza il "
 "codice di scelta rapida."
 
-#: core/inc/backend_settings.php:1616 core/inc/backend_settings.php:3981
+#: core/inc/backend_settings.php:1619 core/inc/backend_settings.php:3987
 msgid "Facebook Comments"
 msgstr "Commenti Facebook"
 
-#: core/inc/backend_settings.php:1618
+#: core/inc/backend_settings.php:1621
 msgid "Do you use Facebook Comments?"
 msgstr "Utilizzate i Commenti di Facebook?"
 
-#: core/inc/backend_settings.php:1622
+#: core/inc/backend_settings.php:1625
 msgid "Shortcode for the integration of Facebook Comments:<br />"
 msgstr "Codice di avviamento per l'integrazione di Facebook Commenti:<br />"
 
-#: core/inc/backend_settings.php:1624
+#: core/inc/backend_settings.php:1627
 msgid ""
 "With the shortcode you can integrate Facebook Comments GDPR compliant on any "
 "desired page."
@@ -605,20 +605,20 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare Facebook Commenti GDPR "
 "conforme a Facebook su qualsiasi pagina desiderata."
 
-#: core/inc/backend_settings.php:1629
+#: core/inc/backend_settings.php:1632
 msgid "Facebook (Like Button)"
 msgstr "Facebook (Like Button)"
 
-#: core/inc/backend_settings.php:1631
+#: core/inc/backend_settings.php:1634
 msgid "Do you use Facebook Like Button?"
 msgstr "Utilizzi Facebook Like Button?"
 
-#: core/inc/backend_settings.php:1635
+#: core/inc/backend_settings.php:1638
 msgid "Shortcode for embedding the Facebook Like Button:<br />"
 msgstr ""
 "Codice di avviamento per incorporare il pulsante Facebook Like Button:<br />"
 
-#: core/inc/backend_settings.php:1637
+#: core/inc/backend_settings.php:1640
 msgid ""
 "With the shortcode you can integrate the Facebook Like Btton GDPR compliant "
 "on every desired page."
@@ -626,24 +626,24 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare il Facebook Like Btton "
 "GDPR conforme a Facebook su ogni pagina desiderata."
 
-#: core/inc/backend_settings.php:1642
+#: core/inc/backend_settings.php:1645
 msgid "X (Share Button)"
 msgstr "X (Share Button)"
 
-#: core/inc/backend_settings.php:1644
+#: core/inc/backend_settings.php:1647
 msgid "Do you want use the X Share Button?"
 msgstr "Vuoi usare il pulsante Condividi X?"
 
-#: core/inc/backend_settings.php:1648 core/inc/user_remove_form.php:79
-#: dsgvo_all_in_one_wp.php:5605
+#: core/inc/backend_settings.php:1651 core/inc/user_remove_form.php:79
+#: dsgvo_all_in_one_wp.php:5654
 msgid "Username"
 msgstr "Username"
 
-#: core/inc/backend_settings.php:1651
+#: core/inc/backend_settings.php:1654
 msgid "Shortcode for embedding the Tweet Button"
 msgstr "Shortcode per l'inserimento del pulsante Tweet"
 
-#: core/inc/backend_settings.php:1653
+#: core/inc/backend_settings.php:1656
 msgid ""
 "With the shortcode you can integrate the Tweet Button GDPR compliant on "
 "every desired page."
@@ -651,23 +651,23 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare il Tweet Button GDPR "
 "conforme a GDPR in ogni pagina desiderata."
 
-#: core/inc/backend_settings.php:1661
+#: core/inc/backend_settings.php:1664
 msgid "AddThis"
 msgstr "AddThis"
 
-#: core/inc/backend_settings.php:1663
+#: core/inc/backend_settings.php:1666
 msgid "Do you use AddThis?"
 msgstr "Utilizzate AddThis?"
 
-#: core/inc/backend_settings.php:1666
+#: core/inc/backend_settings.php:1669
 msgid "Your PUB ID"
 msgstr "Il tuo PUB ID"
 
-#: core/inc/backend_settings.php:1669
+#: core/inc/backend_settings.php:1672
 msgid "Shortcode for including the AddThis Button:<br />"
 msgstr "Codice di avviamento per includere il pulsante AddThis:<br />"
 
-#: core/inc/backend_settings.php:1671
+#: core/inc/backend_settings.php:1674
 msgid ""
 "With the shortcode you can integrate the AddThis Button GDPR compliant on "
 "every desired page."
@@ -675,19 +675,19 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare l'AddThis Button GDPR "
 "conforme a GDPR in ogni pagina desiderata."
 
-#: core/inc/backend_settings.php:1676 core/inc/backend_settings.php:3363
+#: core/inc/backend_settings.php:1679 core/inc/backend_settings.php:3369
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: core/inc/backend_settings.php:1678
+#: core/inc/backend_settings.php:1681
 msgid "Do you use Linkedin?"
 msgstr "Utilizzate Linkedin?"
 
-#: core/inc/backend_settings.php:1682
+#: core/inc/backend_settings.php:1685
 msgid "Shortcode for embedding the Linkedin Button:<br />"
 msgstr "Shortcode per l'inserimento del Linkedin Button:<br />"
 
-#: core/inc/backend_settings.php:1684
+#: core/inc/backend_settings.php:1687
 msgid ""
 "With the shortcode you can integrate the Linkedin Button GDPR compliant on "
 "every desired page."
@@ -695,24 +695,24 @@ msgstr ""
 "Con il codice di scelta rapida è possibile integrare il Linkedin Button GDPR "
 "conforme a Linkedin Button su ogni pagina desiderata."
 
-#: core/inc/backend_settings.php:1693
+#: core/inc/backend_settings.php:1696
 msgid "Video / Audio Services"
 msgstr "Servizi Video / Audio"
 
-#: core/inc/backend_settings.php:1699 core/inc/backend_settings.php:2741
-#: core/inc/backend_settings.php:3265 core/inc/backend_settings.php:3949
+#: core/inc/backend_settings.php:1702 core/inc/backend_settings.php:2747
+#: core/inc/backend_settings.php:3271 core/inc/backend_settings.php:3955
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: core/inc/backend_settings.php:1701
+#: core/inc/backend_settings.php:1704
 msgid "Do you use Vimeo Videos?"
 msgstr "Utilizzate LinkedIn Vimeo?"
 
-#: core/inc/backend_settings.php:1706
+#: core/inc/backend_settings.php:1709
 msgid "Shortcode for embedding Vimeo Videos"
 msgstr "Shortcode per l'inserimento di video su Vimeo"
 
-#: core/inc/backend_settings.php:1708
+#: core/inc/backend_settings.php:1711
 msgid ""
 "With the shortcode you can integrate Vimeo Videos GDPR/DSGVO compliant on "
 "any desired page"
@@ -720,7 +720,7 @@ msgstr ""
 "Con il shortcode è possibile integrare i video di Youtube GDPR/DSGVO "
 "conformi a Vimeo su qualsiasi pagina desiderata"
 
-#: core/inc/backend_settings.php:1709
+#: core/inc/backend_settings.php:1712
 msgid ""
 "Additional parameters: width=\"width\" height=\"height\" thumbnail=\"true|"
 "false|url\""
@@ -728,13 +728,13 @@ msgstr ""
 "Parametri aggiuntivi: width=\"width\" height=\"height\" thumbnail=\"true|"
 "false|url\""
 
-#: core/inc/backend_settings.php:1711 core/inc/backend_settings.php:1730
+#: core/inc/backend_settings.php:1714 core/inc/backend_settings.php:1733
 msgid "Replace existing embeddings automatically GDPR/DSGVO compliant"
 msgstr ""
 "Sostituire automaticamente le incastonature esistenti in conformità con GDPR/"
 "DSGVO"
 
-#: core/inc/backend_settings.php:1712
+#: core/inc/backend_settings.php:1715
 msgid ""
 "The PRO Version offers the feature to automatically replace all existing "
 "vimeo integrations"
@@ -742,19 +742,19 @@ msgstr ""
 "La versione PRO offre la possibilità di sostituire automaticamente tutte le "
 "integrazioni Vimeo esistenti"
 
-#: core/inc/backend_settings.php:1718 core/inc/backend_settings.php:3314
+#: core/inc/backend_settings.php:1721 core/inc/backend_settings.php:3320
 msgid "Youtube"
 msgstr "Youtube"
 
-#: core/inc/backend_settings.php:1720
+#: core/inc/backend_settings.php:1723
 msgid "Do you use Youtube?"
 msgstr "Utilizzate Youtube?"
 
-#: core/inc/backend_settings.php:1725
+#: core/inc/backend_settings.php:1728
 msgid "Shortcode for embedding Youtube Videos"
 msgstr "Shortcode per l'inserimento di video su Youtube"
 
-#: core/inc/backend_settings.php:1727
+#: core/inc/backend_settings.php:1730
 msgid ""
 "With the shortcode you can integrate Youtube Videos GDPR/DSGVO compliant on "
 "any desired page"
@@ -762,7 +762,7 @@ msgstr ""
 "Con il shortcode è possibile integrare i video di Youtube GDPR/DSGVO "
 "conformi a Youtube su qualsiasi pagina desiderata"
 
-#: core/inc/backend_settings.php:1728
+#: core/inc/backend_settings.php:1731
 msgid ""
 "Additional parameters: width=\"width\" height=\"height\" autoplay=\"0|1\" "
 "rel=\"0|1\" thumbnail=\"true|false|url\""
@@ -770,7 +770,7 @@ msgstr ""
 "Parametri aggiuntivi: width=\"width\" height=\"height\" autoplay=\"0|1\" "
 "thumbnail=\"true|false|url\""
 
-#: core/inc/backend_settings.php:1731
+#: core/inc/backend_settings.php:1734
 msgid ""
 "The PRO Version offers the feature to automatically replace all existing "
 "youtube integrations"
@@ -778,13 +778,13 @@ msgstr ""
 "La versione PRO offre la possibilità di sostituire automaticamente tutte le "
 "integrazioni youtube esistenti"
 
-#: core/inc/backend_settings.php:1740
+#: core/inc/backend_settings.php:1743
 msgid "Integrate more external services GDPR compliant such as:"
 msgstr ""
 "Integrare più servizi esterni conformi al GDPR come ad esempio i servizi "
 "esterni:"
 
-#: core/inc/backend_settings.php:1742
+#: core/inc/backend_settings.php:1745
 msgid ""
 "eTracker, Statcounter, Clicky, Google Adsense, Amazon Ads, Google Maps, "
 "Komoot, OpenStreetMap + LeafLetMap, Youtube & Youtube Playlist, Vimeo, "
@@ -803,11 +803,11 @@ msgstr ""
 "tramite codice JS possono essere utilizzati comodamente tramite le "
 "impostazioni conformi a DSGVO."
 
-#: core/inc/backend_settings.php:1744
+#: core/inc/backend_settings.php:1747
 msgid "...in the Pro Version."
 msgstr "...nella versione Pro."
 
-#: core/inc/backend_settings.php:1749
+#: core/inc/backend_settings.php:1752
 msgid ""
 "Settings Cookie Notice <span style='font-size:13px'>(Cookie Notice, Design/"
 "Style, Buttons, Lifetime, Texts)</span>"
@@ -815,19 +815,19 @@ msgstr ""
 "Impostazioni Cookie Notice <span style='font-size:13px'>(Cookie Notice, "
 "Design/Style, Buttons, Lifetime, Texts)</span>"
 
-#: core/inc/backend_settings.php:1752
+#: core/inc/backend_settings.php:1755
 msgid "Cookie Notice/Message"
 msgstr "Avviso/messaggio per i cookie"
 
-#: core/inc/backend_settings.php:1754
+#: core/inc/backend_settings.php:1757
 msgid "Should the Cookie Notice be displayed?"
 msgstr "L'avviso sui cookie deve essere visualizzato?"
 
-#: core/inc/backend_settings.php:1763
+#: core/inc/backend_settings.php:1766
 msgid "Automatic approval by changing the page"
 msgstr "Approvazione automatica cambiando la pagina"
 
-#: core/inc/backend_settings.php:1765
+#: core/inc/backend_settings.php:1768
 msgid ""
 "Should the cookie and external services be automatically enabled when the "
 "user navigates on the site?"
@@ -835,198 +835,198 @@ msgstr ""
 "Il cookie e i servizi esterni devono essere abilitati automaticamente quando "
 "l'utente naviga sul sito?"
 
-#: core/inc/backend_settings.php:1770
+#: core/inc/backend_settings.php:1773
 msgid "Service Control"
 msgstr "Controllo del servizio"
 
-#: core/inc/backend_settings.php:1772
+#: core/inc/backend_settings.php:1775
 msgid "Should the service control be displayed?"
 msgstr "Il controllo del servizio deve essere visualizzato?"
 
-#: core/inc/backend_settings.php:1776
+#: core/inc/backend_settings.php:1779
 msgid "Position Service Control"
 msgstr "Controllo del servizio di posizione"
 
-#: core/inc/backend_settings.php:1779
+#: core/inc/backend_settings.php:1782
 msgid "Top left"
 msgstr "In alto a sinistra"
 
-#: core/inc/backend_settings.php:1779
+#: core/inc/backend_settings.php:1782
 msgid "Top right"
 msgstr "In alto a destra"
 
-#: core/inc/backend_settings.php:1779
+#: core/inc/backend_settings.php:1782
 msgid "Bottom left"
 msgstr "In basso a sinistra"
 
-#: core/inc/backend_settings.php:1779
+#: core/inc/backend_settings.php:1782
 msgid "Bottom right"
 msgstr "In basso a destra"
 
-#: core/inc/backend_settings.php:1788
+#: core/inc/backend_settings.php:1791
 msgid "In which corner the service control should be displayed?"
 msgstr "In quale angolo deve essere visualizzato il controllo del servizio?"
 
-#: core/inc/backend_settings.php:1795
+#: core/inc/backend_settings.php:1798
 msgid "Cookie Notice Style / Position"
 msgstr "Stile / Posizione di avviso dei cookie"
 
-#: core/inc/backend_settings.php:1797
+#: core/inc/backend_settings.php:1800
 msgid "#1 Sticky at the bottom of the screen"
 msgstr "#1 Appiccicoso nella parte inferiore dello schermo"
 
-#: core/inc/backend_settings.php:1798
+#: core/inc/backend_settings.php:1801
 msgid "#2 Overlay over the entire page"
 msgstr "#2 Sovrapposizione su tutta la pagina"
 
-#: core/inc/backend_settings.php:1799
+#: core/inc/backend_settings.php:1802
 msgid "#3 Overlay entire page + Privacy Policy *RECOMMENDED*"
 msgstr ""
 "#3 Sovrapporre l'intera pagina + Informativa sulla privacy *RACCOMANDATO*."
 
-#: core/inc/backend_settings.php:1800
+#: core/inc/backend_settings.php:1803
 msgid "Block - bottom left corner (Pro Version)"
 msgstr "Blocco - angolo in basso a sinistra (Versione Pro)"
 
-#: core/inc/backend_settings.php:1801
+#: core/inc/backend_settings.php:1804
 msgid "Block - bottom right corner (Pro Version)"
 msgstr "Blocco - angolo in basso a destra (Versione Pro)"
 
-#: core/inc/backend_settings.php:1802
+#: core/inc/backend_settings.php:1805
 msgid "Block - top left corner (Pro Version)"
 msgstr "Blocco - angolo in alto a sinistra (Versione Pro)"
 
-#: core/inc/backend_settings.php:1803
+#: core/inc/backend_settings.php:1806
 msgid "Block - top right corner (Pro Version)"
 msgstr "Blocco - angolo in alto a destra (versione Pro)"
 
-#: core/inc/backend_settings.php:1806
+#: core/inc/backend_settings.php:1809
 msgid "Select the layout/position of the cookie notice."
 msgstr "Seleziona il layout/la posizione dell'avviso sui cookie."
 
-#: core/inc/backend_settings.php:1811
+#: core/inc/backend_settings.php:1814
 msgid "Animation Time"
 msgstr "Tempo di animazione"
 
-#: core/inc/backend_settings.php:1813
+#: core/inc/backend_settings.php:1816
 msgid "Specification in milliseconds (1000 = 1 Second)"
 msgstr "Specificazione in millisecondi (1000 = 1 secondo)"
 
-#: core/inc/backend_settings.php:1818
+#: core/inc/backend_settings.php:1821
 msgid "Cookie Notice Design"
 msgstr "Biscotto Avviso Design"
 
-#: core/inc/backend_settings.php:1820
+#: core/inc/backend_settings.php:1823
 msgid "Light - Grey"
 msgstr "Luce - Grigio"
 
-#: core/inc/backend_settings.php:1821
+#: core/inc/backend_settings.php:1824
 msgid "Dark - Grey"
 msgstr "Scuro - Grigio"
 
-#: core/inc/backend_settings.php:1824
+#: core/inc/backend_settings.php:1827
 msgid "Select the design of the cookie notice."
 msgstr "Selezionare il design dell'avviso del cookie."
 
-#: core/inc/backend_settings.php:1829
+#: core/inc/backend_settings.php:1832
 msgid "Button Text (Accept)"
 msgstr "Testo del pulsante (Accettare)"
 
-#: core/inc/backend_settings.php:1832 core/inc/backend_settings.php:1858
-#: core/inc/backend_settings.php:1894 core/inc/backend_settings.php:1970
-#: core/inc/backend_settings.php:2064 core/inc/backend_settings.php:2135
-#: core/inc/backend_settings.php:2245 core/inc/backend_settings.php:2295
-#: core/inc/backend_settings.php:2345 core/inc/backend_settings.php:2396
-#: core/inc/backend_settings.php:2446 core/inc/backend_settings.php:2495
-#: core/inc/backend_settings.php:2545 core/inc/backend_settings.php:2596
-#: core/inc/backend_settings.php:2647 core/inc/backend_settings.php:2696
-#: core/inc/backend_settings.php:2743 core/inc/backend_settings.php:2792
-#: core/inc/backend_settings.php:3104 core/inc/backend_settings.php:3191
-#: core/inc/backend_settings.php:3214 core/inc/backend_settings.php:3268
-#: core/inc/backend_settings.php:3317 core/inc/backend_settings.php:3366
-#: core/inc/backend_settings.php:3415 core/inc/backend_settings.php:3465
-#: core/inc/backend_settings.php:3516 core/inc/backend_settings.php:3643
-#: core/inc/backend_settings.php:3700
+#: core/inc/backend_settings.php:1835 core/inc/backend_settings.php:1861
+#: core/inc/backend_settings.php:1897 core/inc/backend_settings.php:1973
+#: core/inc/backend_settings.php:2067 core/inc/backend_settings.php:2138
+#: core/inc/backend_settings.php:2251 core/inc/backend_settings.php:2301
+#: core/inc/backend_settings.php:2351 core/inc/backend_settings.php:2402
+#: core/inc/backend_settings.php:2452 core/inc/backend_settings.php:2501
+#: core/inc/backend_settings.php:2551 core/inc/backend_settings.php:2602
+#: core/inc/backend_settings.php:2653 core/inc/backend_settings.php:2702
+#: core/inc/backend_settings.php:2749 core/inc/backend_settings.php:2798
+#: core/inc/backend_settings.php:3110 core/inc/backend_settings.php:3197
+#: core/inc/backend_settings.php:3220 core/inc/backend_settings.php:3274
+#: core/inc/backend_settings.php:3323 core/inc/backend_settings.php:3372
+#: core/inc/backend_settings.php:3421 core/inc/backend_settings.php:3471
+#: core/inc/backend_settings.php:3522 core/inc/backend_settings.php:3649
+#: core/inc/backend_settings.php:3706
 msgid "German"
 msgstr "Tedesco"
 
-#: core/inc/backend_settings.php:1838 core/inc/backend_settings.php:1864
-#: core/inc/backend_settings.php:1900 core/inc/backend_settings.php:1976
-#: core/inc/backend_settings.php:2085 core/inc/backend_settings.php:2150
-#: core/inc/backend_settings.php:2260 core/inc/backend_settings.php:2310
-#: core/inc/backend_settings.php:2360 core/inc/backend_settings.php:2410
-#: core/inc/backend_settings.php:2460 core/inc/backend_settings.php:2509
-#: core/inc/backend_settings.php:2560 core/inc/backend_settings.php:2611
-#: core/inc/backend_settings.php:2661 core/inc/backend_settings.php:2710
-#: core/inc/backend_settings.php:2757 core/inc/backend_settings.php:2806
-#: core/inc/backend_settings.php:3118 core/inc/backend_settings.php:3197
-#: core/inc/backend_settings.php:3220 core/inc/backend_settings.php:3282
-#: core/inc/backend_settings.php:3331 core/inc/backend_settings.php:3380
-#: core/inc/backend_settings.php:3429 core/inc/backend_settings.php:3479
-#: core/inc/backend_settings.php:3530 core/inc/backend_settings.php:3649
-#: core/inc/backend_settings.php:3706
+#: core/inc/backend_settings.php:1841 core/inc/backend_settings.php:1867
+#: core/inc/backend_settings.php:1903 core/inc/backend_settings.php:1979
+#: core/inc/backend_settings.php:2088 core/inc/backend_settings.php:2153
+#: core/inc/backend_settings.php:2266 core/inc/backend_settings.php:2316
+#: core/inc/backend_settings.php:2366 core/inc/backend_settings.php:2416
+#: core/inc/backend_settings.php:2466 core/inc/backend_settings.php:2515
+#: core/inc/backend_settings.php:2566 core/inc/backend_settings.php:2617
+#: core/inc/backend_settings.php:2667 core/inc/backend_settings.php:2716
+#: core/inc/backend_settings.php:2763 core/inc/backend_settings.php:2812
+#: core/inc/backend_settings.php:3124 core/inc/backend_settings.php:3203
+#: core/inc/backend_settings.php:3226 core/inc/backend_settings.php:3288
+#: core/inc/backend_settings.php:3337 core/inc/backend_settings.php:3386
+#: core/inc/backend_settings.php:3435 core/inc/backend_settings.php:3485
+#: core/inc/backend_settings.php:3536 core/inc/backend_settings.php:3655
+#: core/inc/backend_settings.php:3712
 msgid "English"
 msgstr "English"
 
-#: core/inc/backend_settings.php:1844 core/inc/backend_settings.php:1870
-#: core/inc/backend_settings.php:1906 core/inc/backend_settings.php:1982
-#: core/inc/backend_settings.php:2103 core/inc/backend_settings.php:2164
-#: core/inc/backend_settings.php:2274 core/inc/backend_settings.php:2324
-#: core/inc/backend_settings.php:2374 core/inc/backend_settings.php:2424
-#: core/inc/backend_settings.php:2474 core/inc/backend_settings.php:2523
-#: core/inc/backend_settings.php:2574 core/inc/backend_settings.php:2625
-#: core/inc/backend_settings.php:2675 core/inc/backend_settings.php:2724
-#: core/inc/backend_settings.php:2771 core/inc/backend_settings.php:2820
-#: core/inc/backend_settings.php:3132 core/inc/backend_settings.php:3203
-#: core/inc/backend_settings.php:3226 core/inc/backend_settings.php:3296
-#: core/inc/backend_settings.php:3345 core/inc/backend_settings.php:3394
-#: core/inc/backend_settings.php:3443 core/inc/backend_settings.php:3493
-#: core/inc/backend_settings.php:3544 core/inc/backend_settings.php:3655
-#: core/inc/backend_settings.php:3712
+#: core/inc/backend_settings.php:1847 core/inc/backend_settings.php:1873
+#: core/inc/backend_settings.php:1909 core/inc/backend_settings.php:1985
+#: core/inc/backend_settings.php:2106 core/inc/backend_settings.php:2167
+#: core/inc/backend_settings.php:2280 core/inc/backend_settings.php:2330
+#: core/inc/backend_settings.php:2380 core/inc/backend_settings.php:2430
+#: core/inc/backend_settings.php:2480 core/inc/backend_settings.php:2529
+#: core/inc/backend_settings.php:2580 core/inc/backend_settings.php:2631
+#: core/inc/backend_settings.php:2681 core/inc/backend_settings.php:2730
+#: core/inc/backend_settings.php:2777 core/inc/backend_settings.php:2826
+#: core/inc/backend_settings.php:3138 core/inc/backend_settings.php:3209
+#: core/inc/backend_settings.php:3232 core/inc/backend_settings.php:3302
+#: core/inc/backend_settings.php:3351 core/inc/backend_settings.php:3400
+#: core/inc/backend_settings.php:3449 core/inc/backend_settings.php:3499
+#: core/inc/backend_settings.php:3550 core/inc/backend_settings.php:3661
+#: core/inc/backend_settings.php:3718
 msgid "Italian"
 msgstr "Italiano"
 
-#: core/inc/backend_settings.php:1849
+#: core/inc/backend_settings.php:1852
 msgid "Text of the button to accept the conditions"
 msgstr "Testo del pulsante per accettare le condizioni"
 
-#: core/inc/backend_settings.php:1855
+#: core/inc/backend_settings.php:1858
 msgid "Button Text (Personalize)"
 msgstr "Testo del pulsante (Personalizza)"
 
-#: core/inc/backend_settings.php:1876
+#: core/inc/backend_settings.php:1879
 msgid "Text of the button to personalize the opt in / opt out settings"
 msgstr ""
 "Testo del pulsante per personalizzare le impostazioni di opt in / opt out"
 
-#: core/inc/backend_settings.php:1884
+#: core/inc/backend_settings.php:1887
 msgid "Show Reject Button"
 msgstr "Mostra il pulsante di rifiuto"
 
-#: core/inc/backend_settings.php:1886
+#: core/inc/backend_settings.php:1889
 msgid "Should the button to reject the conditions be displayed?"
 msgstr "Il pulsante per rifiutare le condizioni deve essere visualizzato?"
 
-#: core/inc/backend_settings.php:1889
+#: core/inc/backend_settings.php:1892
 msgid ""
 "Info: If no external service is activated the reject button is not displayed!"
 msgstr ""
 "Info: Se non viene attivato nessun servizio esterno, il tasto di rifiuto non "
 "viene visualizzato!"
 
-#: core/inc/backend_settings.php:1891
+#: core/inc/backend_settings.php:1894
 msgid "Button Text (Reject)"
 msgstr "Testo del pulsante (Rifiuta)"
 
-#: core/inc/backend_settings.php:1911
+#: core/inc/backend_settings.php:1914
 msgid "Text of the button to reject the conditions"
 msgstr "Testo del pulsante per rifiutare le condizioni"
 
-#: core/inc/backend_settings.php:1924
+#: core/inc/backend_settings.php:1927
 msgid "Close Popup automatically"
 msgstr "Chiudi automaticamente il Popup"
 
-#: core/inc/backend_settings.php:1926
+#: core/inc/backend_settings.php:1929
 msgid ""
 "Should the personalize popup be automatically closed when all services are "
 "allowed or denied?"
@@ -1034,34 +1034,34 @@ msgstr ""
 "Il popup personalizzato deve essere chiuso automaticamente quando tutti i "
 "servizi sono consentiti o negati?"
 
-#: core/inc/backend_settings.php:1930
+#: core/inc/backend_settings.php:1933
 msgid "Show close button (X)"
 msgstr "Mostra pulsante di chiusura (X)"
 
-#: core/inc/backend_settings.php:1932
+#: core/inc/backend_settings.php:1935
 msgid "Should the button to close the cookie notice be displayed?"
 msgstr "Deve essere visualizzato il pulsante per chiudere l'avviso del cookie?"
 
-#: core/inc/backend_settings.php:1936
+#: core/inc/backend_settings.php:1939
 msgid "Cookie Lifetime"
 msgstr "Cookie Lifetime"
 
-#: core/inc/backend_settings.php:1937
+#: core/inc/backend_settings.php:1940
 msgid "Day(s)"
 msgstr "Giorno(i)"
 
-#: core/inc/backend_settings.php:1939
+#: core/inc/backend_settings.php:1942
 msgid ""
 "How long should the cookie of the cookie consent be stored? (<u>in days!</u>)"
 msgstr ""
 "Per quanto tempo deve essere conservato il cookie del consenso del cookie? "
 "(<u>in giorni!</u>)"
 
-#: core/inc/backend_settings.php:1948
+#: core/inc/backend_settings.php:1951
 msgid "DNT (Do Not Track)"
 msgstr "DNT (Non tracciare)"
 
-#: core/inc/backend_settings.php:1950
+#: core/inc/backend_settings.php:1953
 msgid ""
 "Should the Do Not Track setting be respected? We recommend you to respect "
 "DNT because only that is GDPR compliant!"
@@ -1069,32 +1069,32 @@ msgstr ""
 "Deve essere rispettata l'impostazione Do Not Track? Vi raccomandiamo di "
 "rispettare il DNT perché solo questo è conforme al GDPR!"
 
-#: core/inc/backend_settings.php:1956
+#: core/inc/backend_settings.php:1959
 msgid "OptIn / OptOut Layer Texts"
 msgstr "Testi a strati OptIn / OptOut"
 
-#: core/inc/backend_settings.php:1958
+#: core/inc/backend_settings.php:1961
 msgid "Should a short privacy policy text be displayed to the user"
 msgstr ""
 "Se all'utente viene visualizzato un breve testo di informativa sulla privacy"
 
-#: core/inc/backend_settings.php:1965
+#: core/inc/backend_settings.php:1968
 msgid "Conditions/Consent Text"
 msgstr "Condizioni/Testo di consenso"
 
-#: core/inc/backend_settings.php:1966
+#: core/inc/backend_settings.php:1969
 msgid "Cookie Notice Text neu laden"
 msgstr "Biscotto Avviso Biscotto Testo carico"
 
-#: core/inc/backend_settings.php:1987
+#: core/inc/backend_settings.php:1990
 msgid "Here you can change the text of the cookie notice."
 msgstr "Qui è possibile modificare il testo dell'avviso del cookie."
 
-#: core/inc/backend_settings.php:1996
+#: core/inc/backend_settings.php:1999
 msgid "Link to page when conditions/cookies are rejected"
 msgstr "Link alla pagina quando le condizioni/cookie vengono respinte"
 
-#: core/inc/backend_settings.php:1999 core/inc/backend_settings.php:2010
+#: core/inc/backend_settings.php:2002 core/inc/backend_settings.php:2013
 msgid ""
 "If the user does not agree to the terms and conditions and clicks on "
 "\"reject\", which page should the user be redirected to? Recommendation: "
@@ -1106,15 +1106,15 @@ msgstr ""
 "www.wko.at/service/wirtschaftsrecht-gewerberecht/EU-Datenschutz-"
 "Grundverordnung:-Auswirkungen-auf-Websites.html"
 
-#: core/inc/backend_settings.php:2007
+#: core/inc/backend_settings.php:2010
 msgid "Text that should appear when you have rejected the conditions"
 msgstr "Testo che dovrebbe apparire quando avete rifiutato le condizioni"
 
-#: core/inc/backend_settings.php:2020
+#: core/inc/backend_settings.php:2023
 msgid "Comfortably change ALL colors as well as ALL texts?"
 msgstr "Cambiare comodamente TUTTI i colori e TUTTI i testi?"
 
-#: core/inc/backend_settings.php:2022
+#: core/inc/backend_settings.php:2025
 msgid ""
 "No problem at all! In the Pro Version you can change really EVERYTHING "
 "comfortably via the settings."
@@ -1122,7 +1122,7 @@ msgstr ""
 "Nessun problema! Nella versione Pro è possibile modificare davvero TUTTO "
 "comodamente tramite le impostazioni."
 
-#: core/inc/backend_settings.php:2028
+#: core/inc/backend_settings.php:2031
 msgid ""
 "Privacy Settings <span style='font-size:13px'>(Privacy Policy, Shortcode)</"
 "span>"
@@ -1130,70 +1130,70 @@ msgstr ""
 "Impostazioni sulla privacy <span style='font-size:13px'>(Privacy Policy, "
 "Shortcode)</span> </span>."
 
-#: core/inc/backend_settings.php:2031
+#: core/inc/backend_settings.php:2034
 msgid "Privacy Policy Page"
 msgstr "Pagina di Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2033 core/inc/backend_settings.php:3147
+#: core/inc/backend_settings.php:2036 core/inc/backend_settings.php:3153
 msgid "Select Page..."
 msgstr "Seleziona pagina..."
 
-#: core/inc/backend_settings.php:2042
+#: core/inc/backend_settings.php:2045
 msgid "Select the page where your privacy policy is located."
 msgstr "Seleziona la pagina dove si trova la tua politica sulla privacy."
 
-#: core/inc/backend_settings.php:2047
+#: core/inc/backend_settings.php:2050
 msgid "Shortcode Privacy Policy"
 msgstr "Codice di avviamento rapido Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2050
+#: core/inc/backend_settings.php:2053
 msgid "With this shortcode you can embed the privacy policy on a page"
 msgstr ""
 "Con questo shortcode è possibile incorporare l'informativa sulla privacy in "
 "una pagina"
 
-#: core/inc/backend_settings.php:2052 core/inc/backend_settings.php:3163
-#: core/inc/backend_settings.php:3596 core/inc/backend_settings.php:3634
-#: core/inc/backend_settings.php:3678
+#: core/inc/backend_settings.php:2055 core/inc/backend_settings.php:3169
+#: core/inc/backend_settings.php:3602 core/inc/backend_settings.php:3640
+#: core/inc/backend_settings.php:3684
 msgid "New"
 msgstr "Nuovo"
 
-#: core/inc/backend_settings.php:2053 core/inc/backend_settings.php:3164
-#: core/inc/backend_settings.php:3597 core/inc/backend_settings.php:3635
-#: core/inc/backend_settings.php:3679
+#: core/inc/backend_settings.php:2056 core/inc/backend_settings.php:3170
+#: core/inc/backend_settings.php:3603 core/inc/backend_settings.php:3641
+#: core/inc/backend_settings.php:3685
 msgid ""
 "Use the Gutenberg Block instead of the shortcode - to be found in the editor."
 msgstr ""
 "Utilizzare il blocco di Gutenberg al posto del codice di scelta rapida - da "
 "trovare nell'editor."
 
-#: core/inc/backend_settings.php:2059
+#: core/inc/backend_settings.php:2062
 msgid "General Privacy Policy"
 msgstr "Informativa generale sulla privacy"
 
-#: core/inc/backend_settings.php:2060
+#: core/inc/backend_settings.php:2063
 msgid "Reload Privacy Policy"
 msgstr "Ricarica Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2122
+#: core/inc/backend_settings.php:2125
 msgid "Here you can change the text of the privacy policy"
 msgstr "Qui è possibile modificare il testo dell'informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2130
+#: core/inc/backend_settings.php:2133
 msgid "Privacy Policy of WordPress & Plugins"
 msgstr "Informativa sulla privacy di WordPress & Plugins"
 
-#: core/inc/backend_settings.php:2131
+#: core/inc/backend_settings.php:2134
 msgid "Reload WordPress Privacy Policy"
 msgstr "Ricarica WordPress Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2176
+#: core/inc/backend_settings.php:2179
 msgid "This text is automatically inserted at the end of the privacy policy"
 msgstr ""
 "Questo testo viene inserito automaticamente alla fine dell'informativa sulla "
 "privacy"
 
-#: core/inc/backend_settings.php:2177
+#: core/inc/backend_settings.php:2180
 msgid ""
 "<b>Important:</b> Make sure that the tag [dsgvoaio_plugins] is present at "
 "the end of this text! "
@@ -1201,27 +1201,27 @@ msgstr ""
 "<b>Importante:</b> Assicurati che il tag [dsgvoaio_plugins] sia presente "
 "alla fine di questo testo! "
 
-#: core/inc/backend_settings.php:2184 core/inc/backend_settings.php:2205
+#: core/inc/backend_settings.php:2189 core/inc/backend_settings.php:2211
 msgid "You are sure that you want perform this action?"
 msgstr "Siete sicuri di voler eseguire questa azione?"
 
-#: core/inc/backend_settings.php:2198 core/inc/backend_settings.php:2219
+#: core/inc/backend_settings.php:2204 core/inc/backend_settings.php:2225
 #: core/inc/backend_show_log.php:208 core/inc/backend_show_log.php:260
 #: core/inc/backend_show_log.php:318 dsgvo_all_in_one_wp.php:1114
 msgid "An error has occurred. Please contact the support."
 msgstr "Si è verificato un errore. Si prega di contattare il supporto."
 
-#: core/inc/backend_settings.php:2231
+#: core/inc/backend_settings.php:2237
 msgid "Privacy Policy of external Services"
 msgstr "Informativa sulla privacy dei servizi esterni"
 
-#: core/inc/backend_settings.php:2233
+#: core/inc/backend_settings.php:2239
 msgid "Below are the data protection conditions of the external services"
 msgstr ""
 "Di seguito sono riportate le condizioni di protezione dei dati dei servizi "
 "esterni"
 
-#: core/inc/backend_settings.php:2234
+#: core/inc/backend_settings.php:2240
 msgid ""
 "<b>Info:</b> The data protection conditions of the services activated under "
 "point #1 are automatically loaded."
@@ -1229,224 +1229,224 @@ msgstr ""
 "<b>Info:</b> Le condizioni di protezione dei dati dei servizi attivati al "
 "punto 1 vengono caricate automaticamente."
 
-#: core/inc/backend_settings.php:2235
+#: core/inc/backend_settings.php:2241
 msgid ""
 "This text or these texts are also automatically added to the Privacy Policy."
 msgstr ""
 "Anche questo testo o questi testi vengono aggiunti automaticamente "
 "all'informativa sulla privacy."
 
-#: core/inc/backend_settings.php:2241
+#: core/inc/backend_settings.php:2247
 msgid "Reload Facebook Pixel Privacy Policy"
 msgstr "Ricarica l'Informativa sulla privacy dei pixel di Facebook"
 
-#: core/inc/backend_settings.php:2290
+#: core/inc/backend_settings.php:2296
 msgid "Facebook Like/Comments"
 msgstr "Facebook Like/Commenti"
 
-#: core/inc/backend_settings.php:2291
+#: core/inc/backend_settings.php:2297
 msgid "Reload Facebook Like/Comments Privacy Policy"
 msgstr "Ricarica Facebook Like/Commenti Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2340 core/inc/backend_settings.php:3412
-#: core/inc/backend_settings.php:3989
+#: core/inc/backend_settings.php:2346 core/inc/backend_settings.php:3418
+#: core/inc/backend_settings.php:3995
 msgid "X (Twitter)"
 msgstr "X (Twitter)"
 
-#: core/inc/backend_settings.php:2341
+#: core/inc/backend_settings.php:2347
 msgid "Reload X Privacy Policy"
 msgstr "Ricarica X Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2392
+#: core/inc/backend_settings.php:2398
 msgid "Reload Google Analytics Privacy Policy"
 msgstr "Ricarica l'informativa sulla privacy di Google Analytics"
 
-#: core/inc/backend_settings.php:2442
+#: core/inc/backend_settings.php:2448
 msgid "Reload Google Tag Manager Privacy Policy"
 msgstr "Ricarica Google Tag Manager Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2491
+#: core/inc/backend_settings.php:2497
 msgid "Matomo"
 msgstr "Matomo"
 
-#: core/inc/backend_settings.php:2492
+#: core/inc/backend_settings.php:2498
 msgid "Reload Matomo Privacy Policy"
 msgstr "Ricarica Matomo Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2540 core/inc/backend_settings.php:3462
-#: core/inc/backend_settings.php:3969
+#: core/inc/backend_settings.php:2546 core/inc/backend_settings.php:3468
+#: core/inc/backend_settings.php:3975
 msgid "VG Wort"
 msgstr "VG Wort"
 
-#: core/inc/backend_settings.php:2541
+#: core/inc/backend_settings.php:2547
 msgid "Reload VG Wort Privacy Policy"
 msgstr "Ricarica VG Wort Privacy Policy"
 
-#: core/inc/backend_settings.php:2592
+#: core/inc/backend_settings.php:2598
 msgid "Reload Koko Analytics Privacy Policy"
 msgstr "Ricarica l'informativa sulla privacy di Koko Analytics"
 
-#: core/inc/backend_settings.php:2643
+#: core/inc/backend_settings.php:2649
 msgid "Reload Shareaholic Privacy Policy"
 msgstr "Ricaricare l'informativa sulla privacy di Shareaholic"
 
-#: core/inc/backend_settings.php:2691 core/inc/backend_settings.php:3997
+#: core/inc/backend_settings.php:2697 core/inc/backend_settings.php:4003
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: core/inc/backend_settings.php:2692
+#: core/inc/backend_settings.php:2698
 msgid "Reload LinkedIn Privacy Policy"
 msgstr "Ricarica LinkedIn Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:2741
+#: core/inc/backend_settings.php:2747
 msgid "Reload Vimeo Privacy Text"
 msgstr "Ricaricare il testo del Layer Vimeo"
 
-#: core/inc/backend_settings.php:2787 core/inc/backend_settings.php:3945
+#: core/inc/backend_settings.php:2793 core/inc/backend_settings.php:3951
 msgid "YouTube"
 msgstr "YouTube"
 
-#: core/inc/backend_settings.php:2788
+#: core/inc/backend_settings.php:2794
 msgid "Reload Youtube Privacy Policy"
 msgstr "Ricaricare l'informativa sulla privacy di Youtube"
 
-#: core/inc/backend_settings.php:2837 core/inc/backend_settings.php:3916
+#: core/inc/backend_settings.php:2843 core/inc/backend_settings.php:3922
 msgid "Imprint"
 msgstr "Impronta"
 
-#: core/inc/backend_settings.php:2837
+#: core/inc/backend_settings.php:2843
 msgid "Shortcode / Imprint"
 msgstr "Shortcode / Impressum"
 
-#: core/inc/backend_settings.php:2841
+#: core/inc/backend_settings.php:2847
 msgid "Legal form"
 msgstr "Forma giuridica"
 
-#: core/inc/backend_settings.php:2844 core/inc/backend_settings.php:2941
-#: core/inc/backend_settings.php:2971 core/inc/backend_settings.php:3005
+#: core/inc/backend_settings.php:2850 core/inc/backend_settings.php:2947
+#: core/inc/backend_settings.php:2977 core/inc/backend_settings.php:3011
 msgid "Please select..."
 msgstr "Si prega di selezionare..."
 
-#: core/inc/backend_settings.php:2845
+#: core/inc/backend_settings.php:2851
 msgid "Stock corporation (AG)"
 msgstr "Società per azioni (AG)"
 
-#: core/inc/backend_settings.php:2846
+#: core/inc/backend_settings.php:2852
 msgid "Registered association"
 msgstr "Associazione registrata"
 
-#: core/inc/backend_settings.php:2847
+#: core/inc/backend_settings.php:2853
 msgid "Registered merchant (e.K.)"
 msgstr "Mercante registrato (e.K.)"
 
-#: core/inc/backend_settings.php:2848
+#: core/inc/backend_settings.php:2854
 msgid "Sole proprietor"
 msgstr "Proprietario unico"
 
-#: core/inc/backend_settings.php:2849
+#: core/inc/backend_settings.php:2855
 msgid "Freelancer"
 msgstr "Libero professionista"
 
-#: core/inc/backend_settings.php:2850
+#: core/inc/backend_settings.php:2856
 msgid "GmbH & Co. KG"
 msgstr "GmbH & Co. KG"
 
-#: core/inc/backend_settings.php:2851
+#: core/inc/backend_settings.php:2857
 msgid "non-profit GmbH (gGmbH)"
 msgstr "GmbH senza scopo di lucro (gGmbH)"
 
-#: core/inc/backend_settings.php:2852
+#: core/inc/backend_settings.php:2858
 msgid "Civil law partnership (GbR)"
 msgstr "Società di diritto civile (GbR)"
 
-#: core/inc/backend_settings.php:2853
+#: core/inc/backend_settings.php:2859
 msgid "Limited liability company (GmbH)"
 msgstr "Società a responsabilità limitata (GmbH)"
 
-#: core/inc/backend_settings.php:2854
+#: core/inc/backend_settings.php:2860
 msgid "Limited partnership (KG)"
 msgstr "Società in accomandita semplice (KG)"
 
-#: core/inc/backend_settings.php:2855
+#: core/inc/backend_settings.php:2861
 msgid "Limited partnership on shares (KGaA)"
 msgstr "Società in accomandita per azioni (KGaA)"
 
-#: core/inc/backend_settings.php:2856
+#: core/inc/backend_settings.php:2862
 msgid "General partnership (OHG)"
 msgstr "Società in nome collettivo (OHG)"
 
-#: core/inc/backend_settings.php:2857
+#: core/inc/backend_settings.php:2863
 msgid "Public-law foundation (KöR)"
 msgstr "Ente pubblico (KöR)"
 
-#: core/inc/backend_settings.php:2858
+#: core/inc/backend_settings.php:2864
 msgid "Partner company"
 msgstr "Azienda partner"
 
-#: core/inc/backend_settings.php:2859
+#: core/inc/backend_settings.php:2865
 msgid "Private person"
 msgstr "Persona privata"
 
-#: core/inc/backend_settings.php:2860
+#: core/inc/backend_settings.php:2866
 msgid "Other"
 msgstr "Altro"
 
-#: core/inc/backend_settings.php:2861
+#: core/inc/backend_settings.php:2867
 msgid "Foundation"
 msgstr "Fondazione"
 
-#: core/inc/backend_settings.php:2862
+#: core/inc/backend_settings.php:2868
 msgid "University"
 msgstr "Università"
 
-#: core/inc/backend_settings.php:2863
+#: core/inc/backend_settings.php:2869
 msgid "UG"
 msgstr "UG"
 
-#: core/inc/backend_settings.php:2864
+#: core/inc/backend_settings.php:2870
 msgid "Ltd."
 msgstr "Ltd."
 
-#: core/inc/backend_settings.php:2872
+#: core/inc/backend_settings.php:2878
 msgid "Select the legal form that suits you."
 msgstr "Scegliete la forma giuridica più adatta a voi."
 
-#: core/inc/backend_settings.php:2879 core/inc/backend_settings.php:2887
-#: core/inc/backend_settings.php:2892 core/inc/backend_settings.php:2897
-#: core/inc/backend_settings.php:2902 core/inc/backend_settings.php:3045
-#: core/inc/backend_settings.php:3050 core/inc/backend_settings.php:3055
-#: core/inc/backend_settings.php:3060 core/inc/backend_settings.php:3065
+#: core/inc/backend_settings.php:2885 core/inc/backend_settings.php:2893
+#: core/inc/backend_settings.php:2898 core/inc/backend_settings.php:2903
+#: core/inc/backend_settings.php:2908 core/inc/backend_settings.php:3051
+#: core/inc/backend_settings.php:3056 core/inc/backend_settings.php:3061
+#: core/inc/backend_settings.php:3066 core/inc/backend_settings.php:3071
 msgid "This value is defined under owner data."
 msgstr "Questo valore è definito nei dati del proprietario."
 
-#: core/inc/backend_settings.php:2908
+#: core/inc/backend_settings.php:2914
 msgid "Regulatory approval"
 msgstr "Approvazione regolamentare"
 
-#: core/inc/backend_settings.php:2909 core/inc/backend_settings.php:2927
-#: core/inc/backend_settings.php:3034 core/inc/backend_settings.php:3073
-#: core/inc/backend_settings.php:3083 core/inc/backend_settings.php:3093
-#: core/inc/backend_settings.php:3169
+#: core/inc/backend_settings.php:2915 core/inc/backend_settings.php:2933
+#: core/inc/backend_settings.php:3040 core/inc/backend_settings.php:3079
+#: core/inc/backend_settings.php:3089 core/inc/backend_settings.php:3099
+#: core/inc/backend_settings.php:3175
 msgid "Yes"
 msgstr "Sì"
 
-#: core/inc/backend_settings.php:2911 core/inc/backend_settings.php:2929
-#: core/inc/backend_settings.php:2972 core/inc/backend_settings.php:3036
-#: core/inc/backend_settings.php:3075 core/inc/backend_settings.php:3085
-#: core/inc/backend_settings.php:3095 core/inc/backend_settings.php:3171
+#: core/inc/backend_settings.php:2917 core/inc/backend_settings.php:2935
+#: core/inc/backend_settings.php:2978 core/inc/backend_settings.php:3042
+#: core/inc/backend_settings.php:3081 core/inc/backend_settings.php:3091
+#: core/inc/backend_settings.php:3101 core/inc/backend_settings.php:3177
 msgid "No"
 msgstr "No"
 
-#: core/inc/backend_settings.php:2912
+#: core/inc/backend_settings.php:2918
 msgid "Is an official approval required for the exercise of your profession?"
 msgstr ""
 "È necessaria un'approvazione ufficiale per l'esercizio della professione?"
 
-#: core/inc/backend_settings.php:2918 core/inc/imprint.php:66
+#: core/inc/backend_settings.php:2924 core/inc/imprint.php:66
 msgid "Regulatory Authority"
 msgstr "Autorità di regolamentazione"
 
-#: core/inc/backend_settings.php:2920
+#: core/inc/backend_settings.php:2926
 msgid ""
 "Enter the name of the supervisory authority and in the best case also the "
 "address."
@@ -1454,137 +1454,137 @@ msgstr ""
 "Inserire il nome dell'autorità di vigilanza e nel migliore dei casi anche "
 "l'indirizzo."
 
-#: core/inc/backend_settings.php:2926
+#: core/inc/backend_settings.php:2932
 msgid "Register entry"
 msgstr "Registrazione"
 
-#: core/inc/backend_settings.php:2930
+#: core/inc/backend_settings.php:2936
 msgid "Is registration in a register required for your company?"
 msgstr "È richiesta l'iscrizione in un registro per la vostra azienda?"
 
-#: core/inc/backend_settings.php:2938 core/inc/imprint.php:50
+#: core/inc/backend_settings.php:2944 core/inc/imprint.php:50
 msgid "Register"
 msgstr "Registrati"
 
-#: core/inc/backend_settings.php:2942 dsgvo_all_in_one_wp.php:4887
+#: core/inc/backend_settings.php:2948 dsgvo_all_in_one_wp.php:4936
 msgid "Commercial register"
 msgstr "Registro delle imprese"
 
-#: core/inc/backend_settings.php:2943 dsgvo_all_in_one_wp.php:4891
+#: core/inc/backend_settings.php:2949 dsgvo_all_in_one_wp.php:4940
 msgid "Association register"
 msgstr "Registro delle associazioni"
 
-#: core/inc/backend_settings.php:2944 dsgvo_all_in_one_wp.php:4895
+#: core/inc/backend_settings.php:2950 dsgvo_all_in_one_wp.php:4944
 msgid "Partnership register"
 msgstr "Registro delle società"
 
-#: core/inc/backend_settings.php:2945
+#: core/inc/backend_settings.php:2951
 msgid "Cooperatives register"
 msgstr "Registro cooperative"
 
-#: core/inc/backend_settings.php:2959
+#: core/inc/backend_settings.php:2965
 msgid "Register number"
 msgstr "Numero di registro"
 
-#: core/inc/backend_settings.php:2968
+#: core/inc/backend_settings.php:2974
 msgid "Profession with duty to inform"
 msgstr "Professione con obbligo di informazione"
 
-#: core/inc/backend_settings.php:2973 dsgvo_all_in_one_wp.php:5003
+#: core/inc/backend_settings.php:2979 dsgvo_all_in_one_wp.php:5052
 msgid "Doctor"
 msgstr "Dottore"
 
-#: core/inc/backend_settings.php:2974 dsgvo_all_in_one_wp.php:5007
+#: core/inc/backend_settings.php:2980 dsgvo_all_in_one_wp.php:5056
 msgid "Dentist"
 msgstr "Dentista"
 
-#: core/inc/backend_settings.php:2975 dsgvo_all_in_one_wp.php:5010
+#: core/inc/backend_settings.php:2981 dsgvo_all_in_one_wp.php:5059
 msgid "Architect"
 msgstr "Architetto"
 
-#: core/inc/backend_settings.php:2976
+#: core/inc/backend_settings.php:2982
 msgid "Tax consultant"
 msgstr "Consulente fiscale"
 
-#: core/inc/backend_settings.php:2977 dsgvo_all_in_one_wp.php:5018
+#: core/inc/backend_settings.php:2983 dsgvo_all_in_one_wp.php:5067
 msgid "Lawyer"
 msgstr "Avvocato"
 
-#: core/inc/backend_settings.php:2978 dsgvo_all_in_one_wp.php:5022
+#: core/inc/backend_settings.php:2984 dsgvo_all_in_one_wp.php:5071
 msgid "Notary"
 msgstr "Notaio"
 
-#: core/inc/backend_settings.php:2979 dsgvo_all_in_one_wp.php:5026
+#: core/inc/backend_settings.php:2985 dsgvo_all_in_one_wp.php:5075
 msgid "Duditor"
 msgstr "Duditore"
 
-#: core/inc/backend_settings.php:2980 dsgvo_all_in_one_wp.php:5030
+#: core/inc/backend_settings.php:2986 dsgvo_all_in_one_wp.php:5079
 msgid "Pharmacists"
 msgstr "Farmacisti"
 
-#: core/inc/backend_settings.php:2997
+#: core/inc/backend_settings.php:3003
 msgid "Competent chamber"
 msgstr "Camera competente"
 
-#: core/inc/backend_settings.php:2999
+#: core/inc/backend_settings.php:3005
 msgid ""
 "Geben Sie hier den Namen der Kammer ein die für Ihr Unternehmen zuständig "
 "ist."
 msgstr "Inserite qui il nome della camera responsabile della vostra azienda."
 
-#: core/inc/backend_settings.php:3002
+#: core/inc/backend_settings.php:3008
 msgid "State"
 msgstr "Stato"
 
-#: core/inc/backend_settings.php:3006 dsgvo_all_in_one_wp.php:5040
+#: core/inc/backend_settings.php:3012 dsgvo_all_in_one_wp.php:5089
 msgid "Germany"
 msgstr "Germania"
 
-#: core/inc/backend_settings.php:3007 dsgvo_all_in_one_wp.php:5044
+#: core/inc/backend_settings.php:3013 dsgvo_all_in_one_wp.php:5093
 msgid "Austria"
 msgstr "Austria"
 
-#: core/inc/backend_settings.php:3008 dsgvo_all_in_one_wp.php:5048
+#: core/inc/backend_settings.php:3014 dsgvo_all_in_one_wp.php:5097
 msgid "Switzerland"
 msgstr "Svizzera"
 
-#: core/inc/backend_settings.php:3025 core/inc/imprint.php:62
+#: core/inc/backend_settings.php:3031 core/inc/imprint.php:62
 msgid "Economic ID"
 msgstr "ID economico"
 
-#: core/inc/backend_settings.php:3033
+#: core/inc/backend_settings.php:3039
 msgid "Editorial or journalistic content"
 msgstr "Contenuto editoriale o giornalistico"
 
-#: core/inc/backend_settings.php:3037
+#: core/inc/backend_settings.php:3043
 msgid "Do you publish editorial or journalistic content?"
 msgstr "Pubblicate contenuti editoriali o giornalistici?"
 
-#: core/inc/backend_settings.php:3048
+#: core/inc/backend_settings.php:3054
 msgid "Street & house number"
 msgstr "Strada e numero civico"
 
-#: core/inc/backend_settings.php:3072 core/inc/imprint.php:101
+#: core/inc/backend_settings.php:3078 core/inc/imprint.php:101
 msgid "Disclaimer"
 msgstr "Disclaimer"
 
-#: core/inc/backend_settings.php:3076
+#: core/inc/backend_settings.php:3082
 msgid "Should a disclaimer be inserted for contents and links?"
 msgstr "È necessario inserire un disclaimer per i contenuti e i link?"
 
-#: core/inc/backend_settings.php:3082 core/inc/imprint.php:119
+#: core/inc/backend_settings.php:3088 core/inc/imprint.php:119
 msgid "Copyright"
 msgstr "Copyright"
 
-#: core/inc/backend_settings.php:3086
+#: core/inc/backend_settings.php:3092
 msgid "Should a passage for the copyright be inserted?"
 msgstr "È necessario inserire un passaggio per il copyright?"
 
-#: core/inc/backend_settings.php:3092
+#: core/inc/backend_settings.php:3098
 msgid "Own texts"
 msgstr "Testi propri"
 
-#: core/inc/backend_settings.php:3096
+#: core/inc/backend_settings.php:3102
 msgid ""
 "Do you want to add your own texts such as an image source reference or other "
 "texts?"
@@ -1592,82 +1592,82 @@ msgstr ""
 "Volete aggiungere i vostri testi, come ad esempio un riferimento alla fonte "
 "dell'immagine o altri testi?"
 
-#: core/inc/backend_settings.php:3145
+#: core/inc/backend_settings.php:3151
 msgid "Imprint Page"
 msgstr "Pagina delle note legali"
 
-#: core/inc/backend_settings.php:3158
+#: core/inc/backend_settings.php:3164
 msgid "Shortcode Imprint"
 msgstr "Impronta del codice di avviamento postale"
 
-#: core/inc/backend_settings.php:3160
+#: core/inc/backend_settings.php:3166
 msgid "With this shortcode you can embed the imprint on a page"
 msgstr "Con questo shortcode è possibile incorporare l'impronta su una pagina"
 
-#: core/inc/backend_settings.php:3168
+#: core/inc/backend_settings.php:3174
 msgid "Spam Protection (Email Adress)"
 msgstr "Protezione antispam (Indirizzo e-mail)"
 
-#: core/inc/backend_settings.php:3172
+#: core/inc/backend_settings.php:3178
 msgid "Should the email address be displayed as graphic instead of text?"
 msgstr ""
 "L'indirizzo e-mail deve essere visualizzato come grafico invece che come "
 "testo?"
 
-#: core/inc/backend_settings.php:3178
+#: core/inc/backend_settings.php:3184
 msgid "Privacy settings <span style='font-size:13px'>(Blog comments)</span>"
 msgstr ""
 "Impostazioni sulla privacy <span style='font-size:13px'>(Commenti al blog)</"
 "span>"
 
-#: core/inc/backend_settings.php:3181
+#: core/inc/backend_settings.php:3187
 msgid "Accept Blog Privacy Policy"
 msgstr "Accetta l'informativa sulla privacy del blog"
 
-#: core/inc/backend_settings.php:3183
+#: core/inc/backend_settings.php:3189
 msgid "Should the privacy policy be accepted when creating a blog comment?"
 msgstr ""
 "L'informativa sulla privacy deve essere accettata quando si crea un commento "
 "sul blog?"
 
-#: core/inc/backend_settings.php:3188
+#: core/inc/backend_settings.php:3194
 msgid "Text next to the checkbox for acceptance of the privacy policy"
 msgstr ""
 "Testo accanto alla casella di controllo per l'accettazione dell'informativa "
 "sulla privacy"
 
-#: core/inc/backend_settings.php:3207
+#: core/inc/backend_settings.php:3213
 msgid "Text to display next to the checkbox of the blog comment form."
 msgstr ""
 "Testo da visualizzare accanto alla casella di controllo del modulo di "
 "commento del blog."
 
-#: core/inc/backend_settings.php:3211
+#: core/inc/backend_settings.php:3217
 msgid "Text if the conditions were not accepted"
 msgstr "Testo se le condizioni non sono state accettate"
 
-#: core/inc/backend_settings.php:3230
+#: core/inc/backend_settings.php:3236
 msgid ""
 "Text to appear if the privacy policy has not been accepted - no HTML allowed!"
 msgstr ""
 "Il testo deve apparire se l'informativa sulla privacy non è stata accettata "
 "- non è consentito l'HTML!"
 
-#: core/inc/backend_settings.php:3234
+#: core/inc/backend_settings.php:3240
 msgid "Delete existing IP addresses"
 msgstr "Cancellare gli indirizzi IP esistenti"
 
-#: core/inc/backend_settings.php:3238
+#: core/inc/backend_settings.php:3244
 msgid "Delete IP addresses"
 msgstr "Cancellare gli indirizzi IP"
 
-#: core/inc/backend_settings.php:3240
+#: core/inc/backend_settings.php:3246
 msgid ""
 "Here you can delete the existing IP addresses of already posted comments."
 msgstr ""
 "Qui potete cancellare gli indirizzi IP esistenti dei commenti già pubblicati."
 
-#: core/inc/backend_settings.php:3241
+#: core/inc/backend_settings.php:3247
 msgid ""
 "By clicking on the button Delete IP Addresses all IP addresses are deleted "
 "immediately."
@@ -1675,11 +1675,11 @@ msgstr ""
 "Cliccando sul pulsante Cancella indirizzi IP tutti gli indirizzi IP vengono "
 "cancellati immediatamente."
 
-#: core/inc/backend_settings.php:3245
+#: core/inc/backend_settings.php:3251
 msgid "Remove IP addresses automatically"
 msgstr "Rimuovere automaticamente gli indirizzi IP"
 
-#: core/inc/backend_settings.php:3248
+#: core/inc/backend_settings.php:3254
 msgid ""
 "If enabled, the IP addresses of the comments will be anonymized immediately "
 "upon sending before saving.."
@@ -1687,11 +1687,11 @@ msgstr ""
 "Se abilitato, gli indirizzi IP dei commenti saranno resi anonimi "
 "immediatamente dopo l'invio prima del salvataggio."
 
-#: core/inc/backend_settings.php:3255
+#: core/inc/backend_settings.php:3261
 msgid "Texts OptIn OptOut Layer"
 msgstr "Testi OptIn OptOut Layer"
 
-#: core/inc/backend_settings.php:3259
+#: core/inc/backend_settings.php:3265
 msgid ""
 "You have to activate the option Cookie Notice -> Show OptIn / OutOut Layer "
 "texts. Only then the following texts will be used."
@@ -1699,59 +1699,59 @@ msgstr ""
 "È necessario attivare l'opzione Avviso cookie -> Mostra i testi dei livelli "
 "OptIn / OutOut. Solo allora verranno utilizzati i seguenti testi."
 
-#: core/inc/backend_settings.php:3265
+#: core/inc/backend_settings.php:3271
 msgid "Edit Vimeo Layer Text"
 msgstr "Modifica il testo del livello di Vimeo"
 
-#: core/inc/backend_settings.php:3265
+#: core/inc/backend_settings.php:3271
 msgid "Reload Vimeo Layer Text"
 msgstr "Ricaricare il testo del Layer Vimeo"
 
-#: core/inc/backend_settings.php:3314
+#: core/inc/backend_settings.php:3320
 msgid "Edit Youtube Layer Text"
 msgstr "Modifica il testo del livello di Youtube"
 
-#: core/inc/backend_settings.php:3314
+#: core/inc/backend_settings.php:3320
 msgid "Reload Youtube Layer Text"
 msgstr "Ricaricare il testo del Layer Youtube"
 
-#: core/inc/backend_settings.php:3363
+#: core/inc/backend_settings.php:3369
 msgid "Edit Linkedin Layer Text"
 msgstr "Modifica il testo del livello di Linkedin"
 
-#: core/inc/backend_settings.php:3363
+#: core/inc/backend_settings.php:3369
 msgid "Reload Linkedin Layer Text"
 msgstr "Ricaricare il testo del Layer Linkedin"
 
-#: core/inc/backend_settings.php:3412 core/inc/backend_settings.php:3462
+#: core/inc/backend_settings.php:3418 core/inc/backend_settings.php:3468
 msgid "Edit VG Wort Layer Text"
 msgstr "Modifica il testo del livello di VG Wort"
 
-#: core/inc/backend_settings.php:3412 core/inc/backend_settings.php:3462
+#: core/inc/backend_settings.php:3418 core/inc/backend_settings.php:3468
 msgid "Reload VG Wort Layer Text"
 msgstr "Ricaricare il testo del Layer VG Wort"
 
-#: core/inc/backend_settings.php:3513
+#: core/inc/backend_settings.php:3519
 msgid "Edit Shareaholic Layer Text"
 msgstr "Modifica il testo del livello di Shareaholic"
 
-#: core/inc/backend_settings.php:3513
+#: core/inc/backend_settings.php:3519
 msgid "Reload Shareaholic Layer Text"
 msgstr "Ricaricare il testo di livello shareaholic"
 
-#: core/inc/backend_settings.php:3564
+#: core/inc/backend_settings.php:3570
 msgid "#5 Impressum <span style='font-size:13px'>(Shortcode and Text)</span>"
 msgstr "#5 Impronta <span style='font-size:13px'>(Shortcode e Text)</span>"
 
-#: core/inc/backend_settings.php:3567
+#: core/inc/backend_settings.php:3573
 msgid "Does this website have an online store"
 msgstr "Questo sito web ha un negozio online"
 
-#: core/inc/backend_settings.php:3572 core/inc/backend_settings.php:3574
+#: core/inc/backend_settings.php:3578 core/inc/backend_settings.php:3580
 msgid "Operator of this website"
 msgstr "Operatore di questo sito web"
 
-#: core/inc/backend_settings.php:3581
+#: core/inc/backend_settings.php:3587
 msgid ""
 "Settings Delete Account <span style='font-size:13px'>(Shortcode for "
 "removal)</span>"
@@ -1759,11 +1759,11 @@ msgstr ""
 "Impostazioni Elimina Account <span style='font-size:13px'>(Shortcode per la "
 "rimozione)</span>"
 
-#: core/inc/backend_settings.php:3585 core/inc/backend_settings.php:3623
+#: core/inc/backend_settings.php:3591 core/inc/backend_settings.php:3629
 msgid "INFO"
 msgstr "INFO"
 
-#: core/inc/backend_settings.php:3586 core/inc/backend_settings.php:3624
+#: core/inc/backend_settings.php:3592 core/inc/backend_settings.php:3630
 msgid ""
 "The user login is disabled in the WordPress settings. If you do not allow "
 "registration you can ignore this point"
@@ -1771,39 +1771,39 @@ msgstr ""
 "Il login utente è disattivato nelle impostazioni di WordPress. Se non si "
 "consente la registrazione si può ignorare questo punto"
 
-#: core/inc/backend_settings.php:3590
+#: core/inc/backend_settings.php:3596
 msgid "Deletion of the user account"
 msgstr "Cancellazione dell'account utente"
 
-#: core/inc/backend_settings.php:3590
+#: core/inc/backend_settings.php:3596
 msgid "Right to be forgotten"
 msgstr "Right to be forgotten"
 
-#: core/inc/backend_settings.php:3593
+#: core/inc/backend_settings.php:3599
 msgid ""
 "The shortcode for the form to delete the user account including all data."
 msgstr ""
 "Il codice di scelta rapida per il modulo di cancellazione dell'account "
 "utente comprensivo di tutti i dati."
 
-#: core/inc/backend_settings.php:3594
+#: core/inc/backend_settings.php:3600
 msgid "Paste the shortcode on the page where you want to display the form."
 msgstr ""
 "Incollare il codice di scelta rapida nella pagina in cui si desidera "
 "visualizzare il modulo."
 
-#: core/inc/backend_settings.php:3602
+#: core/inc/backend_settings.php:3608
 msgid "Account deletion page"
 msgstr "Pagina di cancellazione del conto"
 
-#: core/inc/backend_settings.php:3612
+#: core/inc/backend_settings.php:3618
 msgid ""
 "Select the page on which the shortcode [dsgvo_user_remove_form] is located."
 msgstr ""
 "Selezionare la pagina in cui si trova il codice di scelta rapida "
 "[dsgvo_user_remove_form]."
 
-#: core/inc/backend_settings.php:3619
+#: core/inc/backend_settings.php:3625
 msgid ""
 "Settings User Data Extract <span style='font-size:13px'>(Data Extract "
 "Shortcode, PDF Settings)</span>"
@@ -1811,43 +1811,43 @@ msgstr ""
 "Impostazioni Estratto dati utente <span style='font-size:13px'>(Estratto "
 "dati Shortcode, Impostazioni PDF)</span>."
 
-#: core/inc/backend_settings.php:3628
+#: core/inc/backend_settings.php:3634
 msgid "Data extract"
 msgstr "Estratto dei dati"
 
-#: core/inc/backend_settings.php:3628
+#: core/inc/backend_settings.php:3634
 msgid "Right of information"
 msgstr "Diritto di informazione"
 
-#: core/inc/backend_settings.php:3631
+#: core/inc/backend_settings.php:3637
 msgid "The shortcode creates an output of all stored data about a user."
 msgstr "Il shortcode crea un output di tutti i dati memorizzati su un utente."
 
-#: core/inc/backend_settings.php:3632
+#: core/inc/backend_settings.php:3638
 msgid ""
 "Der Shortcode erzeugt eine Ausgabe aller gespeicherten Daten über einen "
 "Benutzer."
 msgstr ""
 "Il shortcode genera un'uscita di tutti i dati memorizzati di un utente."
 
-#: core/inc/backend_settings.php:3640
+#: core/inc/backend_settings.php:3646
 msgid "PDF output of the data"
 msgstr "Output dei dati in formato PDF"
 
-#: core/inc/backend_settings.php:3640
+#: core/inc/backend_settings.php:3646
 msgid "Information Text"
 msgstr "Testo informativo"
 
-#: core/inc/backend_settings.php:3660
+#: core/inc/backend_settings.php:3666
 msgid "Enter here the text that you want to appear in the PDF below"
 msgstr "Inserire qui il testo che si desidera visualizzare nel PDF sottostante"
 
-#: core/inc/backend_settings.php:3661
+#: core/inc/backend_settings.php:3667
 msgid "If you do not want to display any text, leave this field empty"
 msgstr ""
 "Se non si desidera visualizzare alcun testo, lasciare vuoto questo campo"
 
-#: core/inc/backend_settings.php:3668
+#: core/inc/backend_settings.php:3674
 msgid ""
 "Settings Opt in & Out <span style='font-size:13px'>(Shortcode for the output "
 "of the current status of the services)</span>"
@@ -1855,11 +1855,11 @@ msgstr ""
 "Impostazioni Opt in & Out <span style='font-size:13px'>(Shortcode per "
 "l'output dello stato corrente dei servizi)</span>"
 
-#: core/inc/backend_settings.php:3671
+#: core/inc/backend_settings.php:3677
 msgid "Opt in & Out Settings"
 msgstr "Impostazioni Opt in & Out"
 
-#: core/inc/backend_settings.php:3674
+#: core/inc/backend_settings.php:3680
 msgid ""
 "The shortcode allows the user to see which opt in / external services he has "
 "allowed and which not."
@@ -1867,7 +1867,7 @@ msgstr ""
 "Il shortcode permette all'utente di vedere quali servizi opt in / esterni ha "
 "permesso e quali no."
 
-#: core/inc/backend_settings.php:3675
+#: core/inc/backend_settings.php:3681
 msgid ""
 "The user can also change the rights which external services are allowed or "
 "not."
@@ -1875,36 +1875,36 @@ msgstr ""
 "L'utente può anche modificare i diritti che i servizi esterni sono "
 "consentiti o meno."
 
-#: core/inc/backend_settings.php:3676
+#: core/inc/backend_settings.php:3682
 msgid "Insert the shortcode on the page where you want to display the data."
 msgstr ""
 "Inserire il codice di scelta rapida nella pagina in cui si desidera "
 "visualizzare i dati."
 
-#: core/inc/backend_settings.php:3685
+#: core/inc/backend_settings.php:3691
 msgid "Outgoing Links <span style='font-size:13px'>(Notice)</span>"
 msgstr "Link in uscita <span style='font-size:13px'>(Avviso)</span>"
 
-#: core/inc/backend_settings.php:3688
+#: core/inc/backend_settings.php:3694
 msgid "Enable Notice"
 msgstr "Attivare l'avviso"
 
-#: core/inc/backend_settings.php:3690
+#: core/inc/backend_settings.php:3696
 msgid "Should a notice appear when clicking on outgoing links?"
 msgstr "Deve apparire un avviso quando si clicca sui link in uscita?"
 
-#: core/inc/backend_settings.php:3697
+#: core/inc/backend_settings.php:3703
 msgid "Text of the notice for the outgoing links"
 msgstr "Testo dell'avviso per i link in uscita"
 
-#: core/inc/backend_settings.php:3716
+#: core/inc/backend_settings.php:3722
 msgid ""
 "Text to be displayed to the user as information that he is now leaving the "
 "website."
 msgstr ""
 "Testo da mostrare all'utente come informazione che sta lasciando il sito web."
 
-#: core/inc/backend_settings.php:3721
+#: core/inc/backend_settings.php:3727
 msgid ""
 "Google Fonts <span style='font-size:13px'>(Check whether Google fonts are "
 "used)</span>"
@@ -1912,11 +1912,11 @@ msgstr ""
 "Caratteri Google <span style='font-size:13px'>(Verifica se vengono "
 "utilizzati i caratteri Google)</span>"
 
-#: core/inc/backend_settings.php:3729
+#: core/inc/backend_settings.php:3735
 msgid "Attention"
 msgstr "Attenzione!"
 
-#: core/inc/backend_settings.php:3730
+#: core/inc/backend_settings.php:3736
 msgid ""
 "Google fonts were found. Currently, these fonts are integrated into your "
 "website via Google's servers, which is <u>not GDPR compliant</u>."
@@ -1925,7 +1925,7 @@ msgstr ""
 "integrati nel tuo sito web tramite i server di Google, che <u>non è conforme "
 "al GDPR</u>."
 
-#: core/inc/backend_settings.php:3731
+#: core/inc/backend_settings.php:3737
 msgid ""
 "The <a href='https://dsgvo-for-wp.com/plugin/dsgvo-all-in-one-pro-version/' "
 "target='blank'>Pro Version</a> of DSGVO All In One offers the function of "
@@ -1937,115 +1937,115 @@ msgstr ""
 "scaricare automaticamente tutti i caratteri Google trovati sul tuo server e "
 "di rimuovere le integrazioni tramite i server di Google."
 
-#: core/inc/backend_settings.php:3733
+#: core/inc/backend_settings.php:3739
 msgid "The following fonts were found:"
 msgstr "Sono stati trovati i seguenti caratteri:"
 
-#: core/inc/backend_settings.php:3743
+#: core/inc/backend_settings.php:3749
 msgid "Perfect, no Google Fonts found"
 msgstr "Perfetto, nessun Google Fonts trovato"
 
-#: core/inc/backend_settings.php:3744
+#: core/inc/backend_settings.php:3750
 msgid "No fonts were found from Google"
 msgstr "Nessun carattere trovato da Google"
 
-#: core/inc/backend_settings.php:3745
+#: core/inc/backend_settings.php:3751
 msgid "There is currently no need for action on your part."
 msgstr "Al momento non è necessario alcun intervento da parte tua."
 
-#: core/inc/backend_settings.php:3753
+#: core/inc/backend_settings.php:3759
 msgid "Save Settings"
 msgstr "Salvare le impostazioni"
 
-#: core/inc/backend_settings.php:3763
+#: core/inc/backend_settings.php:3769
 msgid "Cookie Notice"
 msgstr "Avviso cookie"
 
-#: core/inc/backend_settings.php:3766
+#: core/inc/backend_settings.php:3772
 msgid "Cookie Notice enabled"
 msgstr "Avviso cookie abilitato"
 
-#: core/inc/backend_settings.php:3774
+#: core/inc/backend_settings.php:3780
 msgid "Service Control enabled"
 msgstr "Controllo del servizio abilitato"
 
-#: core/inc/backend_settings.php:3803
+#: core/inc/backend_settings.php:3809
 msgid "Multilingualism active"
 msgstr "Multilinguismo attivo"
 
-#: core/inc/backend_settings.php:3910
+#: core/inc/backend_settings.php:3916
 msgid "Shortcode Check"
 msgstr "Controllo dello shortcode"
 
-#: core/inc/backend_settings.php:3913
+#: core/inc/backend_settings.php:3919
 msgid "Privacy Policy"
 msgstr "Informativa sulla privacy"
 
-#: core/inc/backend_settings.php:3920
+#: core/inc/backend_settings.php:3926
 msgid "User data deletion"
 msgstr "Cancellazione dei dati dell'utente"
 
-#: core/inc/backend_settings.php:3923
+#: core/inc/backend_settings.php:3929
 msgid "User data overview"
 msgstr "Panoramica dei dati utente"
 
-#: core/inc/backend_settings.php:3927
+#: core/inc/backend_settings.php:3933
 msgid "Opt in & Out overview"
 msgstr "Panoramica di Opt in & Out"
 
-#: core/inc/backend_settings.php:3931 core/inc/backend_settings.php:3933
+#: core/inc/backend_settings.php:3937 core/inc/backend_settings.php:3939
 msgid "Insert all shortcodes on pages"
 msgstr "Inserire tutti i codici brevi sulle pagine"
 
-#: core/inc/backend_settings.php:3941
+#: core/inc/backend_settings.php:3947
 msgid "Activated Services"
 msgstr "Servizi attivati"
 
-#: core/inc/backend_settings.php:3961
+#: core/inc/backend_settings.php:3967
 msgid "Matomo (Piwik)"
 msgstr "Matomo (Piwik)"
 
-#: core/inc/backend_settings.php:3977
+#: core/inc/backend_settings.php:3983
 msgid "Google Analytics (gtag.js)"
 msgstr "Google Analytics (gtag.js)"
 
-#: core/inc/backend_settings.php:3985
+#: core/inc/backend_settings.php:3991
 msgid "Facebook Like/Share"
 msgstr "Facebook Like/Share"
 
-#: core/inc/backend_settings.php:4002
+#: core/inc/backend_settings.php:4008
 msgid "No Services activated yet"
 msgstr "Nessun servizio ancora attivato"
 
-#: core/inc/backend_settings.php:4007
+#: core/inc/backend_settings.php:4013
 msgid "Systemcheck"
 msgstr "Controllo del sistema"
 
-#: core/inc/backend_settings.php:4009
+#: core/inc/backend_settings.php:4015
 msgid "max_input_vars"
 msgstr "max_input_vars"
 
-#: core/inc/backend_settings.php:4009
+#: core/inc/backend_settings.php:4015
 msgid "4000"
 msgstr "4000"
 
-#: core/inc/backend_settings.php:4010
+#: core/inc/backend_settings.php:4016
 msgid "max_execution_time"
 msgstr "max_execution_time"
 
-#: core/inc/backend_settings.php:4010
+#: core/inc/backend_settings.php:4016
 msgid "300"
 msgstr "300"
 
-#: core/inc/backend_settings.php:4011
+#: core/inc/backend_settings.php:4017
 msgid "max_input_time"
 msgstr "max_input_time"
 
-#: core/inc/backend_settings.php:4011
+#: core/inc/backend_settings.php:4017
 msgid "60"
 msgstr "60"
 
-#: core/inc/backend_settings.php:4012
+#: core/inc/backend_settings.php:4018
 msgid ""
 "The values in brackets are the recommended values. If these values are not "
 "reached <u>can</u> problems may occur when saving the settings."
@@ -2054,30 +2054,30 @@ msgstr ""
 "vengono raggiunti <u>può</u> verificarsi problemi durante il salvataggio "
 "delle impostazioni."
 
-#: core/inc/backend_settings.php:4017
+#: core/inc/backend_settings.php:4023
 msgid "Many more Options...."
 msgstr "Molte altre opzioni...."
 
-#: core/inc/backend_settings.php:4031
+#: core/inc/backend_settings.php:4037
 msgid "Rate this Plugin...."
 msgstr "Vota questo Plugin...."
 
-#: core/inc/backend_settings.php:4036
+#: core/inc/backend_settings.php:4042
 msgid "If you like the plugin, we would be very pleased about an review."
 msgstr "Se vi piace il plugin, saremmo molto lieti di ricevere una recensione."
 
-#: core/inc/backend_settings.php:4037
+#: core/inc/backend_settings.php:4043
 msgid "This does not take long and so you can appreciate our work."
 msgstr "Non ci vuole molto tempo e quindi potete apprezzare il nostro lavoro."
 
-#: core/inc/backend_settings.php:4038
+#: core/inc/backend_settings.php:4044
 msgid ""
 "Before you give a bad review, describe your problems in the Support Forum."
 msgstr ""
 "Prima di dare una recensione negativa, descrivete i vostri problemi nel "
 "Forum di supporto."
 
-#: core/inc/backend_settings.php:4040
+#: core/inc/backend_settings.php:4046
 msgid "Rate Plugin"
 msgstr "Tasso Plugin"
 
@@ -2121,7 +2121,7 @@ msgstr ""
 "Stato se il rispettivo servizio è stato approvato o respinto (Opt-in / Opt-"
 "out)."
 
-#: core/inc/backend_show_log.php:31 dsgvo_all_in_one_wp.php:5763
+#: core/inc/backend_show_log.php:31 dsgvo_all_in_one_wp.php:5812
 msgid "IP Adress"
 msgstr "Indirizzo IP"
 
@@ -2165,7 +2165,7 @@ msgstr "Registro di esportazione con un UID"
 msgid "Clear/Delete Log"
 msgstr "Cancellare/eliminare il registro"
 
-#: core/inc/backend_show_log.php:142 dsgvo_all_in_one_wp.php:2209
+#: core/inc/backend_show_log.php:142 dsgvo_all_in_one_wp.php:2258
 msgid "Info"
 msgstr "Info"
 
@@ -2191,11 +2191,11 @@ msgstr "Si è verificato un errore. Inserire un UID."
 msgid "Do you want to export the logbook as PDF file?"
 msgstr "Volete esportare il giornale di bordo in formato PDF?"
 
-#: core/inc/changelog.php:21
+#: core/inc/changelog.php:23
 msgid "Changelogs"
 msgstr "Changelogs"
 
-#: core/inc/changelog.php:23
+#: core/inc/changelog.php:25
 msgid ""
 "Here you will find an overview of the changes and new features in each "
 "version listed in detail."
@@ -2203,102 +2203,111 @@ msgstr ""
 "Qui trovate una panoramica delle modifiche e delle nuove caratteristiche di "
 "ogni versione elencate in dettaglio."
 
-#: core/inc/changelog.php:26
-msgid "Version 4.9 (current)"
-msgstr "Versione 4.9 (attuale)"
+#: core/inc/changelog.php:28
+msgid "Version 5.0 (current)"
+msgstr "Versione 5.0 (attuale)"
 
-#: core/inc/changelog.php:28 core/inc/changelog.php:87
-#: core/inc/changelog.php:108 core/inc/changelog.php:155
-#: core/inc/changelog.php:178 core/inc/changelog.php:194
-#: core/inc/changelog.php:229
-msgid "New features"
-msgstr "Nuove caratteristiche"
-
-#: core/inc/changelog.php:32
-msgid "Improvements"
-msgstr "Miglioramenti"
-
-#: core/inc/changelog.php:34
-msgid "Cookie Notice Layout / Design revised"
-msgstr "Layout/design dell'informativa sui cookie rivisto"
-
-#: core/inc/changelog.php:35
-msgid "YouTube Thumbnail function revised"
-msgstr "Funzione miniature YouTube rivista"
-
-#: core/inc/changelog.php:36
-msgid "Vimeo Thumbnail function revised"
-msgstr "Funzione miniature Vimeo rivista"
-
-#: core/inc/changelog.php:38 core/inc/changelog.php:46
-#: core/inc/changelog.php:59 core/inc/changelog.php:67
-#: core/inc/changelog.php:75 core/inc/changelog.php:82
-#: core/inc/changelog.php:96 core/inc/changelog.php:104
-#: core/inc/changelog.php:117 core/inc/changelog.php:129
-#: core/inc/changelog.php:137 core/inc/changelog.php:147
-#: core/inc/changelog.php:165 core/inc/changelog.php:174
-#: core/inc/changelog.php:188 core/inc/changelog.php:203
-#: core/inc/changelog.php:213 core/inc/changelog.php:225
-#: core/inc/changelog.php:240 core/inc/changelog.php:252
-#: core/inc/changelog.php:262 core/inc/changelog.php:270
+#: core/inc/changelog.php:30 core/inc/changelog.php:47
+#: core/inc/changelog.php:55 core/inc/changelog.php:68
+#: core/inc/changelog.php:76 core/inc/changelog.php:84
+#: core/inc/changelog.php:91 core/inc/changelog.php:105
+#: core/inc/changelog.php:113 core/inc/changelog.php:126
+#: core/inc/changelog.php:138 core/inc/changelog.php:146
+#: core/inc/changelog.php:156 core/inc/changelog.php:174
+#: core/inc/changelog.php:183 core/inc/changelog.php:197
+#: core/inc/changelog.php:212 core/inc/changelog.php:222
+#: core/inc/changelog.php:234 core/inc/changelog.php:249
+#: core/inc/changelog.php:261 core/inc/changelog.php:271
+#: core/inc/changelog.php:279
 msgid "Bugfixes"
 msgstr "Bugfixes"
 
-#: core/inc/changelog.php:40
+#: core/inc/changelog.php:32
+msgid "Security Bugfix"
+msgstr "Correzione di un bug di sicurezza"
+
+#: core/inc/changelog.php:35
+msgid "Version 4.9"
+msgstr "Versione 4.9"
+
+#: core/inc/changelog.php:37 core/inc/changelog.php:96
+#: core/inc/changelog.php:117 core/inc/changelog.php:164
+#: core/inc/changelog.php:187 core/inc/changelog.php:203
+#: core/inc/changelog.php:238
+msgid "New features"
+msgstr "Nuove caratteristiche"
+
+#: core/inc/changelog.php:41
+msgid "Improvements"
+msgstr "Miglioramenti"
+
+#: core/inc/changelog.php:43
+msgid "Cookie Notice Layout / Design revised"
+msgstr "Layout/design dell'informativa sui cookie rivisto"
+
+#: core/inc/changelog.php:44
+msgid "YouTube Thumbnail function revised"
+msgstr "Funzione miniature YouTube rivista"
+
+#: core/inc/changelog.php:45
+msgid "Vimeo Thumbnail function revised"
+msgstr "Funzione miniature Vimeo rivista"
+
+#: core/inc/changelog.php:49
 msgid "Settings Import/Export fixed"
 msgstr "Importazione/Esportazione impostazioni corretta"
 
-#: core/inc/changelog.php:41
+#: core/inc/changelog.php:50
 msgid "Cookie Notice Layout 1 - Layout fix"
 msgstr "Layout 1 dell'informativa sui cookie - Correzione del layout"
 
-#: core/inc/changelog.php:44
+#: core/inc/changelog.php:53
 msgid "Version 4.8"
 msgstr "Versione 4.8"
 
-#: core/inc/changelog.php:48
+#: core/inc/changelog.php:57
 msgid "Fixed display issues with v4.7"
 msgstr "Risolti i problemi di visualizzazione con la versione 4.7"
 
-#: core/inc/changelog.php:49
+#: core/inc/changelog.php:58
 msgid "utf8_decode & utf8_encode deprecated since PHP 8.2.0"
 msgstr "utf8_decode e utf8_encode sono deprecate a partire da PHP 8.2.0."
 
-#: core/inc/changelog.php:52
+#: core/inc/changelog.php:61
 msgid "Version 4.7"
 msgstr "Versione 4.7"
 
-#: core/inc/changelog.php:54
+#: core/inc/changelog.php:63
 msgid "Changes"
 msgstr "Modifiche"
 
-#: core/inc/changelog.php:56
+#: core/inc/changelog.php:65
 msgid "Policy changed for Germany"
 msgstr "Modifica della politica per la Germania"
 
-#: core/inc/changelog.php:57
+#: core/inc/changelog.php:66
 msgid "Cookie Notice Design revised"
 msgstr "Informativa sui cookie Design rivisto"
 
-#: core/inc/changelog.php:61 core/inc/changelog.php:69
+#: core/inc/changelog.php:70 core/inc/changelog.php:78
 msgid "Bugfix - Security issue fixed"
 msgstr "Correzione di bug: risolto un problema di sicurezza"
 
-#: core/inc/changelog.php:62 core/inc/changelog.php:70
+#: core/inc/changelog.php:71 core/inc/changelog.php:79
 msgid "Bugfix - Email Adress Spam protection display issues fixed"
 msgstr ""
 "Correzione di bug - Risolti i problemi di visualizzazione della protezione "
 "antispam dell'indirizzo e-mail"
 
-#: core/inc/changelog.php:65
+#: core/inc/changelog.php:74
 msgid "Version 4.6"
 msgstr "Versione 4.6"
 
-#: core/inc/changelog.php:73
+#: core/inc/changelog.php:82
 msgid "Version 4.5"
 msgstr "Versione 4.5"
 
-#: core/inc/changelog.php:77
+#: core/inc/changelog.php:86
 msgid ""
 "Bugfix - Files not fund  (google_fonts.php, tooltipster.bundle.min, "
 "tooltipster.min.css)"
@@ -2306,40 +2315,40 @@ msgstr ""
 "Bugfix – i file non vengono finanziati (google_fonts.php, "
 "tooltipster.bundle.min, tooltipster.min.css)"
 
-#: core/inc/changelog.php:80
+#: core/inc/changelog.php:89
 msgid "Version 4.4"
 msgstr "Versione 4.4"
 
-#: core/inc/changelog.php:84
+#: core/inc/changelog.php:93
 msgid "Important security fix (CSRF)"
 msgstr "Importante correzione di sicurezza (CSRF)"
 
-#: core/inc/changelog.php:85
+#: core/inc/changelog.php:94
 msgid "E-Mail spam protection revised"
 msgstr "Protezione antispam per la posta elettronica rivista"
 
-#: core/inc/changelog.php:89
+#: core/inc/changelog.php:98
 msgid "Google Fonts Checker integrated"
 msgstr "Controllo caratteri Google integrato"
 
-#: core/inc/changelog.php:90
+#: core/inc/changelog.php:99
 msgid "Vimeo - added to the Free Version (Shortcode only)"
 msgstr ""
 "Vimeo - aggiunto alla versione gratuita (solo codice di avviamento rapido)"
 
-#: core/inc/changelog.php:94
+#: core/inc/changelog.php:103
 msgid "Version 4.3"
 msgstr "Versione 4.3"
 
-#: core/inc/changelog.php:98
+#: core/inc/changelog.php:107
 msgid "Some Code changes according to the WordPress Codex"
 msgstr "Alcune modifiche al codice secondo il Codex WordPress"
 
-#: core/inc/changelog.php:102
+#: core/inc/changelog.php:111
 msgid "Version 4.2"
 msgstr "Versione 4.2"
 
-#: core/inc/changelog.php:106
+#: core/inc/changelog.php:115
 msgid ""
 "Important security fix - added wp_kses to frontend output to prevent xss "
 "injection"
@@ -2347,94 +2356,94 @@ msgstr ""
 "Importante correzione per la sicurezza: aggiunta di wp_kses all'output del "
 "frontend per impedire l'inserimento di xss"
 
-#: core/inc/changelog.php:110
+#: core/inc/changelog.php:119
 msgid "Added Public-law foundation (KöR) under Legal form"
 msgstr "Aggiunta la fondazione di diritto pubblico (KöR) nella forma giuridica"
 
-#: core/inc/changelog.php:111
+#: core/inc/changelog.php:120
 msgid "\"Accept all\" button removed if no external service is used"
 msgstr ""
 "Pulsante \"Accetta tutto\" rimosso se non viene utilizzato alcun servizio "
 "esterno"
 
-#: core/inc/changelog.php:115
+#: core/inc/changelog.php:124
 msgid "Version 4.1"
 msgstr "Versione 4.1"
 
-#: core/inc/changelog.php:119
+#: core/inc/changelog.php:128
 msgid "Facebook Pixel - WooCommerce fix"
 msgstr "Facebook Pixel - correzione WooCommerce"
 
-#: core/inc/changelog.php:120
+#: core/inc/changelog.php:129
 msgid "Some CSS fixes"
 msgstr "Alcune correzioni CSS"
 
-#: core/inc/changelog.php:121
+#: core/inc/changelog.php:130
 msgid "Piwik / Matomo Policy updated"
 msgstr "Politica Piwik / Matomo aggiornata"
 
-#: core/inc/changelog.php:122
+#: core/inc/changelog.php:131
 msgid "Multilanguage Fix"
 msgstr "Fix multilingua"
 
-#: core/inc/changelog.php:123
+#: core/inc/changelog.php:132
 msgid "Fatal Error PHP >8.0 fixed"
 msgstr "Errore fatale PHP >8.0 risolto"
 
-#: core/inc/changelog.php:127
+#: core/inc/changelog.php:136
 msgid "Version 4.0"
 msgstr "Versione 4.0"
 
-#: core/inc/changelog.php:131
+#: core/inc/changelog.php:140
 msgid "Important Security Fix - dsgvoaio_write_log"
 msgstr "Importante correzione di sicurezza - dsgvoaio_write_log"
 
-#: core/inc/changelog.php:135
+#: core/inc/changelog.php:144
 msgid "Version 3.9"
 msgstr "Versione 3.9"
 
-#: core/inc/changelog.php:139
+#: core/inc/changelog.php:148
 msgid "jQuery render error fixed (jQuery 3.5.1)"
 msgstr "jQuery rende l'errore di rendering corretto (jQuery 3.5.1)"
 
-#: core/inc/changelog.php:140
+#: core/inc/changelog.php:149
 msgid "Imprint - input error fixed"
 msgstr "Impronta - errore di ingresso corretto"
 
-#: core/inc/changelog.php:141
+#: core/inc/changelog.php:150
 msgid "Google Analytics function updated"
 msgstr "Aggiornata la funzione Google Analytics"
 
-#: core/inc/changelog.php:145
+#: core/inc/changelog.php:154
 msgid "Version 3.8"
 msgstr "Versione 3.8"
 
-#: core/inc/changelog.php:149
+#: core/inc/changelog.php:158
 msgid "Imprint - Umlauts Bugfix"
 msgstr "Impronta - Umlauts Bugfix"
 
-#: core/inc/changelog.php:150
+#: core/inc/changelog.php:159
 msgid "Imprint - imagecreate PHP Warning fixed"
 msgstr "Impronta - imagecreate PHP Warning fixed"
 
-#: core/inc/changelog.php:151
+#: core/inc/changelog.php:160
 msgid "Imprint - Layout revised (br tags removed)"
 msgstr "Impronta - Layout rivisto (tag br rimosso)"
 
-#: core/inc/changelog.php:152
+#: core/inc/changelog.php:161
 msgid "German translation improved"
 msgstr "Migliorata la traduzione in tedesco"
 
-#: core/inc/changelog.php:153
+#: core/inc/changelog.php:162
 msgid "VG Wort - Auto replace function bugfix"
 msgstr "VG Wort - Auto replace function bugfix"
 
-#: core/inc/changelog.php:157
+#: core/inc/changelog.php:166
 msgid "YouTube - added to the Free Version (Shortcode only)"
 msgstr ""
 "YouTube - aggiunto alla versione gratuita (solo codice di avviamento rapido)"
 
-#: core/inc/changelog.php:158
+#: core/inc/changelog.php:167
 msgid ""
 "Function added - Close Personalize Popup after approval or rejection of all "
 "services"
@@ -2442,80 +2451,80 @@ msgstr ""
 "Funzione aggiunta - Chiudi Personalizza Popup dopo l'approvazione o il "
 "rifiuto di tutti i servizi"
 
-#: core/inc/changelog.php:159
+#: core/inc/changelog.php:168
 msgid ""
 "Inline Privacy Policy texts added (VG Wort, YouTube, Shareaholic, LinkedIn)"
 msgstr ""
 "Aggiunti testi di Informativa sulla privacy in linea (VG Wort, YouTube, "
 "Shareaholic, LinkedIn)"
 
-#: core/inc/changelog.php:163
+#: core/inc/changelog.php:172
 msgid "Version 3.7"
 msgstr "Version 3.7"
 
-#: core/inc/changelog.php:167
+#: core/inc/changelog.php:176
 msgid "Imprint - Own Text - Bug fixed"
 msgstr "Impronta - Testo proprio - Bug fix"
 
-#: core/inc/changelog.php:168
+#: core/inc/changelog.php:177
 msgid "Translation / Localization revised"
 msgstr "Traduzione / localizzazione riveduta"
 
-#: core/inc/changelog.php:172
+#: core/inc/changelog.php:181
 msgid "Version 3.6"
 msgstr "Version 3.6"
 
-#: core/inc/changelog.php:176
+#: core/inc/changelog.php:185
 msgid "Cookie Notice - small bugfixes regarding design"
 msgstr "Cookie Notice - piccoli bugfix per quanto riguarda il design"
 
-#: core/inc/changelog.php:180
+#: core/inc/changelog.php:189
 msgid "Italian language added"
 msgstr "Lingua italiana aggiunta"
 
-#: core/inc/changelog.php:181
+#: core/inc/changelog.php:190
 msgid "Imprint - Spam protection - Graphic or text now selectable"
 msgstr "Impronta - Protezione antispam - Grafica o testo ora selezionabile"
 
-#: core/inc/changelog.php:182
+#: core/inc/changelog.php:191
 msgid "Close button (X) in the cookie notice can now be disabled and enabled"
 msgstr ""
 "Il pulsante di chiusura (X) nella notifica del cookie può ora essere "
 "disabilitato e abilitato"
 
-#: core/inc/changelog.php:186
+#: core/inc/changelog.php:195
 msgid "Version 3.5"
 msgstr "Versione 3.5"
 
-#: core/inc/changelog.php:190
+#: core/inc/changelog.php:199
 msgid "MonsterInsights + Analytify Code improved"
 msgstr "MonsterInsights + Analytify Code migliorato"
 
-#: core/inc/changelog.php:191
+#: core/inc/changelog.php:200
 msgid "PDF data extract umlauts revised"
 msgstr "Revisione degli estratti di dati PDF"
 
-#: core/inc/changelog.php:192
+#: core/inc/changelog.php:201
 msgid "Imprint revised"
 msgstr "Impronta riveduta"
 
-#: core/inc/changelog.php:196
+#: core/inc/changelog.php:205
 msgid "Notice for outgoing links added"
 msgstr "Aggiunta di un avviso per i link in uscita"
 
-#: core/inc/changelog.php:197
+#: core/inc/changelog.php:206
 msgid "Koko Analytics added"
 msgstr "Koko Analytics aggiunto"
 
-#: core/inc/changelog.php:201
+#: core/inc/changelog.php:210
 msgid "Version 3.4"
 msgstr "Versione 3.4"
 
-#: core/inc/changelog.php:205
+#: core/inc/changelog.php:214
 msgid "MonsterInsights bug fixed"
 msgstr "Risolto il bug MonsterInsights"
 
-#: core/inc/changelog.php:206
+#: core/inc/changelog.php:215
 msgid ""
 "Facebook Pixel Events revised (PageView, Purchase, AddToCart, "
 "InitiateCheckout)"
@@ -2523,18 +2532,18 @@ msgstr ""
 "Facebook Pixel Events rivisto (PageView, Acquisto, AddToCart, AddToCart, "
 "InitiateCheckout)"
 
-#: core/inc/changelog.php:207
+#: core/inc/changelog.php:216
 msgid ""
 "Gutenberg Blocks are no longer loaded if Wordpress is installed under V5.0"
 msgstr ""
 "I blocchi Gutenberg non sono più caricati se Wordpress è installato sotto "
 "V5.0"
 
-#: core/inc/changelog.php:211
+#: core/inc/changelog.php:220
 msgid "Version 3.3"
 msgstr "Versione 3.3"
 
-#: core/inc/changelog.php:215
+#: core/inc/changelog.php:224
 msgid ""
 "Loading speed significantly improved - files from js/dist - for Gutenberg "
 "Block is no longer loaded in the frontend"
@@ -2542,31 +2551,31 @@ msgstr ""
 "Velocità di caricamento notevolmente migliorata - file da js/dist - per "
 "Gutenberg Block non viene più caricato nel frontend"
 
-#: core/inc/changelog.php:216
+#: core/inc/changelog.php:225
 msgid "Imprint - Pharmacist added"
 msgstr "Impronta - Farmacista aggiunto"
 
-#: core/inc/changelog.php:217
+#: core/inc/changelog.php:226
 msgid "Text \"To be defined under imprint\" removed"
 msgstr "Il testo \"Da definire sotto l'impronta\" è stato rimosso"
 
-#: core/inc/changelog.php:218
+#: core/inc/changelog.php:227
 msgid "JS files compressed"
 msgstr "File JS compressi"
 
-#: core/inc/changelog.php:219
+#: core/inc/changelog.php:228
 msgid "Cookie Notice Mobile - scrolling bug fixed"
 msgstr "Cookie Notice Mobile - bug di scorrimento risolto"
 
-#: core/inc/changelog.php:223
+#: core/inc/changelog.php:232
 msgid "Version 3.2"
 msgstr "Versione 3.2"
 
-#: core/inc/changelog.php:227
+#: core/inc/changelog.php:236
 msgid "Facebook comments - bug fixed"
 msgstr "Commenti su Facebook - bug risolto"
 
-#: core/inc/changelog.php:231
+#: core/inc/changelog.php:240
 msgid ""
 "Gutenberg Blocks integrated - to be found under Edit Page - Add Block - "
 "Search Term = DSGVO"
@@ -2574,15 +2583,15 @@ msgstr ""
 "Blocchi Gutenberg integrati - da trovare sotto Modifica Pagina - Aggiungi "
 "blocco - Termine di ricerca = DSGVO"
 
-#: core/inc/changelog.php:232
+#: core/inc/changelog.php:241
 msgid "Imprint Generator integrated"
 msgstr "Generatore di impronte integrato"
 
-#: core/inc/changelog.php:233
+#: core/inc/changelog.php:242
 msgid "Email address encrypted in source code"
 msgstr "Indirizzo e-mail criptato in codice sorgente"
 
-#: core/inc/changelog.php:234
+#: core/inc/changelog.php:243
 msgid ""
 "Cookie Notice Design/Layout 3 - language switch (for multilingualism) + "
 "close function added"
@@ -2590,65 +2599,65 @@ msgstr ""
 "Cookie Notice Design/Layout 3 - cambio lingua (per il multilinguismo) + "
 "funzione di chiusura aggiunta"
 
-#: core/inc/changelog.php:238
+#: core/inc/changelog.php:247
 msgid "Version 3.1"
 msgstr "Versione 3.1"
 
-#: core/inc/changelog.php:242
+#: core/inc/changelog.php:251
 msgid "Cookie Notice Animation added - duration freely selectable"
 msgstr "Cookie Notice Animazione aggiunta - durata liberamente selezionabile"
 
-#: core/inc/changelog.php:243
+#: core/inc/changelog.php:252
 msgid "MonsterInsights integrated (Google Analytics)"
 msgstr "MonsterInsights integrato (Google Analytics)"
 
-#: core/inc/changelog.php:244
+#: core/inc/changelog.php:253
 msgid "Analytify integrated (Google Analytics)"
 msgstr "Analytify integrato (Google Analytics)"
 
-#: core/inc/changelog.php:245
+#: core/inc/changelog.php:254
 msgid "Import / Export Funktion integrated"
 msgstr "Importazione / esportazione Funktion integrato"
 
-#: core/inc/changelog.php:246
+#: core/inc/changelog.php:255
 msgid "Log - delete Function integrated"
 msgstr "Log - cancellare Funzione integrata"
 
-#: core/inc/changelog.php:250
+#: core/inc/changelog.php:259
 msgid "Version 3.0"
 msgstr "Versione 3.0"
 
-#: core/inc/changelog.php:254
+#: core/inc/changelog.php:263
 msgid "Cookie Notice - HTML bug fixed when saving"
 msgstr "Avviso cookie - Risolto il bug HTML durante il salvataggio"
 
-#: core/inc/changelog.php:255
+#: core/inc/changelog.php:264
 msgid "Data extraction via PDF - function / PHP code renewed"
 msgstr "Estrazione dati via PDF - funzione / codice PHP rinnovato"
 
-#: core/inc/changelog.php:260
+#: core/inc/changelog.php:269
 msgid "Version 2.9"
 msgstr "Versione 2.9"
 
-#: core/inc/changelog.php:264
+#: core/inc/changelog.php:273
 msgid "Update because of small bugfixes (button/table/font sizes) + umlauts"
 msgstr ""
 "Aggiornamento a causa di piccole correzioni di bug (dimensioni di pulsanti/"
 "tavole/font) + umlaut"
 
-#: core/inc/changelog.php:268
+#: core/inc/changelog.php:277
 msgid "Version 2.8"
 msgstr "Versione 2.8"
 
-#: core/inc/changelog.php:272
+#: core/inc/changelog.php:281
 msgid "Umlauts problem fixed"
 msgstr "Risolto il problema degli umlaut"
 
-#: core/inc/changelog.php:273
+#: core/inc/changelog.php:282
 msgid "Elementor Preview Mode"
 msgstr "Modalità di anteprima dell'elemento"
 
-#: core/inc/changelog.php:274
+#: core/inc/changelog.php:283
 msgid "Formatting of the tables improved"
 msgstr "Migliorata la formattazione delle tabelle"
 
@@ -2904,16 +2913,16 @@ msgid "Fistname"
 msgstr "Nome del pesce"
 
 #: core/inc/user_remove_form.php:95 core/inc/user_remove_form.php:126
-#: dsgvo_all_in_one_wp.php:5627 dsgvo_all_in_one_wp.php:5679
+#: dsgvo_all_in_one_wp.php:5676 dsgvo_all_in_one_wp.php:5728
 msgid "Lastname"
 msgstr "Cognome"
 
 #: core/inc/user_remove_form.php:103 core/inc/user_remove_form.php:166
-#: dsgvo_all_in_one_wp.php:5645 dsgvo_all_in_one_wp.php:5739
+#: dsgvo_all_in_one_wp.php:5694 dsgvo_all_in_one_wp.php:5788
 msgid "E-mail Adress"
 msgstr "Indirizzo e-mail"
 
-#: core/inc/user_remove_form.php:111 dsgvo_all_in_one_wp.php:5657
+#: core/inc/user_remove_form.php:111 dsgvo_all_in_one_wp.php:5706
 msgid "Billing Adress"
 msgstr "Indirizzo di fatturazione"
 
@@ -2925,7 +2934,7 @@ msgstr "Strada"
 msgid "Zip"
 msgstr "Codice postale"
 
-#: core/inc/user_remove_form.php:190 dsgvo_all_in_one_wp.php:5769
+#: core/inc/user_remove_form.php:190 dsgvo_all_in_one_wp.php:5818
 msgid "Saved IP Adress"
 msgstr "Indirizzo IP salvato"
 
@@ -3017,7 +3026,11 @@ msgstr "Il file di log è stato esportato con successo come file PDF."
 msgid "Download Log"
 msgstr "Scarica il registro"
 
-#: dsgvo_all_in_one_wp.php:1259
+#: dsgvo_all_in_one_wp.php:1128
+msgid "Not allowed!"
+msgstr "Non concesso!"
+
+#: dsgvo_all_in_one_wp.php:1308
 msgid ""
 "The respective policy text was reloaded. The page will now reload to make "
 "the changes effective."
@@ -3025,7 +3038,7 @@ msgstr ""
 "Il rispettivo testo della politica è stato ricaricato. La pagina verrà "
 "ricaricata per rendere effettive le modifiche."
 
-#: dsgvo_all_in_one_wp.php:1286
+#: dsgvo_all_in_one_wp.php:1335
 msgid ""
 "The query was successful but there are no IP addresses to delete in the "
 "database because there are none stored."
@@ -3033,7 +3046,7 @@ msgstr ""
 "La query ha avuto esito positivo ma non ci sono indirizzi IP da eliminare "
 "nel database perché non ne sono memorizzati."
 
-#: dsgvo_all_in_one_wp.php:1290
+#: dsgvo_all_in_one_wp.php:1339
 #, php-format
 msgid ""
 "The IP addresses stored in the comments were successfully deleted. %s IP "
@@ -3042,24 +3055,24 @@ msgstr ""
 "Gli indirizzi IP memorizzati nei commenti sono stati eliminati con successo. "
 "%s indirizzi IP sono stati eliminati."
 
-#: dsgvo_all_in_one_wp.php:1295
+#: dsgvo_all_in_one_wp.php:1344
 msgid "Nonce not valid! Please reload the page."
 msgstr "Nonce non valido! Per favore ricarica la pagina."
 
-#: dsgvo_all_in_one_wp.php:1301
+#: dsgvo_all_in_one_wp.php:1350
 msgid "You lack the necessary rights to perform this action!"
 msgstr "Non hai i diritti necessari per eseguire questa azione!"
 
-#: dsgvo_all_in_one_wp.php:1307
+#: dsgvo_all_in_one_wp.php:1356
 msgid "An error occurred, no parameter was passed."
 msgstr "Si è verificato un errore, non è stato passato alcun parametro."
 
-#: dsgvo_all_in_one_wp.php:2185 dsgvo_all_in_one_wp.php:5539
-#: dsgvo_all_in_one_wp.php:5543
+#: dsgvo_all_in_one_wp.php:2234 dsgvo_all_in_one_wp.php:5588
+#: dsgvo_all_in_one_wp.php:5592
 msgid "E-Mail:"
 msgstr "E-Mail:"
 
-#: dsgvo_all_in_one_wp.php:2209
+#: dsgvo_all_in_one_wp.php:2258
 msgid ""
 "Please save the settings in the backend under \"DSGVO AIO\" to output the "
 "text of the privacy policy here"
@@ -3067,15 +3080,15 @@ msgstr ""
 "Salvare le impostazioni nel backend alla voce \"DSGVO AIO\" per visualizzare "
 "qui il testo dell'informativa sulla privacy"
 
-#: dsgvo_all_in_one_wp.php:2834
+#: dsgvo_all_in_one_wp.php:2883
 msgid "Achtung - Cache / Minify Plugin gefunden!"
 msgstr "Attenzione - Cache / Minify Plugin trovato!"
 
-#: dsgvo_all_in_one_wp.php:2836
+#: dsgvo_all_in_one_wp.php:2885
 msgid "Sie verwenden"
 msgstr "Utilizzate"
 
-#: dsgvo_all_in_one_wp.php:2840
+#: dsgvo_all_in_one_wp.php:2889
 msgid ""
 "Dies kann zu Problemen führen. Sie müssen die Plugineinstellungen eventuell "
 "anpassen  damit alles funktioniert sollte die Cookie Notice nicht angezeigt "
@@ -3089,59 +3102,59 @@ msgstr ""
 "si trovano nella <a href=\"https://wordpress.org/plugins/dsgvo-all-in-one-"
 "for-wp/\" target=\"blank\">Pagina plugin wordpress</a> sotto FAQ."
 
-#: dsgvo_all_in_one_wp.php:3554
+#: dsgvo_all_in_one_wp.php:3603
 msgid "No ID defined in shortcode!"
 msgstr "Nessun ID definito in shortcode!"
 
-#: dsgvo_all_in_one_wp.php:3721
+#: dsgvo_all_in_one_wp.php:3770
 msgid "Error: You must accept the privacy policy to post a comment..."
 msgstr ""
 "Errore: Devi accettare l'informativa sulla privacy per pubblicare un "
 "commento..."
 
-#: dsgvo_all_in_one_wp.php:4857
+#: dsgvo_all_in_one_wp.php:4906
 msgid "You must be logged in to perform this action."
 msgstr "Per eseguire questa azione è necessario effettuare il login."
 
-#: dsgvo_all_in_one_wp.php:4899
+#: dsgvo_all_in_one_wp.php:4948
 msgid "Cooperative register"
 msgstr "Registro cooperative"
 
-#: dsgvo_all_in_one_wp.php:5014
+#: dsgvo_all_in_one_wp.php:5063
 msgid "Tax Consultant"
 msgstr "Consulente fiscale"
 
-#: dsgvo_all_in_one_wp.php:5595
+#: dsgvo_all_in_one_wp.php:5644
 msgid "Here is a list of all data that is stored in our system about you."
 msgstr ""
 "Ecco un elenco di tutti i dati che vengono memorizzati nel nostro sistema su "
 "di voi."
 
-#: dsgvo_all_in_one_wp.php:5615 dsgvo_all_in_one_wp.php:5667
+#: dsgvo_all_in_one_wp.php:5664 dsgvo_all_in_one_wp.php:5716
 msgid "Firstname"
 msgstr "Nome"
 
-#: dsgvo_all_in_one_wp.php:5691
+#: dsgvo_all_in_one_wp.php:5740
 msgid "Adress"
 msgstr "Indirizzo"
 
-#: dsgvo_all_in_one_wp.php:5715
+#: dsgvo_all_in_one_wp.php:5764
 msgid "Zip Code"
 msgstr "Codice postale"
 
-#: dsgvo_all_in_one_wp.php:5799
+#: dsgvo_all_in_one_wp.php:5848
 msgid "Download as PDF"
 msgstr "Scaricare come PDF"
 
-#: dsgvo_all_in_one_wp.php:5803
+#: dsgvo_all_in_one_wp.php:5852
 msgid "Delete user account and all data"
 msgstr "Cancellare l'account utente e tutti i dati"
 
-#: dsgvo_all_in_one_wp.php:5837
+#: dsgvo_all_in_one_wp.php:5886
 msgid "Error"
 msgstr "Errore"
 
-#: dsgvo_all_in_one_wp.php:5837
+#: dsgvo_all_in_one_wp.php:5886
 msgid "You must be logged in to perform this action"
 msgstr "Per eseguire questa azione è necessario aver effettuato il login"
 
